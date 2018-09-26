@@ -1,0 +1,15 @@
+<% if (page.total > 1){ %>
+	<ul class="am-pagination">
+		<% if (page.prev) { %>
+			<li class="am-pagination-prev">
+				<a href="<%- url_for(page.prev_link) %>">&laquo; <%= __('prev') %> </a>
+			</li>
+		<% } %>
+		
+		<% if (page.next) { %>
+			<li class="am-pagination-next">
+				<a href="<%- url_for(page.next_link) %>"> <%= __('next') %> &raquo; </a>
+			</li>
+		<% } %>
+	</ul>
+<% } %>    

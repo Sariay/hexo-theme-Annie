@@ -1,0 +1,37 @@
+<!--content start-->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+    <div class="am-u-md-8 am-u-sm-12">
+        <article class="am-article blog-article-p">
+
+            <%- partial('page-header') %>
+
+            <% if (page.type === "tags") { %>
+
+                <div class="tags">
+                    <%- tagcloud({
+                        min_font: 16,
+                        max_font: 35,
+                        amount: 999,
+                        color: true,
+                        start_color: 'black',
+                        end_color: 'red'
+                    }) %>
+                </div>
+
+            <% } else if (page.type === "categories") { %>
+
+                <div class="category">
+                    <%- list_categories({
+                        show_count: true,
+                        order: 1
+                    }) %>
+                </div>
+
+            <% } else { %>    
+
+                <%-page.content%>
+
+            <% } %>
+        </article>
+    </div>
+</div>

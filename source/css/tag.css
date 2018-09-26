@@ -1,0 +1,28 @@
+/*标签tag*/
+
+.tags {
+	max-width: 40em;
+	margin: 2em auto;
+	margin-top: 0em;
+	overflow: auto;
+	text-align: center;
+}
+
+.tags li {
+	display: inline;
+	font-size: 1.2em;
+	margin-right: 1em;
+	padding: 6px;
+}
+
+.tags a {
+	margin-right: 1em;
+	display: inline-block;
+	border-bottom: 1px dashed lightgray;
+}
+
+.tags a:hover {
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom: 1px solid black;
+}

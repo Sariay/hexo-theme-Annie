@@ -1,0 +1,35 @@
+<!--
+	作者：Sariay
+	时间：2018-09-25
+	描述：There may be a bug, but don't worry, QiLing(器灵) says that it can work normally!
+-->
+<% if( page.type === "gallery") { %>
+	
+	<!--gallery-->
+	<%- partial('gallery') %>
+
+<% } else { %>
+
+	<!DOCTYPE html>
+	<html>
+		<%- partial('_partial/head') %>
+	<body>	
+		<%- partial('_partial/header') %>
+
+		<!--main-->
+		<main> 
+		<div class="page-container">
+		<%- body %>
+		</div>
+		</main>
+		
+		<!--footer-->
+		<%- partial("_partial/footer") %>
+		<%- partial('_partial/footer-after') %>
+		
+		<!--back to top-->
+        <%- partial('_partial/widget/totop') %>
+	</body>
+	</html>
+
+<% } %>

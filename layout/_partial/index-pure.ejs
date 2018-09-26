@@ -1,0 +1,51 @@
+<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed">
+    <div class="am-u-md-8 am-u-sm-12">
+		<div class="pure">
+			<li>
+				<% page.posts.each(function(post) { %>
+						
+					<div class="pure-text">
+						<h2>
+							<%- partial('post/title', {post: post}) %>
+						</h2>
+						
+						<% if(post.content) { %>
+							<p>
+								<% if ( post.excerpt){ %>
+									<%- post.excerpt %>
+								<% } else { %>
+									<%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) %>	
+								<% } %>  
+							</p>
+						<% } else { %>
+							<p>没有文章内容...</p>    		
+						<% } %>
+
+						<span>
+							<i class="fa fa-clock-o"></i>&nbsp<%= post.date.format('YYYY-MM-DD')%>
+						</span>
+						<span class="continue-read">       	
+							<a href="<%- config.root %><%- post.path %>" class="pull-right">
+								<%= theme.excerpt_link %>
+							</a>		
+						<span>
+						
+					</div>       
+			
+				<% }); %>     
+			</li>
+
+			<%- partial('paginator') %>	
+		</div>
+    </div>
+</div>
+<!-- content end -->
+
+	
+	
+
+
+	
+	
+

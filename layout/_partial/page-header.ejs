@@ -1,0 +1,17 @@
+<div class="page-header">
+	<div class="blog-text-center">
+		<% if (page.type === "tags") { %>
+			
+			<i class="fa fa-pencil-square-o">总计<%= site.tags.length %>个标签</i>
+			
+		<% } else if (page.type === "categories") { %>
+			
+			<i class="fa fa-pencil-square-o">总计<%= site.categories.length %>个分类</i>
+			
+		<% } else { %>
+			
+			<%= page.title %>
+
+		<% } %>  	 		
+	</div>    	 		
+</div>  	 		

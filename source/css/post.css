@@ -1,0 +1,318 @@
+.blog-text-center {
+	text-align: center;
+}
+
+.blog-article-p {
+	margin: 3rem 0;
+}
+
+
+/* Post content style */
+
+.content {
+	margin-top: 50px;
+	font-size: 1em;
+	line-height: inherit;
+	color: #232323;
+	/*
+		font-family: Lato,-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Heiti SC",STHeiti,"Source Han Sans SC","Noto Sans CJK SC","WenQuanYi Micro Hei","Droid Sans Fallback","Microsoft YaHei",sans-serif;
+	*/
+	font-family: "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+}
+
+.content h1 {
+	font-size: 28px
+}
+
+.content h2 {
+	font-size: 26px
+}
+
+.content h3 {
+	font-size: 24px
+}
+
+.content h4 {
+	font-size: 22px
+}
+
+.content h5 {
+	font-size: 20px
+}
+
+.content h6 {
+	font-size: 18px
+}
+
+.content strong,
+b {
+	font-weight: bold;
+}
+
+.content a {
+	background: transparent;
+	color: #1980e6;
+	text-decoration: none;
+}
+
+.content a:hover {
+	color: #518dca;
+}
+
+.content hr {
+	margin-top: 21px;
+	margin-bottom: 21px;
+	border: 0;
+	border-top: 1px solid rgba(102, 128, 153, 0.1)
+}
+
+.content p {
+	margin: 0 0 .8em;
+}
+
+.content ul,
+.content ol {
+	margin: 10px 0;
+	padding-left: 20px;
+}
+
+.content ul li {
+	list-style: disc;
+	margin: 5px 0;
+}
+
+.content ol li {
+	list-style: decimal;
+	margin: 5px 0;
+}
+
+.content>h1,
+.content>h2,
+.content>h3,
+.content>h4,
+.content>h5,
+.content>h6 {
+	margin-top: 2rem;
+	margin-bottom: 0.8rem;
+	color: #000;
+	color: #474747;
+}
+
+.content>h1:first-child,
+.content>h2:first-child,
+.content>h3:first-child,
+.content>h4:first-child,
+.content>h5:first-child,
+.content>h6:first-child {
+	margin-top: 0;
+}
+
+.content img {
+	cursor: pointer;
+}
+
+.content pre,
+.content .highlight {
+	background: #2d2d2d;
+	margin: 1.6rem 0;
+	padding: 0.8rem 0.8rem;
+	border-style: solid;
+	border-width: 1px 0;
+	overflow: auto;
+	color: #ccc;
+	line-height: 20px;
+}
+
+.content .gutter {
+	display: none;
+}
+
+.content .highlight .gutter pre {
+	color: #666;
+	font-size: 0.9rem;
+}
+
+.content code,
+.content pre {
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+.content code {
+	background: rgba(99, 99, 99, 0.07);
+	padding: 1px 2px;
+	border-radius: 2px;
+}
+
+.content pre code {
+	background: none;
+	text-shadow: none;
+	padding: 0;
+}
+
+.content blockquote {
+	color: #656565;
+	margin: 0 0 1.1em;
+	border-left: 3px solid #efefef;
+	border-left-width: 6px;
+	background-color: rgba(119, 119, 119, 0.05);
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding: 15px 20px;
+}
+
+.content blockquote p {
+	margin: 0;
+}
+
+.content table {
+	margin: 15px 0;
+	border-collapse: collapse;
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+	word-wrap: break-word;
+}
+
+.content table tr {
+	border-top: 1px solid #ccc;
+	background-color: #fff;
+}
+
+.content table th,
+.content table td {
+	border: 1px solid #ddd;
+	padding: 6px 13px;
+}
+
+.content .highlight pre {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+.content .highlight table {
+	margin: 0;
+	width: auto;
+}
+
+.content .highlight td {
+	border: none;
+	padding: 0;
+}
+
+.content .highlight tr {
+	border: 0;
+}
+
+.content .highlight figcaption {
+	font-size: 0.85em;
+	color: #999;
+	line-height: 1em;
+	display: block;
+}
+
+.content .highlight figcaption a {
+	float: right;
+}
+
+.content .highlight .gutter pre {
+	text-align: right;
+	padding-right: 20px;
+}
+
+.content .highlight .line {
+	height: 20px;
+}
+
+.content .video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+}
+
+.content .video-container iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+pre .comment,
+pre .title {
+	color: #999;
+}
+
+pre .variable,
+pre .attribute,
+pre .tag,
+pre .regexp,
+pre .ruby .constant,
+pre .xml .tag,
+pre .title,
+pre .xml .pi,
+pre .xml .doctype,
+pre .html .doctype,
+pre .css .id,
+pre .css .class,
+pre .css .pseudo {
+	color: #f2777a;
+}
+
+pre .number,
+pre .preprocessor,
+pre .built_in,
+pre .literal,
+pre .params,
+pre .constant {
+	color: #f99157;
+}
+
+pre .class,
+pre .ruby .class .title,
+pre .css .rules .attribute {
+	color: #99cc99;
+}
+
+pre .string,
+pre .value,
+pre .inheritance,
+pre .header,
+pre .ruby .symbol,
+pre .xml .cdata {
+	color: #99cc99;
+}
+
+pre .css .hexcolor {
+	color: #66cccc;
+}
+
+pre .function,
+pre .python .decorator,
+pre .python .title,
+pre .ruby .function .title,
+pre .ruby .title .keyword,
+pre .perl .sub,
+pre .javascript .title,
+pre .coffeescript .title {
+	color: #6699cc;
+}
+
+pre .keyword,
+pre .javascript .function {
+	color: #cc99cc;
+}

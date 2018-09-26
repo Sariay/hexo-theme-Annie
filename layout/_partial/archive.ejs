@@ -1,0 +1,52 @@
+<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+		<div class="archive">
+
+			<div class="blog-text-center">
+				<% if(is_category()) { %>
+					<i class="fa fa-book"><%= page.category %></i>
+				<% } else if(is_tag()) { %>
+					<i class="fa fa-book"><%= page.tag %></i>
+				<% } else {%>
+					<i class="fa fa-book">总计<%= site.posts.length %>篇文章</i>
+				<% } %>
+			</div>  
+
+			<% var last_year; var last_month; %>
+
+			<% page.posts.each(function(post, i){ %>				
+				<% var year = post.date.year(); %>
+				<% var month = post.date.format('MM'); %>
+				<% if (last_year != year){ %>
+					<% if (last_year != null){ %>
+						<% last_month = null; %>
+					<% } %>
+
+					<% last_year = year; %>
+					<!--<a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>-->
+				<% } %>
+								
+				<% if (!last_month || last_month != month) {%>
+					<% last_month = month; %>  
+					<div class="archive-year">
+						<a href="<%- url_for(config.archive_dir + '/' + year + '/' + month) %>">
+							<%= year %>-<%=  month %>
+						</a>
+					</div>				
+				<% } %>  
+				
+				<div class="archive-item">
+					<div class="archive-post-title">									
+						<a href="<%- url_for(post.path) %>" itemprop="url"><%= post.title %></a>
+					</div>
+					<div class="archive-post-time">
+						<a href="<%- url_for(post.path) %>" itemprop="url"><%= post.date.format('MM-DD') %></a>
+					</div>
+				</div>		        							
+			<% }) %>
+				
+			<%- partial('paginator') %>
+		</div>
+	</div>
+</div>

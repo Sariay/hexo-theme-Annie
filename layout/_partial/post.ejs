@@ -1,0 +1,51 @@
+﻿<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed blog-content">
+	<div class="am-u-md-8 am-u-sm-12">
+
+		<article class="am-article blog-article-p">
+
+			<div class="am-article-hd">
+				<%- partial('post/gallery', {post:post}) %>
+
+				<h1 class="am-article-title blog-text-center">
+					<% permalink = config.url + config.root + post.path %>
+					<%- partial('post/title', {post:post}) %>
+				</h1>
+
+				<p class="am-article-meta blog-text-center">
+					<span>
+						<i class="fa fa-clock-o"></i> 
+						<%- partial('post/date', {post: post, date_format: null}) %>&nbsp;
+					</span>
+					
+					<span>						
+						<% if (post.tags && post.tags.length){ %>
+							<i class="fa fa-tags"></i>
+							<% post.tags.map(function(tag){  %>
+								<a href="#<%= tag.name %>" title="<%= tag.name %>" rel="<%= tag.length %>"><%= tag.name %></a>&nbsp;
+							<% }) %>						 											
+						<% } %>
+					</span>
+				</p>
+			</div>
+
+			<div class="am-article-bd">
+				<div class="content" id="post-content">
+					<% if (post.post_type === 'music' ){ %>
+						<center>
+							<%- post.content %>
+						</center>
+					<% }else{ %>
+						<%- post.content %>
+					<% } %>
+				</div>
+			</div>
+		</article>
+
+		<%- partial('post/navigation', {post:post}) %>
+
+		<%- partial('third/comment') %>
+		
+		<%- partial('widget/toc') %>
+	</div>
+</div>

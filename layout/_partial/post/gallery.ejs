@@ -1,0 +1,7 @@
+<% if (post.photos && post.photos.length){ %>
+	<% post.photos.forEach(function(photo, i){ %>
+		<a href="<%- url_for(photo) %>">
+			<img src="<%- url_for(photo) %>"/>
+		</a>
+	<% }) %>
+<% } %>

@@ -1,0 +1,22 @@
+<!--
+	时间：2018-09-24
+	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+-->
+<% if(theme.post_toc.enable) {		
+    const topic = toc( trim(post.content), { class: 'post-toc', list_number: theme.post_toc.number,max_depth: 6 }) %>
+	<% if (topic) { %>
+		<aside class="post-widget">
+			<nav class="post-toc-wrap" id="post-toc">
+				<% if(theme.post_toc.title) { %>
+					<strong><%= theme.post_toc.title %></strong>
+				<% } else { %>
+					<strong><%= __('toc') %></strong>
+				<% } %>
+				
+				<!--toc(post.content)-->
+				<%- topic %>
+			</nav>
+			<div class="post-toc-bar"><div>
+		</aside>
+	<% } %>
+<% } %>

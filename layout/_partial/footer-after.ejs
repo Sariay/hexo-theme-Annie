@@ -1,0 +1,31 @@
+<!-- <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script> -->
+
+<script>
+	window.jQuery || document.write('<script src="<%- config.root %>js/jquery-2.1.1.min.js"><\/script>')
+</script>
+
+<%- partial('third/motto') %>
+
+<% if (theme.local_search.enable) { %>
+	<%- partial('_partial/third/search') %>
+<% } %>
+
+<% if (theme.love.enable) { %>
+	<script type="text/javascript" src="/js/love.js"></script>
+<% } %>
+
+<% if (is_post()) { %>
+	<script type="text/javascript" src="<%- config.root %>js/toc.js"></script>
+<% } %>
+
+<script type="text/javascript" src="<%- config.root %>js/main.js"></script>
+
+<script type="text/javascript">
+	//generate a random img that pre_name 'from 0 to 110'
+	var random_bg = Math.floor(Math.random() * 109 + 1);
+
+	//var bg = 'url(/img/random/' + random_bg + '.jpg)';		
+	var bg = 'url(<%= theme.background_image.customRadom_url %>' + random_bg + '.jpg)';
+
+	$("#header-bg-2").css("background-image", bg);
+</script>

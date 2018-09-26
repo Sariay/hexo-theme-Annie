@@ -1,0 +1,32 @@
+#nav
+home: 主页
+archive_a: 文章归档
+archive_b: 归档：%s
+categories: 分类
+tags: 标签
+about: 关于
+gallery: 相册
+search: 搜索
+
+#navgation
+prev: 上一页
+next: 下一页
+prev_post: 上一篇
+next_post: 下一篇
+
+#page
+page: 第 %d 页
+
+#post
+current_post: 当前文章
+recent_posts: 最新文章
+toc: 文章目录
+tweets: 推文
+comment: 评论
+load_comment: 加载评论
+no_content: 没有文章内容...
+share: 分享
+
+#others
+powered_by: Powered by
+rss_feed: RSS Feed

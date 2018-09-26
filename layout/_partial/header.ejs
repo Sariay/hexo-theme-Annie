@@ -1,0 +1,81 @@
+<!--Preloader-->
+<div id="preloader">
+	<div id="status">
+		<img alt="PRELOADER" src="<%- config.root %>img/logo.png">
+	</div>
+</div>
+<!--Preloader end-->
+
+<!-- header -->
+<% if(theme.background_image.enable) { %>
+	<header id="header-bg-1" style="background-image: url( <%- url_for(theme.background_image.url) %> );">	
+<% } else { %>
+	<header id="header-bg-2">
+<% } %>
+	<% if(theme.avtor) { %>
+		<div id="cd-logo"><a href="<%- config.root %>"><img src="<%- url_for(theme.avtor) %>" alt="Logo"></a></div>
+	<% } else { %>
+		<div id="cd-logo"><a href="<%- config.root %>"><%= theme.say %></a></div>		
+	<% } %>
+	
+	<!-- motto or description -->
+	<% if(theme.motto || config.description) { %>	
+ 		<p class="motto"><%=config.description%></p>
+	<% } %>
+	
+	<!-- current page name or title -->
+	<% if(theme.page_name.enable) { %>
+		
+		<% if(is_home()) { %>
+			
+			<p class=page-name><%= __('home') %></p>	
+			
+		<% } else if (is_archive()) { %>
+			
+			<!-- && is_current('archives/index.html') -->
+			<p class="page-name"><%= __('archive_a') %></p>
+		
+		<% } else if(is_current('categories/index.html')) { %>
+			
+			<p class=page-name><%= __('categories') %></p>
+		
+		<% } else if(is_current('tags/index.html')) { %>
+			
+			<p class=page-name><%= __('tags') %></p>
+			
+		<% } else if(is_post()) { %>
+			
+			<p class=page-name><%= __('current_post') %>&nbsp;:&nbsp;《<%= page.title %>》</p>
+			
+		<% } else { %>
+			
+			<p class="page-name"><%= page.title %></p>
+			
+		<% } %>
+	<% } %>
+	
+	<!-- others: such as change-bg, time... -->
+	<p class="page-name-other">
+		<%- moment().format('l'); %> 
+		<%- partial('_partial/widget/chang-header-bg') %>
+	</p>		
+</header>
+
+<!-- nav -->
+<div id="cd-nav">
+	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+
+	<nav id="cd-main-nav">
+		<ul>
+			<% for (var i in theme.menu){ %>
+      		<li class="fa fa-<%= theme.menu[i] %>">
+           		<%- link_to(url_for(theme.menu[i]), i, { external: false})%>	
+      		</li>
+    		<%}%>
+    		
+        	<% if (theme.local_search.enable) { %>
+            	<li class="fa fa-/search"><a href="javascript:;" class="popup-trigger" title="Search"><%= __('search') %></a></li>
+        	<% } %>
+		</ul>
+	</nav>
+</div>

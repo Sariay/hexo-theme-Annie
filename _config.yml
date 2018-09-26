@@ -1,0 +1,115 @@
+# Header
+menu:
+    主页: /
+    归档: /archives
+    分类: /categories
+    标签: /tags
+    关于: /about
+    相册: /gallery
+
+# header
+avtor: /img/logo.png
+# if the value of avtor is false
+say: Welcome 
+
+# background_image
+# img/01.jpg
+# https://source.unsplash.com/collection/954550/1920x1080
+background_image:
+    enable: false
+    #url: https://source.unsplash.com/collection/954550/1920x1080
+    url: img/1.jpg
+    #custom Radom img: https://XXX-youname-XXX.github.io/Random-img/
+    customRadom_url: https://XXX-youname-XXX.github.io/Random-img/
+    
+# show the motto
+# otherwise It shows the site description
+motto: true
+
+#index-style: pure or cart
+index_style: cart
+
+#index_cart_cover
+cover: img/cart_cover.jpg
+
+#page
+page_name:
+    enable: true
+
+#post
+#post_comment
+comment:
+    enable: true
+
+gitalk:
+    enable: false
+    clientID: '3333.... ' 
+    clientSecret: '3333.... ' 
+    repo: annie-gitalk 
+    owner: Sariay 
+    admin: Sariay 
+    #must true
+    distractionFreeMode: true
+    #去除 more、index.html、?query=123等格式尾部 
+    hrefTrimend: '#.*$,\\?.*$,index.html$' 
+    
+valine: 
+    enable: true
+    appid: '3333....'
+    appkey: '3333......'
+    #placeholder： comment
+    placeholder: no any!
+    
+#post_toc
+post_toc:
+    enable: true
+    number: false
+    title: 文章目录
+
+#post_excerpt   
+excerpt_link: 展开全文
+
+#footer
+#social
+social:
+    enable: true
+    github: http://github.com/
+    weibo: http://github.com/
+    email: http://github.com/
+    qq: http://github.com/
+    twitter: http://github.com/
+
+#copyright  
+since: 2017
+cotent_author: 
+
+#others 
+#rss
+rss: /atom.xml
+
+#gallery 
+#format: natural or square
+gallery_format: natural
+#one time to load 4 rows or other count(0,1,2,3,4,5,6......)
+gallery_limit: 4
+#data url
+gallery_data: gallery/data.json
+
+# Local search
+# Dependencies: https://github.com/flashlab/hexo-generator-search
+local_search:
+    enable: true
+    # if auto, trigger search by changing input
+    # if manual, trigger search by pressing enter key or search button
+    trigger: auto
+    # show top n results per article, show all results by setting to -1
+    top_n_per_article: 2
+
+#when click, emerge heart
+love:
+    enable: false
+
+#totop
+#enable.true to use totop 
+totop:
+    enable: true

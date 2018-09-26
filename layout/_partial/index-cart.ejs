@@ -1,0 +1,48 @@
+<!-- content srart -->
+<div class="am-g am-g-fixed blog-fixed">
+	<div class="am-u-md-12 am-u-sm-12">
+
+		<% page.posts.each(function(post) { %>
+			<article class="am-g blog-entry-article">
+
+				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
+					<%- image_tag(post.cover || theme.cover, {class: "am-u-sm-12"}) %>
+				</div>	
+
+				<div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
+					<span class="theme-annie-post-date">
+						<%- partial('post/date', {post: post, date_format: null}) %>
+					</span>
+					<span class="theme-annie-post-title">
+						<%- partial('post/title', {post: post}) %>
+					</span>
+					
+					<% if(post.content) { %>
+						<p>
+							<% if ( post.excerpt){ %>
+								<%- post.excerpt %>
+							<% } else { %>
+								<%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) %>	
+							<% } %>  
+						</p> 
+					<% } else { %>
+						<!--没有文章内容-->
+						<p><%= __('no_content') %></p>    		
+					<% } %>
+
+					<% if (theme.excerpt_link){ %>
+						<span class="continue-read">      	
+							<a href="<%- config.root %><%- post.path %>" class="pull-right">
+								<%= theme.excerpt_link %>
+							</a>		
+						</span>
+					<% } %>         		
+				</div>
+		
+			</article>
+		<% }); %>     
+
+		<%- partial('paginator') %>	
+	</div>
+</div>
+<!-- content end -->

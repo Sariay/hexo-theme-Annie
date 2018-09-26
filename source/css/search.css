@@ -1,0 +1,141 @@
+  .local-search-popup {
+  	display: none;
+  	position: fixed;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 100%;
+  	padding: 0;
+  	background: rgba(255, 255, 255, .9);
+  	color: #333;
+  	z-index: 9999;
+  	border-radius: 5px;
+  	overflow: auto;
+  }
+  
+  #local-search-input {
+  	width: 50%;
+  	margin-left: 25%;
+  	margin-top: 15px;
+  	padding: 10px;
+  	border: none;
+  	outline: none;
+  	border-bottom: 1px solid #151515;
+  	background-color: initial;
+  }
+  
+  #local-search-result {
+  	width: 50%;
+  	margin-left: 25%;
+  	margin-top: 15px;
+  	border: none;
+  	outline: none;
+  	background-color: initial;
+  }
+  
+  .search-result {
+  	line-height: 20px;
+  	padding: 5px 0 10px;
+  	display: block;
+  	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  }
+  
+  .search-keyword {
+  	border-bottom: 1px dashed #f00;
+  	font-weight: bold;
+  	color: #c00;
+  }
+  
+  .search-result-title {
+  	font-weight: bold;
+  	border-bottom: 1px dashed lightgray;
+  	font-size: 16px;
+  }
+  
+  #no-result {
+  	color: #ccc;
+  }
+  
+  .search-result-list {
+  	list-style: none;
+  	padding-left: 0;
+  }
+  
+  .search-result-list>li {
+  	margin-bottom: 20px;
+  	border-bottom: 1px solid #ddd;
+  	transition: all ease .3s;
+  }
+  
+  .search-result-list>li:hover {
+  	border-bottom: 1px solid gray;
+  }
+  
+  @media (min-width: 890px) {
+  	.popup-btn-close {
+  		position: absolute;
+  		top: 15px;
+  		left: 35px;
+  		border: 1px solid #151515;
+  		padding: 0px 10px;
+  		border-radius: 8px;
+  		cursor: pointer;
+  		transition: all ease .3s;
+  	}
+  	.popup-btn-close:hover {
+  		background: #151515;
+  		opacity: .9;
+  		color: #fff;
+  	}
+  }
+  
+  @media (max-width: 890px) {
+  	#local-search-input {
+  		width: 90%;
+  		margin-left: 5%;
+  		margin-top: 15px;
+  		padding: 10px;
+  		border: none;
+  		outline: none;
+  		border-bottom: 1px solid #151515;
+  		background-color: initial;
+  	}
+  	#local-search-result {
+  		width: 90%;
+  		margin-left: 5%;
+  		margin-top: 15px;
+  		border: none;
+  		outline: none;
+  		background-color: initial;
+  	}
+  	.popup-btn-close {
+  		font-size: 0;
+  		position: fixed;
+  		right: 20px;
+  		bottom: 50px;
+  		width: 50px;
+  		height: 50px;
+  		background: #fff;
+  		border-radius: 50%;
+  		box-shadow: 1px 1px 5px #888;
+  		cursor: pointer;
+  	}
+  	.popup-btn-close::after {
+  		content: '←';
+  		color: #151515;
+  		position: absolute;
+  		top: 0;
+  		left: 0;
+  		font-size: 20px;
+  		width: 100%;
+  		height: 100%;
+  		line-height: 50px;
+  		text-align: center;
+  	}
+  	#no-result {
+  		color: #ccc;
+  		font-size: 10px;
+ 	 }
+  }

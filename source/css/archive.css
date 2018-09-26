@@ -1,0 +1,60 @@
+/* 归档archive */
+
+.archive {
+	margin-bottom: 3rem;
+	margin-top: 3rem;
+	border: 1px solid transparent;
+	font-family: "Open Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Microsoft Jhenghei", sans-serif;
+}
+
+.archive i {
+	color: red;
+	letter-spacing: 2px;
+	text-align: center;
+	margin: 60px 0 60px 0;
+}
+
+.archive-year {
+	font-size: 24px;
+	text-align: center;
+	padding-top: 3rem;
+}
+
+.archive-month {
+	font-size: 20px;
+	color: #aaa;
+	text-align: center;
+}
+
+.archive-item {
+	display: flex;
+	border-bottom: 1px dashed lightgray;
+	justify-content: space-between
+}
+
+.archive-item:hover {
+	cursor: pointer;
+	font-weight: 500;
+	border-bottom: 1px solid #1abc9c;
+}
+
+.archive-post-title {
+	font-size: 1.4rem;
+	color: #333
+}
+
+.archive-post-time {
+	font-size: 1.2rem;
+	color: #333;
+	display: flex;
+	align-items: flex-end
+}
+
+@media(max-width:512px) {
+	.archive-post-time {
+		display: none
+	}
+	.archive-year {
+		text-align: left;
+	}
+}

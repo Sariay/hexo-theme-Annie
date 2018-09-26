@@ -1,0 +1,15 @@
+<% if (post.link){ %>
+	<a href="<%- url_for(post.path) %>" itemprop="url">
+		<%= post.title %>
+	</a>
+<% } else if (post.title){ %>
+	<% if (1){ %>
+		<a href="<%- url_for(post.path) %>" itemprop="url">		
+			<%= post.title %>		
+		</a>
+	<% } else {%>
+		<a href="<%- url_for(post.path) %>" itemprop="url">
+			<%= post.title %>			
+		</a>
+	<% } %>
+<% } %>

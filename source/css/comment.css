@@ -1,0 +1,70 @@
+.theme-annie-comment-button {
+	position: relative;
+	background: #FFFFFF;
+	color: #666;
+	padding: 10px;
+	width: 166px;
+	border: 1px solid #dadada;
+	display: inline-block;
+	list-style: none;
+	cursor: pointer;
+	letter-spacing: 5px;
+	text-align: center;
+	font-size: 14px;
+}
+
+.theme-annie-comment-button-container {
+	text-align: center;
+	margin: 100px 0 0 0;
+}
+
+.theme-annie-comment-main-container {
+	line-height: inherit;
+	margin: 100px 0 0 0;
+	display: none
+}
+
+
+/* gitalk details*/
+
+.gt-container .gt-meta {
+	margin: 1.25em 0;
+	padding: 1em 0;
+	position: relative;
+	border-bottom: 1px solid #e9e9e9;
+	font-size: 1em;
+	position: relative;
+	z-index: 10;
+}
+
+.gt-container .gt-popup .gt-action.is--active:before {
+	content: '';
+	width: 0.25em;
+	height: 0.25em;
+	background: #6190e8;
+	position: absolute;
+	left: 0.5em;
+	top: 1.2375em;
+}
+
+
+/* vline details */
+
+.valine .vwrap {
+	overflow: hidden;
+	position: relative;
+	border: 1px solid #ededed;
+	cursor: pointer;
+}
+
+.valine .vlist .vcard .vfooter .vat {
+	background: transparent;
+	color: #ffffff;
+	padding: .2em 1em;
+	line-height: 1.6;
+	cursor: pointer;
+	word-break: keep-all;
+	text-transform: uppercase;
+	display: inline-block;
+	/*display: inline-block;  fix button ‘回复’ display on Firefox*/
+}
