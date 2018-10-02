@@ -111,7 +111,7 @@
 .post-toc-bar {
 	width: calc(100%);
 	height: 1.5rem;
-	background: rgba(0, 0, 0, 0.1);
+	background: rgba(0, 0, 0, 0);
 	position: absolute;
 	left: 0px;
 	top: 2rem;
