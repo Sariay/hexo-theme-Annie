@@ -68,8 +68,8 @@
 	<nav id="cd-main-nav">
 		<ul>
 			<% for (var i in theme.menu){ %>
-      		<li class="fa fa-<%= theme.menu[i] %>">
-           		<%- link_to(url_for(theme.menu[i]), i, { external: false})%>	
+      		<li class="fa fa-<%= theme.menu[i] %>">	
+           		<a href="<%- url_for(theme.menu[i]) %>"><%- __(i) %></a>
       		</li>
     		<%}%>
     		

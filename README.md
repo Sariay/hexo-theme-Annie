@@ -237,3 +237,160 @@ Amaze UI
 Other open source...
 
 (All Rights Reserved by Them)
+
+
+
+
+
+# Added by Dinghow
+
+- [x] Add Disqus
+- [x] Add livere
+- [x] Add Addthis
+- [x] Add About page
+- [x] Add Friend link page
+- [x] Add multi-language support
+- [x] Add inner math type support (install hexo-math at first and may need proxy)
+- [x] Support edit favicon in _config.yml 
+- [x] Fix some syntax error
+
+
+
+## 1. Disqus
+
+Open `_config.yml`  in the theme folder
+
+```yml
+# Disqus settings
+disqus: 
+    enable: true
+    disqus_username:  # set your disqus name here
+```
+
+Set `enable` as `true` , then set your disqus name at `disqus_username`
+
+
+
+## 2. Livere
+
+Livere is a comment system which support QQ and Wechat, and it doesn't need any proxy.
+
+To enable livere, you just need to  open `_config.yml`  in the theme folder
+
+```yml
+# Use livere
+livere:
+    enable: true
+    livere_uid:  # set your livere uid here
+```
+
+Set `enable` as `true` , then set your livere id at `livere_uid`
+
+> How to get livere id: Regist a account in [livere](https://www.livere.com/), then get your uid
+
+
+
+## 3. Addthis
+
+> [Addthis](https://www.addthis.com/) is a free website tools include share buttons, targeting tools and content recommendations help you get more likes, shares and followers
+
+In brief, your can use this tool to share your blog in wechat moment and other social platform without been forcibly transcoding
+
+To enable livere, you just need to  open `_config.yml`  in the theme folder
+
+```yml
+# Post share by addthis
+addthis:
+    enable: true
+    addthis_id: # set your addthis id here
+```
+
+Set `enable` as `true` , then set your addthis id at `addthis_id`
+
+
+
+## 4. About Page
+
+Enter `hexo new page about` to create about page, then set the front-matter element in `index.md` of about folder
+
+```markdown
+layout: about
+type: about
+```
+
+You can edit the details in `hexo-theme-Annie/layout/_partial/about.ejs`
+
+
+
+## 5. Friend Page
+
+Enter `hexo new page friends` to create about page, then set the front-matter element in `index.md` of about folder
+
+```markdown
+layout: friend
+type: friend
+```
+
+Open `_config.yml`  in the theme folder, add your friends' information
+
+```yml
+# friends
+friends: [
+        {
+              title: "Dinghow",
+              img: /img/friends/dinghow.jpg,
+              href: "https://dinghow.site"
+        },
+        {
+              title: "loveSnowBest",
+              img: /img/friends/loveSnowBest.jpg,
+              href: "https://lovesnowbest.site"
+        },
+]
+```
+
+
+
+## 6. Multi-language Support
+
+You can set the language item in hexo `_config.yml`
+
+```yml
+language: en
+```
+
+I've add `zh-CN`, `zh-TW`, `en`
+
+
+
+## 7. Math Formula Support
+
+Install  `hexo-math ` 
+
+```bash
+npm install hexo-math 
+```
+
+Then add these code to `_config.yml` in the hexo folder
+
+```yml
+math:
+  engine: 'mathjax' # or 'katex'
+  mathjax:
+    # src: custom_mathjax_source
+    config:
+      # MathJax config
+```
+
+Then you can use \$...\$ and \$\$ ....\$\$ to show math formula in your post
+
+
+
+## 8. Favicon
+
+You can set your blog's favicon in `_config.yml` of the theme folder
+
+```yml
+favicon: /imgs/favicon.png # your favicon png
+```
+

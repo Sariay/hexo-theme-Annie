@@ -1,0 +1,31 @@
+<!-- Chinese Version -->
+<div class="friend">
+    <div class="content" id="about-header"> 
+        <div class="row" id="offer">
+            <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
+                <div class="contact-show">
+                    <h3 class="title "> <span class="glyphicon glyphicon-earphone"></span> Friends </h3>
+                    <div class="person-body">
+                        <!-- Friends Blog -->
+                        <% if(theme.friends) { %>
+                        <div style="margin-top: 20px;">
+                            <ul>
+                                <% theme.friends.forEach(function(friend){ %>
+                                <li>
+                                  <img src="<%= friend.img %>" class="w3-left" style="width:50px">
+                                  <span><a href="<%= friend.href %>"><%= friend.title %></a></span><br>
+                                </li>
+
+                                <% }); %>
+                            </ul>
+                        </div>
+                        <% } %>
+                    </div>                    
+                </div>
+            </div>
+        </div></div>
+</div>
+
+
+
+

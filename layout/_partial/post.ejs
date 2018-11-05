@@ -2,6 +2,7 @@
 <div class="am-g am-g-fixed blog-fixed blog-content">
 	<div class="am-u-md-8 am-u-sm-12">
 
+		<%- partial('third/math') %>
 		<article class="am-article blog-article-p">
 
 			<div class="am-article-hd">
@@ -31,6 +32,9 @@
 
 			<div class="am-article-bd">
 				<div class="content" id="post-content">
+					<% if (theme.addthis.enable){ %>
+						<%- partial('third/addthis') %>
+					<% } %>
 					<% if (post.post_type === 'music' ){ %>
 						<center>
 							<%- post.content %>

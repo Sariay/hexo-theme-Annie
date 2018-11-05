@@ -7,12 +7,7 @@
 	<% if (topic) { %>
 		<aside class="post-widget">
 			<nav class="post-toc-wrap" id="post-toc">
-				<% if(theme.post_toc.title) { %>
-					<strong><%= theme.post_toc.title %></strong>
-				<% } else { %>
 					<strong><%= __('toc') %></strong>
-				<% } %>
-				
 				<!--toc(post.content)-->
 				<%- topic %>
 			</nav>

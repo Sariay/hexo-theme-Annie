@@ -1,46 +1,48 @@
 # Header
 menu:
-    主页: /
-    归档: /archives
-    分类: /categories
-    标签: /tags
-    关于: /about
-    相册: /gallery
-
-# header
-avtor: /img/logo.png
+    home: /
+    archive_a: /archives
+    categories: /categories
+    tags: /tags
+    about: /about
+    friend: /friends
+    #gallery: /gallery
+# Head
+favicon: /imgs/favicon.png # your favicon png
+# Header
+avtor: /imgs/logo.png
 # if the value of avtor is false
-say: Welcome 
+say: Welcome to XXX's Blog
 
 # background_image
 # img/01.jpg
 # https://source.unsplash.com/collection/954550/1920x1080
 background_image:
-    enable: false
+    enable: true
     #url: https://source.unsplash.com/collection/954550/1920x1080
-    url: img/1.jpg
+    #url: img/2.jpg
     #custom Radom img: https://XXX-youname-XXX.github.io/Random-img/
-    customRadom_url: https://XXX-youname-XXX.github.io/Random-img/
+    #customRadom_url: 
     
 # show the motto
 # otherwise It shows the site description
 motto: true
 
-#index-style: pure or cart
-index_style: cart
+# index-style: pure or cart
+index_style: pure
 
-#index_cart_cover
+# index_cart_cover
 cover: img/cart_cover.jpg
 
-#page
+# Page
 page_name:
     enable: true
 
-#post
-#post_comment
+# Post
+# Post comment
 comment:
     enable: true
-
+# Gittalk settings
 gitalk:
     enable: false
     clientID: '3333.... ' 
@@ -48,36 +50,57 @@ gitalk:
     repo: annie-gitalk 
     owner: Sariay 
     admin: Sariay 
-    #must true
+    # Must true
     distractionFreeMode: true
-    #去除 more、index.html、?query=123等格式尾部 
+    # 去除 more、index.html、?query=123等格式尾部 
     hrefTrimend: '#.*$,\\?.*$,index.html$' 
-    
+# Valine settings  
 valine: 
-    enable: true
+    enable: false
     appid: '3333....'
     appkey: '3333......'
     #placeholder： comment
     placeholder: no any!
+
+# Disqus settings
+disqus: 
+    enable: false
+    disqus_username:  # set your disqus name here
+
+# Use livere
+livere:
+    enable: true
+    livere_uid:  # set your livere uid here
     
-#post_toc
+
+# Post toc
 post_toc:
     enable: true
     number: false
-    title: 文章目录
 
-#post_excerpt   
-excerpt_link: 展开全文
+# Post share by addthis
+addthis:
+    enable: true
+    addthis_id:  # set your addthis id here
 
-#footer
-#social
+# friends
+friends: [
+        {
+              title: "Dinghow",
+              img: /img/friends/dinghow.jpg,
+              href: "https://dinghow.site"
+        },
+]
+
+# footer
+# social
 social:
     enable: true
-    github: http://github.com/
-    weibo: http://github.com/
-    email: http://github.com/
-    qq: http://github.com/
-    twitter: http://github.com/
+    github: 
+    weibo: 
+    email: mailto:
+    qq: 
+    twitter: 
 
 #copyright  
 since: 2017
@@ -98,7 +121,7 @@ gallery_data: gallery/data.json
 # Local search
 # Dependencies: https://github.com/flashlab/hexo-generator-search
 local_search:
-    enable: false
+    enable: true
     # if auto, trigger search by changing input
     # if manual, trigger search by pressing enter key or search button
     trigger: auto

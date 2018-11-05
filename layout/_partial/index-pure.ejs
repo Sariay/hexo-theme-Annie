@@ -19,16 +19,14 @@
 								<% } %>  
 							</p>
 						<% } else { %>
-							<p>没有文章内容...</p>    		
+							<p><%- __('no_content') %></p>    		
 						<% } %>
 
 						<span>
 							<i class="fa fa-clock-o"></i>&nbsp<%= post.date.format('YYYY-MM-DD')%>
 						</span>
 						<span class="continue-read">       	
-							<a href="<%- config.root %><%- post.path %>" class="pull-right">
-								<%= theme.excerpt_link %>
-							</a>		
+							<a href="<%- config.root %><%- post.path %>" class="pull-right"><%- __('view_all') %></a>		
 						<span>
 						
 					</div>       

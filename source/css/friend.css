@@ -1,0 +1,71 @@
+/*友链friend link*/
+.friend>*{
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+#about-header{
+	margin-top: 85px;
+}
+#about-header img{
+	width: 145px;
+}
+
+#lv-container{
+	width: 60%;
+	margin: 0 auto;
+}
+
+.offer-body,
+.person-body,
+.project-body,
+.skills-body,
+.work-body,
+.learn-body{
+	padding-left: 25px;
+}
+p{
+	margin:0;
+	font-size: 15px;
+}
+.body-section{
+	padding-left: 15px;
+}
+#offer ul{
+	margin-left: 20px;
+	margin-bottom: 5px!important;
+	border-left: 4px darkgray solid;
+	padding-left: 8px;
+
+}
+li{
+	list-style: none;
+	font-size: 15px;
+
+}
+.title{
+	color: #777;
+}
+.title>span{margin-right: 5px}
+.detail-info-xueli{
+	display: block;
+	padding-left: 70px;
+}
+.person-body ul{
+	border-left: none !important;
+}
+.person-body ul li{
+	text-decoration: none;
+	list-style: none;
+	border: none;
+	position: relative;
+	height: 60px;
+}
+
+.person-body ul li img{
+	float: left;
+	height: 50px;
+	width: auto;
+	border-radius: 50%;
+	margin-left: 20%;
+}

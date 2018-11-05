@@ -7,6 +7,7 @@ tags: 标签
 about: 关于
 gallery: 相册
 search: 搜索
+friend: 友链
 
 #navgation
 prev: 上一页
@@ -25,6 +26,7 @@ tweets: 推文
 comment: 评论
 load_comment: 加载评论
 no_content: 没有文章内容...
+view_all: 查看全文
 share: 分享
 
 #others

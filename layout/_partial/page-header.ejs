@@ -2,11 +2,11 @@
 	<div class="blog-text-center">
 		<% if (page.type === "tags") { %>
 			
-			<i class="fa fa-pencil-square-o">总计<%= site.tags.length %>个标签</i>
+			<i class="fa fa-pencil-square-o">There are <%= site.tags.length %> tags</i>
 			
 		<% } else if (page.type === "categories") { %>
 			
-			<i class="fa fa-pencil-square-o">总计<%= site.categories.length %>个分类</i>
+			<i class="fa fa-pencil-square-o">There are <%= site.categories.length %> categories</i>
 			
 		<% } else { %>
 			

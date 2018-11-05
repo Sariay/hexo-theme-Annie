@@ -43,7 +43,9 @@
 	<%- css('css/style.css')%>
 
 	<!-- favicon -->
-	<link href="<%- config.root %>img/favicon.ico" rel="Shortcut Icon" type="image/ico">
+	<% if (theme.favicon){ %>
+  <link rel="icon" href="<%- theme.favicon %>">
+  <% } %>
 	
 	<!-- font-awesome -->
 	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
