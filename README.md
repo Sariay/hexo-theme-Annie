@@ -253,6 +253,7 @@ Other open source...
 - [x] Add inner math type support (install hexo-math at first and may need proxy)
 - [x] Support edit favicon in _config.yml 
 - [x] Fix some syntax error
+- [x] Add busuanzi page access counter
 
 
 
