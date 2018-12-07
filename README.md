@@ -254,6 +254,7 @@ Other open source...
 - [x] Support edit favicon in _config.yml 
 - [x] Fix some syntax error
 - [x] Add busuanzi page access counter
+- [x] Add a script to auto create gittalk issues
 
 
 
@@ -364,30 +365,7 @@ I've add `zh-CN`, `zh-TW`, `en`
 
 
 
-## 7. Math Formula Support
-
-Install  `hexo-math ` 
-
-```bash
-npm install hexo-math 
-```
-
-Then add these code to `_config.yml` in the hexo folder
-
-```yml
-math:
-  engine: 'mathjax' # or 'katex'
-  mathjax:
-    # src: custom_mathjax_source
-    config:
-      # MathJax config
-```
-
-Then you can use \$...\$ and \$\$ ....\$\$ to show math formula in your post
-
-
-
-## 8. Favicon
+## 7. Favicon
 
 You can set your blog's favicon in `_config.yml` of the theme folder
 
@@ -395,3 +373,18 @@ You can set your blog's favicon in `_config.yml` of the theme folder
 favicon: /imgs/favicon.png # your favicon png
 ```
 
+
+
+## 8. Auto Create GitTalk Issues
+
+Configure the ruby script `CommentInitializer.rb`
+
+```ruby
+username = "" # GitHub 用户名
+new_token = ""  # GitHub Token
+repo_name = "" # 存放 issues
+sitemap_url = "l" # sitemap
+kind = "Gitalk" # "Gitalk" or "gitment"
+```
+
+Then run it.
