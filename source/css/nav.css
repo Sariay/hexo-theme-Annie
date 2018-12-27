@@ -1,273 +1,42 @@
-/* -------------------------------- Modules - reusable parts of our design-------------------------------- */
+/*Nav Trigger - 菜单触发器 */
 
-.cd-container {
-	width: 90%;
-	max-width: 1170px;
-	margin: 0 auto;
-	color: #000000;
-}
-
-.cd-container::after {
-	/* clearfix */
-	content: '';
-	display: table;
-	clear: both;
-}
-
-header #cd-logo {
-	margin-bottom: 3em;
-}
-
-header h1 {
-	font-size: 1.25rem;
-}
-
-@media only screen and (min-width: 768px) {
-	header {
-		margin-bottom: 4em;
-	}
-}
-
-@media only screen and (min-width: 1170px) {
-	header {
-		height: 100%;
-		padding-top: 11em;
-	}
-	header #cd-logo {
-		position: absolute;
-		top: 40px;
-		left: 5%;
-	}
-	header h1 {
-		font-size: 2.5rem;
-		font-weight: 300;
-	}
-}
-
-#cd-nav ul {
-	/* mobile first */
+.nav-trigger {
 	position: fixed;
-	width: 90%;
-	max-width: 400px;
-	right: 5%;
-	bottom: 20px;
-	border-radius: 0.25em;
-	box-shadow: 0 0 10px gray;
-	background: white;
-	visibility: hidden;
-	font-stretch: inherit;
-	line-height: 0.5em;
-	/* remove overflow:hidden if you want to create a drop-down menu - but then remember to fix/eliminate the list items animation */
-	overflow: hidden;
-	z-index: 20;
-	/* Force Hardware Acceleration in WebKit */
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-	-webkit-transform: scale(0);
-	-moz-transform: scale(0);
-	-ms-transform: scale(0);
-	-o-transform: scale(0);
-	transform: scale(0);
-	-webkit-transform-origin: 100% 100%;
-	-moz-transform-origin: 100% 100%;
-	-ms-transform-origin: 100% 100%;
-	-o-transform-origin: 100% 100%;
-	transform-origin: 100% 100%;
-	-webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
-	-moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
-	transition: transform 0.3s, visibility 0s 0.3s;
-}
-
-#cd-nav ul li {
-	/* Force Hardware Acceleration in WebKit */
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-}
-
-#cd-nav ul.is-visible {
-	visibility: visible;
-	-webkit-transform: scale(1);
-	-moz-transform: scale(1);
-	-ms-transform: scale(1);
-	-o-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: -webkit-transform 0.3s, visibility 0s 0s;
-	-moz-transition: -moz-transform 0.3s, visibility 0s 0s;
-	transition: transform 0.3s, visibility 0s 0s;
-}
-
-#cd-nav ul.is-visible li:nth-child(1) {
-	/* list items animation */
-	-webkit-animation: cd-slide-in 0.2s;
-	-moz-animation: cd-slide-in 0.2s;
-	animation: cd-slide-in 0.2s;
-}
-
-#cd-nav ul.is-visible li:nth-child(2) {
-	-webkit-animation: cd-slide-in 0.3s;
-	-moz-animation: cd-slide-in 0.3s;
-	animation: cd-slide-in 0.3s;
-}
-
-#cd-nav ul.is-visible li:nth-child(3) {
-	-webkit-animation: cd-slide-in 0.4s;
-	-moz-animation: cd-slide-in 0.4s;
-	animation: cd-slide-in 0.4s;
-}
-
-#cd-nav ul.is-visible li:nth-child(4) {
-	-webkit-animation: cd-slide-in 0.5s;
-	-moz-animation: cd-slide-in 0.5s;
-	animation: cd-slide-in 0.5s;
-}
-
-#cd-nav ul.is-visible li:nth-child(5) {
-	-webkit-animation: cd-slide-in 0.6s;
-	-moz-animation: cd-slide-in 0.6s;
-	animation: cd-slide-in 0.6s;
-}
-
-#cd-nav li a {
-	display: block;
-	padding: 1.6em;
-	border-bottom: 1px solid #eff2f6;
-	/*font style*/
-	font-weight: normal;
-	font-family: "KaiTi", "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
-}
-
-#cd-nav li:last-child a {
-	border-bottom: none;
-}
-
-@media only screen and (min-width: 1170px) {
-	#cd-nav ul {
-		/* the navigation moves to the top */
-		position: absolute;
-		width: auto;
-		max-width: none;
-		bottom: auto;
-		top: 36px;
-		background: transparent;
-		visibility: visible;
-		box-shadow: none;
-		-webkit-transform: scale(1);
-		-moz-transform: scale(1);
-		-ms-transform: scale(1);
-		-o-transform: scale(1);
-		transform: scale(1);
-		-webkit-transition: all 0s;
-		-moz-transition: all 0s;
-		transition: all 0s;
-	}
-	#cd-nav li {
-		display: inline-block;
-	}
-	#cd-nav li a {
-		opacity: 1;
-		padding: .4em;
-		margin-left: 1.6em;
-		border-bottom: none;
-	}
-	#cd-nav li a:hover {
-		color: gray;
-		font-weight: bold;
-	}
-	#cd-nav.is-fixed ul {
-		/* when the user scrolls down, the navigation moves to the bottom right in Fixed position - as on touch devices */
-		position: fixed;
-		width: 90%;
-		max-width: 400px;
-		bottom: 20px;
-		top: auto;
-		background: white;
-		visibility: hidden;
-		box-shadow: 0 0 10px gray;
-		-webkit-transform: scale(0);
-		-moz-transform: scale(0);
-		-ms-transform: scale(0);
-		-o-transform: scale(0);
-		transform: scale(0);
-	}
-	#cd-nav.is-fixed ul li {
-		display: block;
-	}
-	#cd-nav.is-fixed ul li a {
-		padding: 1.6em;
-		margin-left: 0;
-		border-bottom: 1px solid #eff2f6;
-	}
-	#cd-nav ul.has-transitions {
-		/* this class is used to bring back transitions when the navigation moves at the bottom right */
-		-webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
-		-moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
-		transition: transform 0.3s, visibility 0s 0.3s;
-	}
-	#cd-nav ul.is-visible {
-		/* this class is used to bring back the navigation animation - as on touch devices */
-		visibility: visible;
-		-webkit-transform: scale(1);
-		-moz-transform: scale(1);
-		-ms-transform: scale(1);
-		-o-transform: scale(1);
-		transform: scale(1);
-		-webkit-transition: -webkit-transform 0.3s, visibility 0s 0s;
-		-moz-transition: -moz-transform 0.3s, visibility 0s 0s;
-		transition: transform 0.3s, visibility 0s 0s;
-	}
-	#cd-nav ul.is-hidden {
-		/* this class is used to animate the scale down the navigation when the user scrolls down with the navigation still open */
-		-webkit-transform: scale(0);
-		-moz-transform: scale(0);
-		-ms-transform: scale(0);
-		-o-transform: scale(0);
-		transform: scale(0);
-		-webkit-transition: -webkit-transform 0.3s;
-		-moz-transition: -moz-transform 0.3s;
-		transition: transform 0.3s;
-	}
-}
-
-.cd-nav-trigger {
-	position: fixed;
-	bottom: 20px;
-	right: 5%;
-	width: 44px;
+	top: 0px;
+	right: 1.5%;
 	height: 44px;
-	background: white;
-	border-radius: 0.25em;
-	box-shadow: 0 0 10px gray;
-	/* image replacement */
-	overflow: hidden;
-	text-indent: 100%;
-	white-space: nowrap;
-	z-index: 30;
+	width: 44px;
+	z-index: 100;
+	border-bottom: none;
+	display: none;
+	cursor: pointer;
 }
 
-.cd-nav-trigger span {
-	/* the span element is used to create the menu icon */
+.nav-trigger span {
 	position: absolute;
-	display: block;
-	width: 20px;
-	height: 2px;
-	background: #000000;
-	top: 50%;
-	margin-top: -1px;
 	left: 50%;
-	margin-left: -10px;
-	-webkit-transition: background 0.3s;
-	-moz-transition: background 0.3s;
-	transition: background 0.3s;
+	top: 50%;
+	bottom: auto;
+	right: auto;
+	width: 32px;
+	height: 3px;
+	background-color: black;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-o-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
 }
 
-.cd-nav-trigger span::before,
-.cd-nav-trigger span::after {
+.nav-trigger span::before,
+.nav-trigger span:after {
 	content: '';
 	position: absolute;
-	left: 0;
-	background: inherit;
+	top: 0;
+	right: 0;
 	width: 100%;
 	height: 100%;
+	background-color: inherit;
 	/* Force Hardware Acceleration in WebKit */
 	-webkit-transform: translateZ(0);
 	-moz-transform: translateZ(0);
@@ -276,168 +45,188 @@ header h1 {
 	transform: translateZ(0);
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
-	-webkit-transition: -webkit-transform 0.3s, background 0s;
-	-moz-transition: -moz-transform 0.3s, background 0s;
-	transition: transform 0.3s, background 0s;
+	-webkit-transition: -webkit-transform 0.2s, width 0.2s;
+	-moz-transition: -moz-transform 0.2s, width 0.2s;
+	transition: transform 0.2s, width 0.2s;
 }
 
-.cd-nav-trigger span::before {
-	top: -6px;
-	-webkit-transform: rotate(0);
-	-moz-transform: rotate(0);
-	-ms-transform: rotate(0);
-	-o-transform: rotate(0);
-	transform: rotate(0);
+.nav-trigger span::before {
+	-webkit-transform-origin: right top;
+	-moz-transform-origin: right top;
+	-ms-transform-origin: right top;
+	-o-transform-origin: right top;
+	transform-origin: right top;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	-ms-transform: translateY(-10px);
+	-o-transform: translateY(-10px);
+	transform: translateY(-10px);
 }
 
-.cd-nav-trigger span::after {
-	bottom: -6px;
-	-webkit-transform: rotate(0);
-	-moz-transform: rotate(0);
-	-ms-transform: rotate(0);
-	-o-transform: rotate(0);
-	transform: rotate(0);
+.nav-trigger span::after {
+	-webkit-transform-origin: right bottom;
+	-moz-transform-origin: right bottom;
+	-ms-transform-origin: right bottom;
+	-o-transform-origin: right bottom;
+	transform-origin: right bottom;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	-ms-transform: translateY(10px);
+	-o-transform: translateY(10px);
+	transform: translateY(10px);
 }
 
-.cd-nav-trigger.menu-is-open {
-	box-shadow: none;
+
+/*Nav Close - 菜单关闭*/
+
+.nav-close {
+	position: absolute;
+	top: 50%;
+	right: 1.5%;
+	bottom: auto;
+	height: 44px;
+	width: 44px;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
-.cd-nav-trigger.menu-is-open span {
-	background: rgba(232, 74, 100, 0);
+.nav-close::after,
+.nav-close::before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 3px;
+	width: 32px;
+	background-color: #5c4b51;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 
-.cd-nav-trigger.menu-is-open span::before,
-.cd-nav-trigger.menu-is-open span::after {
-	background: #000000;
+.nav-close::after {
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	-o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+	transform: translateX(-50%) translateY(-50%) rotate(45deg);
 }
 
-.cd-nav-trigger.menu-is-open span::before {
+.nav-close::before {
+	-webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+	-moz-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+	-ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+	-o-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+	transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+}
+
+.nav-container {
+	position: fixed;
 	top: 0;
-	-webkit-transform: rotate(135deg);
-	-moz-transform: rotate(135deg);
-	-ms-transform: rotate(135deg);
-	-o-transform: rotate(135deg);
-	transform: rotate(135deg);
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background-color: #ffffff;
+	background-color: #f5f5f5;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transform: translateX(100%);
+	-moz-transform: translateX(100%);
+	-ms-transform: translateX(100%);
+	-o-transform: translateX(100%);
+	transform: translateX(100%);
+	-webkit-transition: -webkit-transform 0.4s 0s, box-shadow 0s 0.4s;
+	-moz-transition: -moz-transform 0.4s 0s, box-shadow 0s 0.4s;
+	transition: transform 0.4s 0s, box-shadow 0s 0.4s;
 }
 
-.cd-nav-trigger.menu-is-open span::after {
-	bottom: 0;
-	-webkit-transform: rotate(225deg);
-	-moz-transform: rotate(225deg);
-	-ms-transform: rotate(225deg);
-	-o-transform: rotate(225deg);
-	transform: rotate(225deg);
+.nav-container a {
+	border-bottom: none;
 }
 
-@media only screen and (min-width: 1170px) {
-	.cd-nav-trigger {
-		/* the the menu triger is hidden by default on desktop devices */
-		visibility: hidden;
-		-webkit-transform: scale(0);
-		-moz-transform: scale(0);
-		-ms-transform: scale(0);
-		-o-transform: scale(0);
-		transform: scale(0);
-		-webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
-		-moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
-		transition: transform 0.3s, visibility 0s 0.3s;
-	}
-	.is-fixed .cd-nav-trigger {
-		visibility: visible;
-		-webkit-transition: all 0s;
-		-moz-transition: all 0s;
-		transition: all 0s;
-		-webkit-transform: scale(1);
-		-moz-transform: scale(1);
-		-ms-transform: scale(1);
-		-o-transform: scale(1);
-		transform: scale(1);
-		-webkit-animation: cd-bounce-in 0.3s linear;
-		-moz-animation: cd-bounce-in 0.3s linear;
-		animation: cd-bounce-in 0.3s linear;
-	}
+.nav-container.is-visible {
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	-ms-transform: translateX(0);
+	-o-transform: translateX(0);
+	transform: translateX(0);
+	-webkit-overflow-scrolling: touch;
+	box-shadow: -4px 0 30px rgba(0, 0, 0, 0.2);
+	-webkit-transition: -webkit-transform 0.4s 0s, box-shadow 0s 0s;
+	-moz-transition: -moz-transform 0.4s 0s, box-shadow 0s 0s;
+	transition: transform 0.4s 0s, box-shadow 0s 0s;
 }
 
-@-webkit-keyframes cd-slide-in {
-	0% {
-		-webkit-transform: translateX(100px);
-	}
-	100% {
-		-webkit-transform: translateY(0);
-	}
+.nav-container .nav-header {
+	height: 10%;
+	position: relative;
 }
 
-@-moz-keyframes cd-slide-in {
-	0% {
-		-moz-transform: translateX(100px);
-	}
-	100% {
-		-moz-transform: translateY(0);
-	}
+.nav-container .nav-header h3 {
+	font-family: "Lora", serif;
+	font-size: 1.6rem;
+	font-weight: bold;
+	color: #5c4b51;
+	text-transform: uppercase;
+	margin: 0em;
+	padding: 1em;
 }
 
-@keyframes cd-slide-in {
-	0% {
-		-webkit-transform: translateX(100px);
-		-moz-transform: translateX(100px);
-		-ms-transform: translateX(100px);
-		-o-transform: translateX(100px);
-		transform: translateX(100px);
-	}
-	100% {
-		-webkit-transform: translateY(0);
-		-moz-transform: translateY(0);
-		-ms-transform: translateY(0);
-		-o-transform: translateY(0);
-		transform: translateY(0);
-	}
+.nav-container .nav-body {
+	padding: 2em 0;
+	text-align: center;
 }
 
-@-webkit-keyframes cd-bounce-in {
-	0% {
-		-webkit-transform: scale(0);
-	}
-	60% {
-		-webkit-transform: scale(1.2);
-	}
-	100% {
-		-webkit-transform: scale(1);
-	}
+.nav-container .nav-body ul {
+	margin: 0.2em 0;
+	padding: 1.6em;
 }
 
-@-moz-keyframes cd-bounce-in {
-	0% {
-		-moz-transform: scale(0);
-	}
-	60% {
-		-moz-transform: scale(1.2);
-	}
-	100% {
-		-moz-transform: scale(1);
-	}
+.nav-container .nav-body li {
+	display: inline-block;
+	margin: 1em 0;
 }
 
-@keyframes cd-bounce-in {
-	0% {
-		-webkit-transform: scale(0);
-		-moz-transform: scale(0);
-		-ms-transform: scale(0);
-		-o-transform: scale(0);
-		transform: scale(0);
-	}
-	60% {
-		-webkit-transform: scale(1.2);
-		-moz-transform: scale(1.2);
-		-ms-transform: scale(1.2);
-		-o-transform: scale(1.2);
-		transform: scale(1.2);
-	}
-	100% {
-		-webkit-transform: scale(1);
-		-moz-transform: scale(1);
-		-ms-transform: scale(1);
-		-o-transform: scale(1);
-		transform: scale(1);
-	}
+.nav-container .nav-body li a {
+	font-size: 1.5em;
+	padding: .2em;
+	color: gray;
+}
+
+.nav-container .nav-body li a:hover {
+	color: darkgoldenrod;
+}
+
+.nav-container .nav-footer {
+	padding: 2em 0;
+	text-align: center;
+}
+
+.nav-container .nav-footer ul {
+	text-align: center;
+	margin: 0.2em 0;
+	padding: 1.6em;
+}
+
+.nav-container .nav-footer li {
+	display: inline-block;
+	margin: .8em;
+}
+
+.nav-container .nav-footer li a {
+	font-size: 1.5em;
+	padding: .2em;
+	color: #999;
+}
+
+.nav-container .nav-footer li a:hover {
+	color: darkgoldenrod;
 }

@@ -1,0 +1,85 @@
+<% 
+	var currentPostTitle = post.title, 
+		relatePostsArry = [],
+		result =[],
+		postsEnable = theme.relate.enable,
+		postsLimt = theme.relate.posts_limit,
+		postsExcerpt = theme.relate.posts_excerpt,
+		sitePostsLen = site.posts.length;
+
+    //Check post exists in postArray?
+    function checkDup(post, postArray){
+        var title = post.title, 
+            id = post.id;
+        for (var i = 0; i < postArray.length; i++){
+            if(post){
+                if(postArray[i]){
+                    if(title === postArray[i].title && id === postArray[i].id){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+	//Get all relate posts by tag.name or category.name & Remove duplicate posts.
+	function getPosts(){		
+		post.categories.forEach(function(category, i){
+			site.categories.findOne({'name': category.name}).posts.sort('date', 'desc').each(function(post) {
+				if( (post.title !== currentPostTitle) && !checkDup(post, relatePostsArry) )
+					relatePostsArry.push(post);
+			});
+		});	
+		
+		post.tags.forEach(function(tag, i){
+			site.tags.findOne({'name': tag.name}).posts.sort('date', 'desc').each(function(post) {
+				//Remove duplicate posts.
+				if( (post.title !== currentPostTitle) && !checkDup(post, relatePostsArry) )
+					relatePostsArry.push(post);	
+			});
+		});
+		
+		if(relatePostsArry.length < postsLimt){
+			var distance = postsLimt - relatePostsArry.length, ij = 0;
+			site.posts.sort('date', 'desc').each(function(post) { 
+				if((post.title !== currentPostTitle) && !checkDup(post, relatePostsArry) && (ij < distance)){
+					relatePostsArry.push(post);
+					ij++;
+				}
+				if(ij >= distance)	break;
+			});
+		}
+		return relatePostsArry;
+	}
+
+	if( (postsEnable == true) && (sitePostsLen > 1) ){
+		result = getPosts();
+	}	
+%>
+
+<div class="relate-post">
+	<ul>
+		<% 
+	 		for(var j = 0; j < ( result.length <= postsLimt ? result.length : postsLimt ); j ++ ) { 	 			
+	 	%>
+				<li>
+					<div>
+						<a href="<%- url_for( result[j].path ) %>" title="<%- result[j].title %>">
+							<%- result[j].title %>
+						</a>
+						<p>
+							<%- truncate(strip_html(result[j].content), {length: postsExcerpt, omission: '...'}) %>
+						</p>
+					</div>
+
+					<a href="<%- url_for( result[j].path ) %>" title="<%- result[j].title %>">				
+						<%- image_tag(result[j].cover || theme.cover, {class: "relateImg", alt: result[j].title}) %>
+					</a>
+				</li>											
+		
+		<% 				
+			}
+		%>
+	</ul>
+</div>

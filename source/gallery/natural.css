@@ -1,11 +1,3 @@
-/* Colors */
-
-.natural-gallery,
-.theme-annie-gallery {
-	font-family: "STXingkai", "Source Sans Pro", "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
-	;
-}
-
 .natural-gallery .natural-gallery-body .figure.loading {
 	background-color: rgba(0, 137, 224, 0.1);
 }

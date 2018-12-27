@@ -1,5 +1,22 @@
-<a href="<%- url_for(post.path) %>" itemprop="url">
-	<time datetime="<%= date_xml(post.date) %>" itemprop="datePublished">
-  		<%= date(post.date, date_format) %>
-  </time>
-</a>    
+<% if( is_post() ) { %>
+	<%= __('publish_date') %>
+	<a href="<%- url_for(post.path) %>" itemprop="url">
+		<time datetime="<%= date_xml(post.date) %>" itemprop="datePublished">
+	  		<%= date(post.date, date_format) %>
+	  </time>
+	</a> 
+
+	<%= __('split_line')%>
+	<%= __('update_date') %>
+	<a href="<%- url_for(post.path) %>" itemprop="url">
+		<time datetime="<%= date_xml(post.date) %>" itemprop="dateUpdated">
+	  		<%= date(post.updated, date_format) %>
+	  </time>
+	</a> 	
+<% } else { %>
+	<a href="<%- url_for(post.path) %>" itemprop="url">
+		<time datetime="<%= date_xml(post.date) %>" itemprop="datePublished">
+	  		<%= date(post.date, date_format) %>
+	  </time>
+	</a> 		
+<% } %>

@@ -1,0 +1,29 @@
+<!--
+	时间：2018-11-27
+	描述：
+		文章访问量：visitors
+		文章喜欢量：likes	
+		文章排行榜：topNPost
+		其他得说明：
+			01-Cookie相关的函数 
+				https://blog.csdn.net/somehow1002/article/details/78511541（Author：somehow1002）
+			02-visitors相关的函数 
+				https://blog.csdn.net/u013553529/article/details/63357382（Author：爱博客大伯）
+				https://notes.doublemine.me/2015-10-21-为NexT主题添加文章阅读量统计功能.html（Author：夏末）
+			03-topNPost相关的函数
+				https://hoxis.github.io/hexo-next-read-rank.html（Author：hoxis）
+			04-likes相关的函数，
+				参考了01 & 02进行简单的设计与实现
+-->
+<% 
+	var lean = theme.leancloud_count; 
+%>
+<% if( lean.enable && ( lean.like_post.enable || lean.visit_post.enable)){ %>
+
+	<script>
+		var appid = '<%= lean.appid %>',
+            appkey = '<%= lean.appkey %>';	  
+        AnnieLeancloud(appid, appkey);         
+	</script>
+    
+<% } %>

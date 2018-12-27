@@ -1,0 +1,19 @@
+<% 
+	var lean = theme.leancloud_count; 
+%>
+<% if( lean.enable && lean.visit_post.enable ){ %>
+    <span class="leancloud_visitors" id="<%- url_for(post.path) %>_visitors" data-url="<%- url_for(post.path) %>" data-title="<%- post.title %>">
+        <%= __('hits') %>
+        <i class="leancloud_visitors_count" id="leancloud_visitors_count">0</i>
+    </span>
+    
+    <%= __('split_line')%>
+<% } %>
+
+<% if( lean.enable && lean.like_post.enable ){ %>
+    <span class="leancloud_likes" id="<%- url_for(post.path) %>_likes" data-url="<%- url_for(post.path) %>" data-title="<%- post.title %>" rel="unlike">
+        <%= __('likes') %>
+        <i class="fa fa-heart"></i>
+        <i class="leancloud_likes_count" id="leancloud_likes_count">0</i>
+    </span>
+<% } %>

@@ -1,120 +1,45 @@
-/*
- * 时间：2018-09-24
- * 描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
-*/
-.post-widget {
-	width: 190px;
-	position: absolute;
-	right: -230px;
-	top: 160px;
-	overflow-y: hidden;
-	max-height: 55%;
-	font-size: 13px;
-}
+/* katelog - 目录 */
 
-@media(max-width:1100px) {
-	.post-widget {
-		display: none;
-	}
-}
-
-.post-widget a, a:hover {
-	padding: 0px;
-}
-
-.post-widget li {
-	display: block;
-	margin: 0px 2px 2px 0px;
-}
-
-.post-widget.fixed {
-	position: fixed;
-	top: 66px
-}
-
-.post-toc-wrap {
-	overflow-x: hidden;
-}
-
-.post-toc-wrap ol,
-.post-toc-wrap ul {
-	list-style: none;
-	margin: 0
-}
-
-.post-toc-wrap strong {
-	line-height: 2rem;
-	font-size: 15px;
-	font-weight: bold;
-	color: #666
-}
-
-.post-toc-child {
-	padding-left: 10px
-}
-
-.post-toc {
-	padding: 0;
-	font-size: 13px
-}
-
-.post-toc-item {
-	line-height: 1.5rem;
-	color: #666;
-	text-overflow: ellipsis;
+.k-catelog-list {
+	width: calc( (100% - 64%)/2);
+	height: 90vh;
+	left: 16px;
+	top: 65px;
 	overflow: hidden;
-	white-space: nowrap;
+	border-right: 1px solid #e0e0e0;
+	display: none;
+}
+
+.k-catelog-list>ul {
+	padding: 0;
+	margin: 0;
+}
+
+.k-catelog-list li {
+	list-style: none;
+	width: 100%;
+}
+
+.k-catelog-list li ul {
+	/*Exampl: h6 对于 h5的层级边距*/
+	padding-left: 10px;
+}
+
+.k-catelog-link {
 	cursor: pointer;
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out
+	display: block;
+	padding: 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-decoration: none;
+	transition: background 0.5s;
+	-moz-transition: background 0.5s;
+	-webkit-transition: background 0.5s;
+	-o-transition: background 0.5s;
 }
 
-.post-toc-item:not(.active) ol {
-	display: none
-}
-
-.post-toc-item:not(.active) {
-	text-shadow: initial;
-	color: #666
-}
-
-.post-toc-item:not(.active) .post-toc-link {
-	color: #666
-}
-
-.post-toc-item:not(.active) .post-toc-number {
-	color: #666
-}
-
-.post-toc-item:hover,
-.post-toc-item.active {
-	color: #b71c1c;
-	text-shadow: 0 0 .5px #b71c1c
-}
-
-.post-toc-item:hover .post-toc-link,
-.post-toc-item.active .post-toc-link {
-	color: #b71c1c
-}
-
-.post-toc-link {
-	padding-right: 10px;
-	color: #666;
-	-webkit-transition: none ease-in-out;
-	transition: none ease-in-out
-}
-
-.post-toc-link:hover {
-	text-decoration: none
-}
-
-.post-toc-bar {
-	width: calc(100%);
-	height: 1.5rem;
-	background: rgba(0, 0, 0, 0);
-	position: absolute;
-	left: 0px;
-	top: 2rem;
-	-webkit-transition: .2s ease-in-out;
-	transition: .2s ease-in-out
+.k-catelog-link-active {
+	color: red;
+	border-right: 1px solid red;
 }

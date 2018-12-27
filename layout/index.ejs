@@ -1,7 +1,20 @@
-<% if(theme.index_style === 'pure' ) { %>
+<% 
+	const indexStyle = theme.index_style;
+%>
+
+<% if(indexStyle === 'pure'){ %>
+
+	<!--pure style-->
 	<%- partial('_partial/index-pure') %>
-	<!--纯净风格-->
-<% } else { %>
+
+<% } else if(indexStyle === 'cart'){ %>
+
+	<!--cart style-->
 	<%- partial('_partial/index-cart') %>
-	<!--图文风格-->
+	
+<% } else { %>
+
+	<!--default style-->
+	<%- partial('_partial/index-pure') %>
+	
 <% } %>

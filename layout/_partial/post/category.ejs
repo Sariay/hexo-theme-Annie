@@ -1,3 +1,7 @@
 <% if (post.categories && post.categories.length){ %>
-   	<%- list_categories(post.categories, {class: 'categories',  show_count: true }) %>	
+	<% post.categories.forEach( function(category, i){ %>    		
+     	<a href="<%= url_for(category.path) %>" class=" ">
+     		<%= category.name %>
+     	</a>      		
+    <% }) %>
 <% } %>

@@ -1,22 +1,22 @@
 <!--
-	时间：2018-09-24
-	描述：The TOC module refers to 'https://github.com/codefine/hexo-theme-mellow', include toc.ejs、toc.js、toc.css. All rights reserved by codefine. 
+	时间：2018-11-17
+	描述：
+		插件名称：katelog.min.js
+		插件作者：KELEN
+		插件来源: https://github.com/KELEN/katelog
 -->
-<% if(theme.post_toc.enable) {		
-    const topic = toc( trim(post.content), { class: 'post-toc', list_number: theme.post_toc.number,max_depth: 6 }) %>
-	<% if (topic) { %>
-		<aside class="post-widget">
-			<nav class="post-toc-wrap" id="post-toc">
-				<% if(theme.post_toc.title) { %>
-					<strong><%= theme.post_toc.title %></strong>
-				<% } else { %>
-					<strong><%= __('toc') %></strong>
-				<% } %>
-				
-				<!--toc(post.content)-->
-				<%- topic %>
-			</nav>
-			<div class="post-toc-bar"><div>
-		</aside>
-	<% } %>
-<% } %>
+<%	
+	const tocContent = toc( trim(post.content) );
+	if(theme.post_toc.enable && tocContent) { 
+%>
+	<% if(theme.post_toc.katelog) { %>	
+
+		<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+		<%- js('plugin/toc/katelog.min.js') %>
+
+	<% } else {%>
+		<%# TODO: You need other toc plugin? %>
+	<% } %>	
+<% 
+	} 
+%>	

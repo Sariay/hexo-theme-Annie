@@ -1,0 +1,40 @@
+<ul>
+	<% if(theme.social.enable) { %>
+		<% if(theme.social.github){ %>
+			<li>
+				<a href="<%- url_for(theme.social.github) %>" title="Github" target="_blank">
+					<i class="fa fa-github"></i>
+				</a>
+			</li>
+		<% } %>
+		<% if(theme.social.weibo){ %>
+			<li>
+				<a href="<%- url_for(theme.social.weibo) %>" title="Weibo" target="_blank">
+					<i class="fa fa-weibo"></i>
+				</a>
+			</li>
+		<% } %>
+		<% if(theme.social.email){ %>
+			<li>
+				<a href="<%- url_for(theme.social.email) %>" title="Email" target="_blank">
+					<i class="fa fa-envelope-o"></i>
+				</a>
+			</li>
+		<% } %>
+
+		<% if(theme.social.qq){ %>
+			<li>
+				<a href="<%- url_for(theme.social.qq) %>" title="QQ" target="_blank">
+					<i class="fa fa-qq"></i>
+				</a>
+			</li>
+		<% } %>
+		<% if(theme.social.twitter){ %>
+			<li>
+				<a href="<%- url_for(theme.social.twitter) %>" title="Twitter" target="_blank">
+					<i class="fa fa-twitter"></i>
+				</a>
+			</li>
+		<% } %>
+	<% } %> 
+</ul>

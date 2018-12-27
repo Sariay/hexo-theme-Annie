@@ -1,48 +1,28 @@
-<div class="theme-annie-comment-button-container">
-	<button id="annie-comment-button" class="theme-annie-comment-button" onclick="Annie_Comment()">
-		<%= __('load_comment') %>
-		<!--加载评论-->
-	</button>
-</div>
-
-<div id="annie-comment-container" class="theme-annie-comment-main-container">
+<div class="layout-comment">
 
 	<% if(theme.comment.enable) { %>
+
 		<% if(theme.gitalk.enable) { %>
+
 			<!-- comment gitalk -->
 			<%- partial('comment/gitalk') %>
-		<% } else if(theme.valine.enable) { %>
+
+		<% } else if(theme.valine.enable && !theme.leancloud_count.enable) { %>
+
 			<!-- comment valine -->
 			<%- partial('comment/valine') %>
+
+		<% } else if(theme.livere.enable) { %>
+			
+			<!-- comment valine -->
+			<%- partial('comment/livere') %>
+			
 		<% } else { %>
-			<!-- comment demo -->
-			<%- partial('comment/default') %>
+
+			<!-- I don't know 【表情】-->
+			
 		<% } %>
+		
 	<% } %>
 
 </div>
-
-<script type="text/javascript">
-	/* Show Comment */
-	var Annie_Comment = function() {
-		function Show_Hidden(obj) {
-			obj.style.display = 'block';
-		}
-		
-		//var obutton = $('#annie-comment-button');
-		//var obutton = $('#annie-comment-container');
-		var obutton = document.getElementById("annie-comment-button" || "0");
-		var odiv = document.getElementById("annie-comment-container");
-		if( 'obutton' ) {
-			obutton.onclick = function() {
-				Show_Hidden(odiv);
-				$("#annie-comment-button").css("display", 'none');
-				return false;
-			}
-		}
-	};
-
-	(function Annie_Init() {
-		Annie_Comment();
-	})();
-</script>

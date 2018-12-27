@@ -1,98 +1,136 @@
-# Header
+# 01-header
+# menu
 menu:
-    主页: /
-    归档: /archives
-    分类: /categories
-    标签: /tags
-    关于: /about
-    相册: /gallery
+    home: /
+    archive: /archives
+    categories: /categories
+    tags: /tags
+    about: /about
+    gallery: /gallery
 
-# header
+# favicon & avtor
+# if the value of avtor is false, the 'say' is optional.
+favicon: /img/favicon.ico
 avtor: /img/logo.png
-# if the value of avtor is false
 say: Welcome 
 
 # background_image
-# img/01.jpg
+# /img/1.jpg
 # https://source.unsplash.com/collection/954550/1920x1080
+# https://sariay.github.io/Random-img/
+# May be cause CROS bug!
 background_image:
-    enable: false
-    #url: https://source.unsplash.com/collection/954550/1920x1080
-    url: img/1.jpg
-    #custom Radom img: https://XXX-youname-XXX.github.io/Random-img/
-    customRadom_url: https://XXX-youname-XXX.github.io/Random-img/
+    mode: normal #normal or random
+    normal_url: /img/1.jpg
+    random_max: 110 
+    random_url: https://sariay.github.io/Random-img/
     
-# show the motto
-# otherwise It shows the site description
-motto: true
-
-#index-style: pure or cart
-index_style: cart
-
-#index_cart_cover
-cover: img/cart_cover.jpg
-
-#page
-page_name:
+# show motto
+motto:
     enable: true
 
-#post
-#post_comment
+# 02-PROLOADER
+# animation: spinner, transition or cyclic
+preloader:
+    enable: true
+    animation: transition
+
+# 03-INDEX
+# index-style: pure, cart
+index_style: cart
+
+# index_cart_cover
+cover: /img/cart_cover.jpg
+
+# 04-POST
+# post_relate
+relate:
+    enable: true
+    posts_limit: 10
+    posts_excerpt: 120
+
+# post_comment
 comment:
     enable: true
 
 gitalk:
     enable: false
-    clientID: '3333.... ' 
-    clientSecret: '3333.... ' 
+    clientID: '333--' 
+    clientSecret: '333--' 
     repo: annie-gitalk 
     owner: Sariay 
     admin: Sariay 
-    #must true
     distractionFreeMode: true
     #去除 more、index.html、?query=123等格式尾部 
     hrefTrimend: '#.*$,\\?.*$,index.html$' 
     
 valine: 
-    enable: true
-    appid: '3333....'
-    appkey: '3333......'
-    #placeholder： comment
+    enable: false
+    appid: 'DU--'
+    appkey: 'DU--'
     placeholder: no any!
     
-#post_toc
+livere: 
+    enable: false
+    livere_uid: 'sdd'
+    
+# post_count
+leancloud_count:
+    enable: true
+    appid: 'dX--'
+    appkey: 'dx--'
+    like_post:
+        enable: true
+    visit_post:
+        enable: true
+    topN_post: 
+        enable: true #param1 for topN_post
+        limit: 10 #param2 for topN_post
+busuanzi_count:
+    enable: true
+
+# post_toc
 post_toc:
     enable: true
-    number: false
-    title: 文章目录
+    katelog: true
+    
+# post_mathJax
+mathjax:
+  enable: false
+  
+# post_code
+code_copy:
+    enable: false
 
-#post_excerpt   
-excerpt_link: 展开全文
+# post_excerpt for index page
+excerpt_cart: 80
+excerpt_pure: 300   
+excerpt_link: true
 
-#footer
-#social
+# 05-FOOTER
+# social
 social:
     enable: true
     github: http://github.com/
     weibo: http://github.com/
-    email: http://github.com/
+    email: mailto:http://github.com/
     qq: http://github.com/
     twitter: http://github.com/
 
-#copyright  
+# copyright  
 since: 2017
 cotent_author: 
 
-#others 
-#rss
+# 06-OTHERS
+# rss
 rss: /atom.xml
 
-#gallery 
-#format: natural or square
+# gallery 
+# format: natural or square
 gallery_format: natural
-#one time to load 4 rows or other count(0,1,2,3,4,5,6......)
-gallery_limit: 4
-#data url
+# one time to load 4 rows or other count, 0 to load img automatically when scrolling.(0,1,2,3,4,5,6......)
+gallery_limit: 0
+# data url
 gallery_data: gallery/data.json
 
 # Local search
@@ -107,9 +145,8 @@ local_search:
 
 #when click, emerge heart
 love:
-    enable: false
+    enable: true
 
 #totop
-#enable.true to use totop 
 totop:
     enable: true

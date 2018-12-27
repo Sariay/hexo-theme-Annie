@@ -1,4 +1,4 @@
-/*!  PhotoSwipe main CSS by Dmitry Semenov | photoswipe.com | MIT license */
+	/*! PhotoSwipe main CSS by Dmitry Semenov | photoswipe.com | MIT license */
 
 .pswp {
 	display: none;
@@ -10,7 +10,7 @@
 	overflow: hidden;
 	-ms-touch-action: none;
 	touch-action: none;
-	z-index: 1500;
+	z-index: 1500px;
 	-webkit-text-size-adjust: 100%;
 	-webkit-backface-visibility: hidden;
 	outline: none
@@ -820,7 +820,8 @@ a.pswp__share--download:hover {
 .natural-gallery .natural-gallery-header .natural-gallery-searchTerm {
 	border: none;
 	border-bottom-width: 1px;
-	border-bottom-style: solid
+	border-bottom-style: solid;
+	min-width: 125px;
 }
 
 .natural-gallery .natural-gallery-header .bar {
@@ -1029,7 +1030,7 @@ a.pswp__share--download:hover {
 }
 
 .pswp {
-	z-index: 9999999
+	z-index: 999
 }
 
 .pswp .pswp__caption__center {
@@ -1127,4 +1128,3 @@ a.pswp__share--download:hover {
 		transform: scale(1);
 		opacity: .05
 	}
-}

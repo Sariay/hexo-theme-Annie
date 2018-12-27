@@ -1,51 +1,46 @@
-<!-- content srart -->
-<div class="am-g am-g-fixed blog-fixed">
-    <div class="am-u-md-8 am-u-sm-12">
-		<div class="pure">
-			<li>
-				<% page.posts.each(function(post) { %>
-						
-					<div class="pure-text">
-						<h2>
-							<%- partial('post/title', {post: post}) %>
-						</h2>
-						
-						<% if(post.content) { %>
-							<p>
-								<% if ( post.excerpt){ %>
-									<%- post.excerpt %>
-								<% } else { %>
-									<%- post.content.replace(/<(?:.|\n)*?>/gm, '').substr(0, 200) %>	
-								<% } %>  
-							</p>
+<div class="layout-pure">
+	<div id="layout-pure">	
+	<% page.posts.each( function( post ) { %>
+		<div class="post" id="post">
+			<div class="post-text">
+				<div class="post-title" id="post-title-index">			
+					<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+					<%- partial('post/title', {post: post}) %>
+				</div>
+
+				<div class="post-content">
+					<% if(post.content) { %>
+						<% if ( post.excerpt){ %>
+							<%- post.excerpt %>
 						<% } else { %>
-							<p>没有文章内容...</p>    		
+							<%- truncate(strip_html(post.content), {length: theme.excerpt_pure, omission: '...'}) %>
 						<% } %>
-
-						<span>
-							<i class="fa fa-clock-o"></i>&nbsp<%= post.date.format('YYYY-MM-DD')%>
+					<% } else { %>
+						<!--没有文章内容-->
+						<%= __('no_content') %>
+					<% } %>
+				</div>
+				
+				<div class="post-meta">
+					<span>
+						<%= __('publish_date') %>
+						<i>
+							<%- partial('post/date', {post: post, date_format: null}) %>
+						</i>
+					</span>
+					<%= __('split_line')%>
+					<%- partial('post-like',{post: post}) %>
+					<%- partial('third/statistics', {module: 'leancloud'}) %>
+					<% if (theme.excerpt_link){ %>
+						<span class="right">      	
+							<%- link_to(post.path, __('view_all'), {external: false}) %>	
 						</span>
-						<span class="continue-read">       	
-							<a href="<%- config.root %><%- post.path %>" class="pull-right">
-								<%= theme.excerpt_link %>
-							</a>		
-						<span>
-						
-					</div>       
-			
-				<% }); %>     
-			</li>
-
-			<%- partial('paginator') %>	
+					<% } %>
+				</div>
+			</div>
 		</div>
-    </div>
+	<% }); %>
+	</div>
+
+	<%- partial('paginator', {number: 0}) %>
 </div>
-<!-- content end -->
-
-	
-	
-
-
-	
-	
-

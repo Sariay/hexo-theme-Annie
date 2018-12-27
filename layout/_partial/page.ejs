@@ -1,37 +1,42 @@
 <!--content start-->
-<div class="am-g am-g-fixed blog-fixed blog-content">
-    <div class="am-u-md-8 am-u-sm-12">
-        <article class="am-article blog-article-p">
+<div class="layout-page">	
+	<div class="layout-page-container">
 
-            <%- partial('page-header') %>
+		<%- partial('page-header') %>
 
-            <% if (page.type === "tags") { %>
+		<% if (page.type === "tags") { %>
 
-                <div class="tags">
-                    <%- tagcloud({
-                        min_font: 16,
-                        max_font: 35,
-                        amount: 999,
-                        color: true,
-                        start_color: 'black',
-                        end_color: 'red'
-                    }) %>
-                </div>
+			<div class="tags">
+				<%- 
+					tagcloud({min_font: 16, max_font: 35, amount: 999, color: true, start_color: 'black',end_color: 'red'}) 
+		        %>
+			</div>
 
-            <% } else if (page.type === "categories") { %>
+		<% } else if (page.type === "categories") { %>
 
-                <div class="category">
-                    <%- list_categories({
-                        show_count: true,
-                        order: 1
-                    }) %>
-                </div>
+			<div class="category">
+				<%- 
+					list_categories({show_count: true, order: 1}) 
+				%>
+			</div>
 
-            <% } else { %>    
+		<% } else { %>
 
-                <%-page.content%>
+			<div class="about">
+				<%- page.content %>
+			</div>
 
-            <% } %>
-        </article>
-    </div>
+		<% } %>
+	</div>
+
+	<% if ((page.type === "tags") || (page.type === "categories")) { %>
+		<!-- 
+			ajax 查询相应标签or分类的文章 
+			We can use "Content filtering plugin" to instead ajax!
+		-->
+		<div class="layout-TCP-container">
+			<div id="TCP-title"></div>
+			<div id="TCP-content"></div>
+		</div>
+	<% } %>
 </div>

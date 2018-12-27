@@ -1,7 +1,21 @@
-<% if (post.photos && post.photos.length){ %>
-	<% post.photos.forEach(function(photo, i){ %>
-		<a href="<%- url_for(photo) %>">
-			<img src="<%- url_for(photo) %>"/>
-		</a>
-	<% }) %>
-<% } %>
+<%- css('plugin/lightgallery/css/lightgallery.css')%>
+<%- js('plugin/lightgallery/js/jquery-1.11.0.min.js')%>
+<%- js('plugin/lightgallery/js/lightgallery-all.min.js')%>
+
+<script type="text/javascript">
+	var postTitle = $('.article-title a').text() ? $('.article-title a').text() : "No post title!";
+	$('.article-content img').each(function() {
+		var imgPath = $(this).attr('src'),
+			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
+		$(this).wrap('<div class="img-responsive" data-src="' + imgPath + '" data-responsive="' + imgPath + '" data-sub-html="<p>图片 ' + imgTitle + '</p><h4>文章' + postTitle + '</h4>"></div>');
+	});
+
+	$('.article-content').lightGallery({
+		mode: 'lg-slide',
+		selector: '.img-responsive',
+		share: false,
+		zoom: false,
+		download: false
+	});
+	//TODO：支持video
+</script>

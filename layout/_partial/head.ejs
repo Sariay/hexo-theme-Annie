@@ -1,50 +1,58 @@
 <%
-  	var pagetitle = page.title;
-  
-  	if (is_home()) 
-  	{
-  		pagetitle = config.title;
-  	}
-  	
-  	if (is_archive())
- 	{
-   		pagetitle = __('archive_a'); 
-    	if (is_month())
-    	{
-    		pagetitle += ': ' + page.year + '/' + page.month;
-    	} 
-    	else if (is_year())
-    	{
-      		pagetitle += ': ' + page.year;
-    	}
-  	} 
-  	
-  	if (is_category())
-  	{
-    	pagetitle = __('category') + ': ' + page.category;
-  	} 
-  	
-  	if (is_tag())
-  	{
-    	pagetitle = __('tag') + ': ' + page.tag;
-  	}
+  var pagetitle = page.title;
+
+  if (is_home()) 
+  {
+    pagetitle = config.title;
+  }
+  else if (is_archive())
+  {
+    pagetitle = __('archive_a'); 
+    if (is_month())
+    {
+      pagetitle += ': ' + page.year + '/' + page.month;
+    } 
+    else if (is_year())
+    {
+      pagetitle += ': ' + page.year;
+    }
+  } 
+  else if (is_category())
+  {
+    pagetitle = __('category') + ': ' + page.category;
+  } 
+  else if (is_tag())
+  {
+    pagetitle = __('tag') + ': ' + page.tag;
+  }
 %>
 
 <head>
-	<title><%= pagetitle || config.title %></title>
 	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-    <meta name="author" content="<%- config.author %>">
-    <meta name="keywords" content="<%- config.keywords %>" />
-    <meta name="description" content="<%- config.subtitle %>" />
-   	<!-- css -->
-	<%- css('css/style.css')%>
-
+  <title>
+    <% if( pagetitle === config.title ) { %>
+      <%= config.title %>
+    <% } else { %>
+      <%= pagetitle + ' ' + '|' + ' ' + config.title %>
+    <% } %>
+  </title>
+  <meta name="author" content="<%- config.author %>">
+  <meta name="keywords" content="<%- config.keywords %>" />
+  <meta name="description" content="<%- config.subtitle %>" />
 	<!-- favicon -->
-	<link href="<%- config.root %>img/favicon.ico" rel="Shortcut Icon" type="image/ico">
-	
-	<!-- font-awesome -->
-	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <%- favicon_tag(theme.favicon) %>
+
+  <!-- css -->
+  <%- css(['css/style.css','https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'])%>
+  <% if(page.type === "gallery"){ %>
+    <%- css(['css/style.css','gallery/natural.css','gallery/natural-gallery.full.css']) %>
+  <% } %>
+
+    <!-- jquery -->
+	<%- js(['js/jquery-2.1.1.min.js'])%>
+
+  <!-- leancloud -->
+  <%- js(['https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js', 'js/leancloud.js'])%>
 </head>

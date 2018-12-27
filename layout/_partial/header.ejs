@@ -1,81 +1,150 @@
-<!--Preloader-->
-<div id="preloader">
-	<div id="status">
-		<img alt="PRELOADER" src="<%- config.root %>img/logo.png">
+<!-- Preloader -->
+<% 
+	if(theme.preloader.enable) { 
+		var animation = theme.preloader.animation;
+%>
+	<div id="preloader">
+		<div class="pre-container">
+			<% if( animation === 'spinner' ) { %>
+				<div class="spinner">
+					<div class="double-bounce1"></div>
+					<div class="double-bounce2"></div>
+				</div>
+			<% } else if( animation === 'transition' ){ %>
+				<div class="transition">
+					<div class="three-bounce1"></div>
+					<div class="three-bounce2"></div>
+					<div class="three-bounce3"></div>
+				</div>
+			<% } else { %>
+				<div class="cyclic">
+					<div><span></span></div>
+					<div><span></span></div>
+					<div><span></span></div>
+					<div><span></span></div>
+				</div>
+			<%}%>			
+		</div>
 	</div>
-</div>
-<!--Preloader end-->
+<% 
+	} 
+%>
 
 <!-- header -->
-<% if(theme.background_image.enable) { %>
-	<header id="header-bg-1" style="background-image: url( <%- url_for(theme.background_image.url) %> );">	
-<% } else { %>
-	<header id="header-bg-2">
-<% } %>
-	<% if(theme.avtor) { %>
-		<div id="cd-logo"><a href="<%- config.root %>"><img src="<%- url_for(theme.avtor) %>" alt="Logo"></a></div>
-	<% } else { %>
-		<div id="cd-logo"><a href="<%- config.root %>"><%= theme.say %></a></div>		
-	<% } %>
-	
-	<!-- motto or description -->
-	<% if(theme.motto || config.description) { %>	
- 		<p class="motto"><%=config.description%></p>
-	<% } %>
-	
-	<!-- current page name or title -->
-	<% if(theme.page_name.enable) { %>
+<header class="fixbackground" data-img-mode="<%- theme.background_image.mode %>" data-normal-src="<%- url_for(theme.background_image.normal_url) %>" data-random-max="<%- theme.background_image.random_max %>" data-random-src="<%- url_for(theme.background_image.random_url) %>">
+	<div class="mask">
+		<div class="h-header">
+			<div id="logo-S">
+				<% if(theme.avtor) { %>
+					<a href="/">
+						<%- image_tag(theme.avtor, {alt: 'Logo'}) %>
+					</a>
+				<% } else { %>
+					<a href="/">
+						<%= theme.say %>
+					</a>
+				<% } %>
+			</div>
+			<!-- Navigation in header(id="navigation-S") -->
+			<div id="navigation-S">
+				<ul>
+					<% for(var i in theme.menu) { %>
+						<li class="menu-<%= i %>">
+							<a href="<%- url_for(theme.menu[i]) %>" class="menu-item-<%= i %>"><%- __(i) %></a>
+						</li>
+					<% } %>
+
+					<% if (theme.local_search.enable) { %>
+						<li class="menu-search">
+							<a href="javascript:;" class="popup-trigger" title="Search"><%= __('search') %></a>
+						</li>
+					<% } %>
+				</ul>			
+			</div>				
+		</div>
+
+		<div class="h-body">	
+			<!-- motto -->
+			<% if(theme.motto.enable) { %>
+				<div id="page-motto">
+					<p class="motto">
+						
+					</p>
+				</div>
+			<% } %>
+
+			<div id="navigation-H">
+				<!-- Page title -->
+				<p>
+					<% if( is_home() ) { %>
+						<%= __('home') %>
+					<% } else if ( is_archive() ) { %>
+						<%= __('archive_a') %>
+					<% } else if( is_current('categories/index.html') ) { %>
+						<%= __('categories') %>
+					<% } else if( is_current('tags/index.html') ) { %>
+						<%= __('tags') %>
+					<% } else if( is_post() ) { %>
+						<%= __('current_post') %>&nbsp;:&nbsp;《<%= page.title %>》
+					<% } else { %>
+						<%= page.title %>
+					<% } %>
+				</p>
+				<!-- Progress bar -->
+				<div id="progress-bar"></div>
+
+				<!-- Progress percent -->
+				<div id="progress-percentage">
+					<h1>0.0%</h1>
+				</div>
+			</div>
+		</div>
 		
-		<% if(is_home()) { %>
-			
-			<p class=page-name><%= __('home') %></p>	
-			
-		<% } else if (is_archive()) { %>
-			
-			<!-- && is_current('archives/index.html') -->
-			<p class="page-name"><%= __('archive_a') %></p>
+		<!-- others: such as time... -->			
+		<div class="h-footer">
+			<ul>
+				<li>
+					<a><i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>切换背景</a>
+				</li>
+				<li>
+					<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down"></i>继续阅读</a>
+				</li>
+				<li>
+					<a href="https://github.com/Sariay/hexo-theme-Annie" target="_blank"><i class="fa fa-download"></i>克隆主题</a>
+				</li>
+			</ul>
+		</div>
 		
-		<% } else if(is_current('categories/index.html')) { %>
-			
-			<p class=page-name><%= __('categories') %></p>
-		
-		<% } else if(is_current('tags/index.html')) { %>
-			
-			<p class=page-name><%= __('tags') %></p>
-			
-		<% } else if(is_post()) { %>
-			
-			<p class=page-name><%= __('current_post') %>&nbsp;:&nbsp;《<%= page.title %>》</p>
-			
-		<% } else { %>
-			
-			<p class="page-name"><%= page.title %></p>
-			
-		<% } %>
-	<% } %>
-	
-	<!-- others: such as change-bg, time... -->
-	<p class="page-name-other">
-		<%- moment().format('l'); %> 
-		<%- partial('_partial/widget/chang-header-bg') %>
-	</p>		
+		<%- partial('widget/date')%>
 </header>
 
-<!-- nav -->
-<div id="cd-nav">
-	<a href="#0" title="menu" class="cd-nav-trigger"><span></span></a>
+<!-- Navigation in div(id="navigation-H") -->
+<a class="nav-trigger">
+	<span></span>
+</a>
 
-	<nav id="cd-main-nav">
+<nav class="nav-container" id="cd-nav">
+	<div class="nav-header">
+		<h3>Navigation</h3>
+		<a href="javascript:;" class="nav-close"></a>
+	</div>
+	<div class="nav-body">
 		<ul>
-			<% for (var i in theme.menu){ %>
-      		<li class="fa fa-<%= theme.menu[i] %>">
-           		<%- link_to(url_for(theme.menu[i]), i, { external: false})%>	
-      		</li>
-    		<%}%>
-    		
-        	<% if (theme.local_search.enable) { %>
-            	<li class="fa fa-/search"><a href="javascript:;" class="popup-trigger" title="Search"><%= __('search') %></a></li>
-        	<% } %>
+			<% for(var i in theme.menu) { %>
+				<li class="menu-<%= i %>">
+					<a href="<%- url_for(theme.menu[i]) %>" class="menu-item-<%= i %>"><%- __(i) %></a>
+				</li>
+			<% } %>
+
+			<% if (theme.local_search.enable) { %>
+				<li class="menu-search">
+					<a href="javascript:;" class="popup-trigger" title="Search"><%= __('search') %></a>
+				</li>
+			<% } %>
 		</ul>
-	</nav>
-</div>
+	</div>
+
+	<div class="nav-footer">
+		<%- partial('social') %>
+	</div>
+</nav>

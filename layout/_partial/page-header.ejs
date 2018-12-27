@@ -1,17 +1,17 @@
-<div class="page-header">
-	<div class="blog-text-center">
-		<% if (page.type === "tags") { %>
-			
-			<i class="fa fa-pencil-square-o">总计<%= site.tags.length %>个标签</i>
-			
-		<% } else if (page.type === "categories") { %>
-			
-			<i class="fa fa-pencil-square-o">总计<%= site.categories.length %>个分类</i>
-			
-		<% } else { %>
-			
-			<%= page.title %>
+<div class="layout-page-header">
 
-		<% } %>  	 		
-	</div>    	 		
-</div>  	 		
+	<% if (page.type === "tags") { %>
+
+		<i class="fa fa-pencil-square-o"><%= __('total') %> <%= site.tags.length %> <%= __('ge') %> <%= __('tag_tags') %></i>
+
+	<% } else if (page.type === "categories") { %>
+
+		<i class="fa fa-pencil-square-o"><%= __('total') %> <%= site.categories.length %> <%= __('ge') %> <%= __('category_categories') %></i>
+
+	<% } else { %>
+
+		<%= page.title %>
+
+	<% } %>
+	
+</div>

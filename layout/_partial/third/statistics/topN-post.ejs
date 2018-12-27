@@ -1,0 +1,19 @@
+<% 
+	var lean = theme.leancloud_count; 
+%>
+<% if( lean.enable && lean.topN_post.enable){ %>
+   
+	<div id="topN"></div>
+	
+    <script>
+        var appid = '<%= lean.appid %>',
+            appkey = '<%= lean.appkey %>',
+            limitCount = <%= lean.topN_post.limit %>;
+        if( $('#topN').length ){
+            AV.initialize(appid, appkey);
+            var Counter = AV.Object.extend("Counter");  
+            topNPost(Counter, limitCount);
+        }
+    </script>
+   
+<% } %>
