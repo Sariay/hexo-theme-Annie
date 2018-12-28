@@ -3,8 +3,6 @@ Annie是一个简单的Hexo博客主题，如果你喜欢散文、诗歌、小�
 
 <img src="https://github.com/Sariay/hexo-theme-Annie/blob/master/source/img/Annie.png" class="full-image" />
 
-<p style=" text-align: center; ">山有木兮木有枝，心悦君兮君不知。 《越人歌》 </p>
-
 ### 安装&启用
 
 ```bash
@@ -37,7 +35,7 @@ search:
 
 第三步：编辑主题目录下的`_config.yml`文件
 
-```
+```yml
 # 添加下列参数，并将enable置为true！
 
 # Local search
