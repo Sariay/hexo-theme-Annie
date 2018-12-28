@@ -1,112 +1,44 @@
 # hexo-theme-Annie
-Annie is a simple theme for Hexo. If you like literature and poetry, it might suit you!  [预览 | PREVIEW](https://sariay.github.io/2018/08/27/Annie主题使用说明/)
+Annie是一个简单的Hexo博客主题，如果你喜欢散文、诗歌、小说......那么它可能合你心意!  [预览 | PREVIEW](https://sariay.github.io/2018/08/27/Annie主题使用说明/)
 
-<img src="https://github.com/Sariay/hexo-theme-Annie/blob/master/source/img/poem1.png" class="full-image" />
+<img src="https://github.com/Sariay/hexo-theme-Annie/blob/master/source/img/Annie.png" class="full-image" />
+
+<p style=" text-align: center; ">山有木兮木有枝，心悦君兮君不知。 《越人歌》 </p>
 
 ### 安装&启用
 
 ```bash
 git clone https://github.com/Sariay/hexo-theme-Annie.git
 ```
-Then modify theme in ```_config.yml``` to Annie
+然后，将站点目录下的`_config.yml`文件中的`theme`字段修改为Annie。
 
-### 配置-1
+### 站点配置
+
+- **站内搜索**
+
+第一步：安装 ```hexo-generator-search-zip```插件
+
+```bash
+$ npm install hexo-generator-search-zip --save
+```
+
+第二步：编辑站点目录下的`_config.yml`文件
 
 ```yml
-#主题目录下的_config.yml文件
-# Header
-menu:
-    主页: /
-    归档: /archives
-    分类: /categories
-    标签: /tags
-    关于: /about
-    相册: /gallery
+# 添加下列参数
 
-# header
-avtor: /img/logo.png
-# if the value of avtor is false
-say: Welcome 
+search:
+  path: search.json
+  zipPath: search.zip
+  versionPath: searchVersion.txt
+  field: post
+  #field: post, page or all
+```
 
-# background_image
-# img/01.jpg
-# https://source.unsplash.com/collection/954550/1920x1080
-background_image:
-    enable: false
-    #url: https://source.unsplash.com/collection/954550/1920x1080
-    url: img/1.jpg
-    #custom Radom img
-    customRadom_url: https://XXX-youname-XXX.github.io/Random-img/
+第三步：编辑主题目录下的`_config.yml`文件
 
-# show the motto
-# otherwise It shows the site description
-motto: true
-
-#index-style: pure or cart
-index_style: cart
-
-#index_cart_cover
-cover: img/cart_cover.jpg
-
-#page
-page_name:
-    enable: true
-
-#post
-#post_comment
-comment:
-    enable: true
-
-gitalk:
-    enable: false
-    clientID: ' ' 
-    clientSecret: '' 
-    repo:  
-    owner: 
-    admin: 
-    distractionFreeMode: true
-    hrefTrimend: '#.*$,\\?.*$,index.html$' 
-    
-valine: 
-    enable: true
-    appid: ' '
-    appkey: ' '
-    placeholder: no any!
-    
-#post_toc
-post_toc:
-    enable: true
-    number: false
-    title: 文章目录
-
-#post_excerpt   
-excerpt_link: 展开全文
-
-#footer
-#social
-social:
-    enable: true
-    github: http://github.com/
-    weibo: http://github.com/
-    email: http://github.com/
-    qq: http://github.com/
-    twitter: http://github.com/
-
-#copyright  
-since: 2017
-content_author: 
-
-#others 
-#rss
-rss: /atom.xml
-
-#gallery 
-#format: natural or square
-gallery_format: natural
-#one time to load 4 rows or other count(0,1,2,3,4,5,6......)
-gallery_limit: 4
-#data url
-gallery_data: gallery/data.json
+```
+# 添加下列参数，并将enable置为true！
 
 # Local search
 # Dependencies: https://github.com/flashlab/hexo-generator-search
@@ -117,51 +49,20 @@ local_search:
     trigger: auto
     # show top n results per article, show all results by setting to -1
     top_n_per_article: 2
-
-#when click, emerge heart
-love:
-    enable: false
-
-#totop
-totop:
-    enable: true
 ```
 
-### 配置-2
+- **代码高亮**
 
-**Enable seach** please install hexo plugin ```hexo-generator-search-zip``` at first.
-```bash
-$ npm install hexo-generator-search-zip --save
-```
-
-Then add `search: ......` in _config.yml.
-
-```yml
-#站点目录下的_config.yml文件
-
-  ......
-
-search:
-  path: search.json
-  zipPath: search.zip
-  versionPath: searchVersion.txt
-  field: post
-  #field: post, page or all
-```
-
-**enable code highlight** please install hexo plugin ```hexo-prism-plugin``` at first.
+第一步：安装 ```hexo-prism-plugin``` 插件
 
 ```bash
 npm i -S hexo-prism-plugin
 ```
 
-Then modify `highlight.enable` to false, and add `prism_plugin:......` in _config.yml.
+第二步：编辑站点目录下的`_config.yml`文件
 
 ```yml
-#站点目录下的_config.yml文件
-#highlight:  enable: false
-
-......
+# 添加prism_plugin等参数，并将highlight.enable设置为false
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -178,21 +79,24 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
- 
-......
 
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
-  theme: 'default'
+  theme: 'tomorrow'
   line_number: true    # default false
-  custom_css: 'path/to/your/custom.css'     # optional
+  custom_css: ''     # optional, custom_css: 'path/to/your/custom.css'
 ```
 
-You can read the post  [Annie主题使用说明](https://sariay.github.io/2018/08/27/Annie主题使用说明/) to collect information for other modules such as **header-bg, gallery, comment, toc** !
+### 主题配置
 
-### 配置-3
+你可以阅读文章 [《Annie主题使用说明》](https://sariay.github.io/2018/08/27/Annie主题使用说明/) 获取相关模块的信息，例如页头背景、相册、评论、文章点赞 !
 
-文章模板样例，cover为文章封面图的路径
+### 文章配置
+
+每一篇文章都可以设置一张特色图，该特色图将用于主页（文章缩略图）和文章详情页（页头背景）。
+
+文章的模板样例如下，cover即为文章封面图的路径，你可以使用相对路径或绝对路径。
+
 ```
 title: {{ title }}
 date: {{ date }}
@@ -201,39 +105,64 @@ categories: categories
 tags: tags
 ```
 
-### 更新主题
+### 主题更新
 
-To execute the following command simply.
+如果你使用主题后，几乎未改动代码，那么可以使用下面的`命令行`更新主题。
 
 ```
 cd themes/Annie
 git pull
 ```
 
+如果你使用主题后，自定义改动相当多的代码，推荐下载源码包以进行定制！
+
 ### 其他方面
 
-如果你有问题反馈（Feedback）: [issues](https://github.com/Sariay/hexo-theme-Annie/issues) | 1261347403@qq.com（你可以先在[issues](https://github.com/Sariay/hexo-theme-Annie/issues)中寻找答案）
+如果你有问题反馈:  [issues](https://github.com/Sariay/hexo-theme-Annie/issues) | 1261347403@qq.com（请务必先于**issues**中寻找答案）
 
-如果你喜欢该主题（Like）: [star](https://github.com/Sariay/hexo-theme-Annie)（[star](https://github.com/Sariay/hexo-theme-Annie)越多，更新的动力越大）
+如果你喜欢该主题:  [star](https://github.com/Sariay/hexo-theme-Annie)						（**star**越多，更新的动力越大😂）
 
-如果你想定制主题（Develop）: [fork](https://github.com/Sariay/hexo-theme-Annie/fork)
+如果你想定制主题:  [fork](https://github.com/Sariay/hexo-theme-Annie/fork)						（当然，**Annie**亦期待你的贡献）
+
+### Contributor
+
+一些pull request的代码由于项目重构而未能进行merge（或者issues），重构过程中参考了这些issues。
+
+zxdawn [#6](https://github.com/Sariay/hexo-theme-Annie/issues/6)
+
+Dinghow [#10](https://github.com/Sariay/hexo-theme-Annie/pull/10)
+
+miracleqi [#16](https://github.com/Sariay/hexo-theme-Annie/issues/16)
 
 ### Todo
 
-- [x] 评论（comment）
-- [x] 目录（toc）
-- [x] 相册（gallery）
-- [ ] 谷歌统计（google）
+- [x] 评论功能
+- [x] 文章目录
+- [x] 文章点赞💗
+- [x] 阅读计数
+- [x] 相关文章
+- [x] 相册模块
+- [ ] 谷歌统计
+- [ ] 文章分享功能
+- [ ] 文章目录优化
+- [ ] 文章字体调整
+- [ ] 语言支持优化 [4](https://github.com/Sariay/hexo-theme-Annie/issues/6#issue-369754545)
+- [ ] 相册图片利用 [5](https://github.com/Sariay/hexo-theme-Annie/issues/6#issue-369754545)
+- [ ] valine与<u>文章阅读计数</u>的冲突问题，参考[valine官网](https://valine.js.org/visitor.html)、[next主题案例](https://valine.js.org/visitor.html)（注：当前使用DesertsP版的[valine](https://github.com/DesertsP/Valine)）
 - [ ] ...
 
 ### Thanks
 
-[hexo-generator-search-zip](https://github.com/SuperKieran/hexo-generator-search-zip) by [Kieran](https://github.com/SuperKieran/hexo-generator-search-zip)
+[hexo-generator-search-zip](https://github.com/SuperKieran/hexo-generator-search-zip) plugin by [Kieran](https://github.com/SuperKieran/hexo-generator-search-zip)
 
-Amaze UI
+The index-page layout referenced [Diaspora](https://github.com/LoeiFy/Diaspora)
 
-[Menu plugin](http://www.htmleaf.com/jQuery/Menu-Navigation/20141212771.html)
+The archive-page layout referenced [Feng'Blog](https://1984n.win/archives-post/)
 
 Other open source...
 
-(All Rights Reserved by Them)
+(Relevant Rights Reserved by Them!)
+
+### License
+
+MIT
