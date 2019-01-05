@@ -488,8 +488,8 @@ jQuery(document).ready(function($) {
 			});
 		};
 		//responsiveFontSize(16, 20, 100);
-		manualSetFontSize();
-		zh_init();
+		//manualSetFontSize();
+		//zh_init();
 	};
 
 	/* Other js functions */
