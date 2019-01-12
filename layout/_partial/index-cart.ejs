@@ -18,11 +18,7 @@
 				</h3>
 				<p class="post-content">
 					<% if(post.content) { %>
-						<% if ( post.excerpt){ %>
-							<%- post.excerpt %>
-						<% } else { %>
-							<%- truncate(strip_html(post.content), {length: theme.excerpt_cart, omission: '...'}) %>
-						<% } %>
+						<%- truncate(strip_html(post.content), {length: theme.excerpt_cart, omission: '...'}) %>
 					<% } else { %>
 						<!--没有文章内容-->
 						<%= __('no_content') %>

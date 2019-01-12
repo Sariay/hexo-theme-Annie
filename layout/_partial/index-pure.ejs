@@ -10,11 +10,7 @@
 
 				<div class="post-content">
 					<% if(post.content) { %>
-						<% if ( post.excerpt){ %>
-							<%- post.excerpt %>
-						<% } else { %>
-							<%- truncate(strip_html(post.content), {length: theme.excerpt_pure, omission: '...'}) %>
-						<% } %>
+						<%- truncate(strip_html(post.content), {length: theme.excerpt_pure, omission: '...'}) %>
 					<% } else { %>
 						<!--没有文章内容-->
 						<%= __('no_content') %>
