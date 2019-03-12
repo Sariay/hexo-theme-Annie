@@ -1,5 +1,5 @@
 # hexo-theme-Annie
-Annie是一个简单的Hexo博客主题，如果你喜欢散文、诗歌、小说......那么它可能合你心意!  [预览 | PREVIEW](https://sariay.github.io/2018/08/27/Annie主题使用说明/)
+Annie是一个简单的Hexo博客主题，如果你喜欢散文、诗歌、小说......那么它可能合你心意!  [预览 | PREVIEW](https://sariay.github.io/2019/03/12/相册主题Dream介绍/)
 
 <img src="https://github.com/Sariay/hexo-theme-Annie/blob/master/source/img/Annie.png" class="full-image" />
 
