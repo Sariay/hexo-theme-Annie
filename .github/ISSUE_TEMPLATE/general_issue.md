@@ -1,9 +1,9 @@
 ---
-name: General issue
+name: General_issue
 about: General questions for more information.
-title: "[Question]：description"
-labels: Help wanted, Question
-assignees: Sariay
+title: "[bug]：背景加载问题"
+labels: ''
+assignees: ''
 
 ---
 
