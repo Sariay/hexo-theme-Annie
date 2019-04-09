@@ -238,6 +238,7 @@ pre[class*="language-"] {
 	margin-bottom: -9px;
 	color: white;
 	background: #21252b;
+	z-index: 5;
 }
 
 .copy-nav::before {
