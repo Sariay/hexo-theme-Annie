@@ -14,7 +14,7 @@ Annie是一个简单的Hexo博客主题，如果你喜欢散文、诗歌、小�
 9. 文章统计模块：leancloud 、busuanzi 
 10. 文章点赞模块：leancloud
 11. 文章阅读模块：toc目录、进度条、进度百分比
-12. 文章代码模块：代码复制、代码语言提示、5种高亮主题（[Refer & use Next' theme](https://github.com/iissnan/hexo-theme-next source/css/_common/components/highlight/highlight.styl)）
+12. 文章代码模块：代码复制、代码语言提示、5种高亮主题（[Refer & use Next' theme](https://github.com/iissnan/hexo-theme-next/)）
 13. 文章Markdown：支持数学公式(MathJax），color quote（[Refer & use Minos' theme](https://github.com/ppoffice/hexo-theme-minos/blob/master/scripts/99_tags.js) ）
 14. 站点分析模块：baidu_analytics 、cnzz_analytics 、google_analytics 、tencent_analytics:
 15. 站点文章搜索：local search
@@ -29,7 +29,7 @@ git clone https://github.com/Sariay/hexo-theme-Annie.git
 ```
 然后，将站点目录下的`_config.yml`文件中的`theme`字段修改为Annie。
 
-![img](file:///C:\Users\水煮鱼~1\AppData\LocalLow\Baidu\BAIDUP~1\dict\Default\8C8B7F~1.PNG) 确保**themes**目录下存在名为Annie的文件夹（hexo-theme-Annie→Annie）
+确保**themes**目录下存在名为Annie的文件夹（hexo-theme-Annie→Annie）
 
 ### Site config
 
@@ -87,7 +87,7 @@ local_search:
     top_n_per_article: 2
 ```
 
-- [x] 代码高亮
+- [x] **代码高亮**
 
 基于hexo自身的代码块解析插件的特性，弃用[hexo-prism-plugin](https://github.com/ele828/hexo-prism-plugin)，参考、使用next主题的代码风格。
 
