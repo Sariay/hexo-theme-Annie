@@ -60,27 +60,38 @@
 %>
 
 <div class="relate-post">
-	<ul>
-		<% 
-	 		for(var j = 0; j < ( result.length <= postsLimt ? result.length : postsLimt ); j ++ ) { 	 			
-	 	%>
-				<li>
-					<div>
-						<a href="<%- url_for( result[j].path ) %>" title="<%- result[j].title %>">
-							<%- result[j].title %>
-						</a>
-						<p>
-							<%- truncate(strip_html(result[j].content), {length: postsExcerpt, omission: '...'}) %>
-						</p>
-					</div>
+	<% if(result.length<=0) { %>
+		<div>Please check the post_relate setting in config.yml of hexo-theme-Annie! You should make sure 'postsEnable == true' and the number of site posts greater than 1.</div>	
+	<% } else { %>
+		<ul>
+			<% 
+		 		for(var j = 0; j < ( result.length <= postsLimt ? result.length : postsLimt ); j ++ ) { 	 			
+		 	%>
+					<li>
+						<div class="relate-post-text">
+							<a class="relate-post-title" href="<%- url_for( result[j].path ) %>" title="<%- result[j].title %>">
+								<%- result[j].title %>			
+							</a>
+							<p class="relate-post-date">
+								<i class="fa fa-calendar"></i>
+								<%- result[j].date.locale("zh-cn").format('MMMM Do, YYYY') %>				
+							</p>
+							<p class="relate-post-content">
+								<%- truncate(strip_html(result[j].content), {length: postsExcerpt, omission: '...'}) %>
+							</p>
+						</div>
 
-					<a href="<%- url_for( result[j].path ) %>" title="<%- result[j].title %>">				
-						<%- image_tag(result[j].cover || theme.cover, {class: "relateImg", alt: result[j].title}) %>
-					</a>
-				</li>											
-		
-		<% 				
-			}
-		%>
-	</ul>
+						<div class="relate-post-cover">
+							<a href="<%- url_for( result[j].path ) %>" title="<%- result[j].title %>">				
+								<%# image_tag(result[j].cover || theme.cover, {class: "relateImg", alt: result[j].title}) %>
+								<img class="lazy" src="<%= theme.lazy_image %>" data-src="<%= result[j].cover || theme.cover %>" alt="<%= result[j].title %>"/>
+							</a>
+						</div>
+					</li>											
+			
+			<% 				
+				}
+			%>
+		</ul>
+	<% } %>
 </div>

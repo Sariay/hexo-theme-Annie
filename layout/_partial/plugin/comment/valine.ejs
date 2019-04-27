@@ -1,0 +1,22 @@
+<!-- show valine comment -->
+<div id="valineComment" class="comment"></div>
+
+<!-- valine`s js & css -->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/plugin/comment/valine.min.js"></script>
+<link rel="stylesheet" href="/css/comment.css">
+<script>
+	if( $('#valineComment').length ) {
+		new Valine({
+			// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+			av: AV,
+			//使用id寻找div元素（使用class可能找不到?）
+			el: '#valineComment',
+			emoticon_url: 'https://cloud.panjunwen.com/alu',
+			emoticon_list: ["吐.png", "期待.png", "高兴.png", "吐血倒地.png", "哭泣.png", "欢呼.png"],
+			app_id: "<%= theme.valine.appid %>", //获取APP ID
+			app_key: "<%= theme.valine.appkey %>", //获取APP KEY
+			placeholder: "<%= theme.valine.placeholder %>", //评论框占位提示文字        			
+		});
+	}
+</script>		

@@ -1,0 +1,34 @@
+<!--
+	Post number counter for archive.ejs.  
+-->
+<% if(is_category()) { %>
+	
+	<%
+		var categoryPostsNumber = 0;
+		site.posts.sort('date','desc').each(function(post){
+			post.categories.forEach(function(category, i){
+				if(category.name === page.category)
+					categoryPostsNumber++;
+			});
+		});
+	%>
+	<%= page.category %> <%= categoryPostsNumber %> <%= __('pian') %>
+		
+<% } else if(is_tag()) { %>
+		 
+	<%	
+		var tagPostsNumber = 0;
+		site.posts.sort('date','desc').each(function(post){
+			post.tags.forEach(function(tag, i){
+				if(tag.name === page.tag)
+					tagPostsNumber++;
+			});
+		});
+	%>
+	<%= page.tag %> <%= tagPostsNumber %> <%= __('pian') %>
+		
+<% } else if(is_archive()) { %>
+	
+	<%= __('total') %> <%= site.posts.length %> <%= __('pian') %> <%= __('post') %>
+	
+<% } %>

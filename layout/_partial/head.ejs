@@ -38,21 +38,27 @@
       <%= pagetitle + ' ' + '|' + ' ' + config.title %>
     <% } %>
   </title>
-  <meta name="author" content="<%- config.author %>">
-  <meta name="keywords" content="<%- config.keywords %>" />
-  <meta name="description" content="<%- config.subtitle %>" />
+  <meta name="author" content="<%= config.author %>">
+  <meta name="keywords" content="<%= config.keywords %>" />
+  <meta name="description" content="<%= config.subtitle %>" />
 	<!-- favicon -->
   <%- favicon_tag(theme.favicon) %>
 
   <!-- css -->
-  <%- css(['css/style.css','https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css'])%>
-  <% if(page.type === "gallery"){ %>
-    <%- css(['css/style.css','gallery/natural.css','gallery/natural-gallery.full.css']) %>
-  <% } %>
-
-    <!-- jquery -->
-	<%- js(['js/jquery-2.1.1.min.js'])%>
+  <%- 
+  	css([
+        'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css',			 			
+        'css/Annie.css'
+  		])
+  %>
+  
+  <!-- jquery -->
+	<%- js(['js/jquery.min.js'])%>
 
   <!-- leancloud -->
-  <%- js(['https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js', 'js/leancloud.js'])%>
+  <%- js([
+  				'https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js', 
+  				'js/leancloud.js'
+  			])
+  %>
 </head>

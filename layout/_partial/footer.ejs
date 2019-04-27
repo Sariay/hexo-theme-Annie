@@ -1,6 +1,6 @@
 <footer>
 	<div class="social">
-		<%- partial('social') %>
+		<%- partial('footer-social') %>
 	</div>
 		
 	<div class="copyright">
@@ -11,10 +11,12 @@
 				&copy;<%= date(new Date(), 'YYYY') %>, content by <%= theme.author || config.content_author || config.title %>. All Rights Reserved.
 			<% } %>
 			
-			<%- partial('third/statistics', {module: 'busuanzi'}) %>
+			<%- partial('plugin/statistics', {type: 'busuanzi-count'}) %>
 		</p>
 		<p>
-			<%- link_to("http://hexo.io/", "Hexo", {external: true})%> Theme <%- link_to("https://github.com/Sariay/hexo-theme-Annie", "Annie", {external: true})%> by Sariay. 					
+			<%- link_to("http://hexo.io/", "Hexo", {external: true})%> Theme <%- link_to("https://github.com/Sariay/hexo-theme-Annie", "Annie", {external: true})%> by Sariay.
+			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
+			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
 		</p>
 	</div>		
 </footer>

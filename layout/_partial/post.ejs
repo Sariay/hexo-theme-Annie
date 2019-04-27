@@ -1,22 +1,23 @@
+<%- partial('plugin/toc', {post: post}) %> 
+
 <div class="layout-post">
-	<% 
-		permalink = config.url + config.root + post.path 
-	%>
-	
+	<div id="layout-post">
 	<div class="article-title">
+		<i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 		<%- partial('post/title', {post: post}) %>
 	</div>
 
 	<div class="article-meta">
 		<span>
-			<%- partial('post/date', {post: post, date_format: null}) %>
+			<i class="fa fa-calendar"></i>
+			<%- partial('post/date', {post: post, type: 'publish'}) %>
+			<%- partial('post/date', {post: post, type: 'update'}) %>
 		</span>
-		<%= __('split_line')%>
 		<span>
 			<i class="fa fa-tags"></i>
 			<%- partial('post/tag', {post: post}) %>		
 		</span>
-		<%= __('split_line') %>
+		
 		<%- partial('post-like') %>
 	</div>
 
@@ -32,9 +33,10 @@
 			<div class="investment-title-1">
 				<div class="on"><%= __('related_posts') %></div>
 				<div><%= __('comment') %></div>
+				<div><%= __('share') %></div>
 			</div>
 			<div class="investment-title-2">	            
-				<%- partial('post/navigation', {number: 0}) %>  		
+				<%- partial('post/navigation', {type: 'narrow-navigation'}) %>  		
 			</div>	
 		</div>
 		
@@ -43,19 +45,20 @@
 				<%- partial('post-relate') %>	
 			</div>
 			<div class="investment-content-list">
-				<%- partial('third/comment') %>
+				<%- partial('plugin/comment') %>
+			</div>
+			<div class="investment-content-list">
+				<%- partial('plugin/share') %>
 			</div>
 		</div>	
 	</div>
+	</div>
 </div>
 
-<%- partial('third/statistics', {module: 'leancloud'}) %>
+<%- partial('plugin/statistics', {type: 'leancloud-count'}) %>
 
-<%- partial('third/math', {post: post}) %>
+<%- partial('plugin/mathjax', {post: post}) %>
 
-<%- partial('post/code-copy', {post: post}) %>
+<%- partial('plugin/clipboard', {post: post, type: "code-copy"}) %>
 
-<!-- TODO: There seems to be a bug when you close the post gallery! -->
 <%- partial('post/gallery', {post: post}) %>
-
-<%- partial('widget/toc', {post: post}) %>

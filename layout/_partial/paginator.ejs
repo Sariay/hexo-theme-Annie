@@ -1,10 +1,12 @@
-<% if( is_home() && number == 0 ) { %>
+<% if( is_home() && type == "infiniteLoading" ) { %>
 	<div id="pagination">
 		<% if (page.total > 1 && page.next_link){ %>
 			<a href="<%- url_for(page.next_link) %>" data-title="<%= __('load_more') %>" data-status="<%= __('load_end') %>"><%= __('load_more') %></a>
 		<% } %>
 	</div>
-<% } else { %>
+<% } %>
+	
+<% if( type == "pageLoading" ){ %>
 	<% if (page.total > 1){ %>
 		<ul class="pagination-2">
 			<% if (page.prev) { %>

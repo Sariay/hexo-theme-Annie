@@ -1,0 +1,45 @@
+<!--
+	时间：2018-10-3
+	描述：
+		插件名称：hexo-generator-search-zip
+		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
+		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
+-->
+<div class="popup search-popup local-search-popup" >
+	<div class="local-search-container">
+		<span class="popup-btn-close">
+      		ESC
+   		</span>
+		<div class="local-search-header">
+			<div class="input-prompt">				
+			</div>
+			<input autocomplete="off" placeholder="Search..." type="text" id="local-search-input">
+		</div>
+		<div class="local-search-body">
+			<div id="local-search-output"></div>
+		</div>
+		<div class="local-search-footer">
+			<div class="topN-post">				
+				<%- partial('statistics/topN-post') %>								
+			</div>
+		</div>
+	</div>
+</div>
+
+<%- js(['plugin/search/ziploader.js','plugin/search/search.js']) %>
+
+<script type="text/javascript">
+	var search_path = '<%= config.search.path %>',
+		zip_Path = '<%- config.root %><%= config.search.zipPath %>',
+		version_Path = '<%- config.root %><%= config.search.versionPath %>',
+		input_Trigger = '<%= theme.local_search.trigger %>',
+		top_N = '<%= theme.local_search.top_n_per_article %>';
+
+	themeLocalSearch({
+		search_path, 
+		zip_Path, 
+		version_Path, 
+		input_Trigger, 
+		top_N
+	});
+</script>

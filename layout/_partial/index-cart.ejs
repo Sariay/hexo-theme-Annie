@@ -3,7 +3,8 @@
 		<% page.posts.each( function( post, i ) { %>
 		<div class="post" id="post">
 			<a class="post-cover" href="<%- url_for(post.path) %>" title=" <%= post.title %> ">
-				<%- image_tag(post.cover || theme.cover, {class: ""}) %>
+				<%# image_tag(post.cover || theme.cover, {class: "lazy"}) %>
+				<img class="lazy" src="<%= theme.lazy_image %>" data-src="<%= post.cover || theme.cover %>"/>
 			</a>
 
 			<div class="post-text">
@@ -26,12 +27,12 @@
 				</p>
 				<p class="post-meta">
 					<%- partial('post-like',{post: post}) %>
-					<%- partial('third/statistics', {module: 'leancloud'}) %>
+					<%- partial('plugin/statistics', {type: 'leancloud-count'}) %>
 				</p>
 			</div>
 		</div>
 		<% }); %>
 	</div>
 	
-	<%- partial('paginator', {number: 0}) %>
+	<%- partial('paginator', {type: "infiniteLoading"}) %>
 </div>

@@ -1,0 +1,13 @@
+<ul>
+	<% for(var i in theme.menu) { %>
+		<li class="menu-<%= i %>">
+			<a href="<%- url_for(theme.menu[i]) %>" class="menu-item-<%= i %>"><%- __(i) %></a>
+		</li>
+	<% } %>
+
+	<% if (theme.local_search.enable) { %>
+		<li class="menu-search">
+			<a href="javascript:;" class="popup-trigger"><%= __('search') %></a>
+		</li>
+	<% } %>
+</ul>

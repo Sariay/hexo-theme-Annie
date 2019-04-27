@@ -1,0 +1,10 @@
+<% if (theme.tencent_analytics.enable) { %>
+<script type="text/javascript">
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "//tajs.qq.com/stats?sId=<%- theme.tencent_analytics.id %>";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+<% } %>

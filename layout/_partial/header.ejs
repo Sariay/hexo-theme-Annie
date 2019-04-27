@@ -1,16 +1,16 @@
 <!-- Preloader -->
 <% 
 	if(theme.preloader.enable) { 
-		var animation = theme.preloader.animation;
+		const animation = theme.preloader.animation;
 %>
 	<div id="preloader">
 		<div class="pre-container">
-			<% if( animation === 'spinner' ) { %>
+			<% if( animation == 'spinner' ) { %>
 				<div class="spinner">
 					<div class="double-bounce1"></div>
 					<div class="double-bounce2"></div>
 				</div>
-			<% } else if( animation === 'transition' ){ %>
+			<% } else if( animation == 'transition' ){ %>
 				<div class="transition">
 					<div class="three-bounce1"></div>
 					<div class="three-bounce2"></div>
@@ -31,120 +31,84 @@
 %>
 
 <!-- header -->
-<header class="fixbackground" data-img-mode="<%- theme.background_image.mode %>" data-normal-src="<%- url_for(theme.background_image.normal_url) %>" data-random-max="<%- theme.background_image.random_max %>" data-random-src="<%- url_for(theme.background_image.random_url) %>">
+<header class="fixbackground" data-img-mode="<%= theme.background_image.mode %>" data-normal-src="<%- url_for(theme.background_image.normal_url) %>" data-random-max="<%= theme.background_image.random_max %>" data-random-src="<%- url_for(theme.background_image.random_url) %>">
 	<div class="mask">
+		<!-- Logo and navigation -->
 		<div class="h-header">
-			<div id="logo-S">
-				<% if(theme.avtor) { %>
-					<a href="/">
-						<%- image_tag(theme.avtor, {alt: 'Logo'}) %>
-					</a>
-				<% } else { %>
-					<a href="/">
-						<%= theme.say %>
-					</a>
-				<% } %>
+			<div id="logo">
+				<a href="/">
+					<% if(theme.logo) { %>	
+						<%- image_tag(theme.logo, {alt: 'Logo'}) %>
+					<% } else { %>
+						<%= theme.title || config.title %>
+					<% } %>
+				</a>
 			</div>
-			<!-- Navigation in header(id="navigation-S") -->
-			<div id="navigation-S">
-				<ul>
-					<% for(var i in theme.menu) { %>
-						<li class="menu-<%= i %>">
-							<a href="<%- url_for(theme.menu[i]) %>" class="menu-item-<%= i %>"><%- __(i) %></a>
-						</li>
-					<% } %>
-
-					<% if (theme.local_search.enable) { %>
-						<li class="menu-search">
-							<a href="javascript:;" class="popup-trigger" title="Search"><%= __('search') %></a>
-						</li>
-					<% } %>
-				</ul>			
+			
+			<div id="navigation-show">
+				<%- partial('nav') %>
 			</div>				
 		</div>
 
+		<!-- motto -->
 		<div class="h-body">	
-			<!-- motto -->
 			<% if(theme.motto.enable) { %>
-				<div id="page-motto">
-					<p class="motto">
-						
-					</p>
-				</div>
+				<p class="motto"></p>
 			<% } %>
-
-			<div id="navigation-H">
-				<!-- Page title -->
-				<p>
-					<% if( is_home() ) { %>
-						<%= __('home') %>
-					<% } else if ( is_archive() ) { %>
-						<%= __('archive_a') %>
-					<% } else if( is_current('categories/index.html') ) { %>
-						<%= __('categories') %>
-					<% } else if( is_current('tags/index.html') ) { %>
-						<%= __('tags') %>
-					<% } else if( is_post() ) { %>
-						<%= __('current_post') %>&nbsp;:&nbsp;《<%= page.title %>》
-					<% } else { %>
-						<%= page.title %>
-					<% } %>
-				</p>
-				<!-- Progress bar -->
-				<div id="progress-bar"></div>
-
-				<!-- Progress percent -->
-				<div id="progress-percentage">
-					<h1>0.0%</h1>
-				</div>
-			</div>
 		</div>
 		
 		<!-- others: such as time... -->			
 		<div class="h-footer">
-			<ul>
-				<li>
-					<a><i class="fa fa-camera-retro" onclick="changeHeaderBg()"></i>切换背景</a>
-				</li>
-				<li>
-					<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down"></i>继续阅读</a>
-				</li>
-				<li>
-					<a href="https://github.com/Sariay/hexo-theme-Annie" target="_blank"><i class="fa fa-download"></i>克隆主题</a>
-				</li>
-			</ul>
+			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			</a>
+
+			<% if(theme.timejs.enable) { %>
+				<%- partial('widget/time-js') %>
+			<% } %>
 		</div>
-		
-		<%- partial('widget/date')%>
+	</div>
 </header>
 
-<!-- Navigation in div(id="navigation-H") -->
-<a class="nav-trigger">
-	<span></span>
-</a>
+<div id="navigation-hide">
+	<!-- Progress bar -->
+	<div id="progress-bar"></div>
 
+	<!-- Progress percent -->
+	<div id="progress-percentage"><h1>0.0%</h1></div>
+
+	<div class="toc-switch"><span class="switch-button"><%= __('toc_switch') %></span></div>
+
+	<!-- Page title -->
+	<p>
+		<% if( is_home() ) { %>
+			<%= __('home') %>
+		<% } else if ( is_archive() ) { %>
+			<%= __('archive_a') %>
+		<% } else if( is_current('categories/index.html') ) { %>
+			<%= __('categories') %>
+		<% } else if( is_current('tags/index.html') ) { %>
+			<%= __('tags') %>
+		<% } else if( is_post() ) { %>
+			<%= __('current_post') %>&nbsp;:&nbsp;《<%= page.title %>》
+		<% } else { %>
+			<%= page.title %>
+		<% } %>
+	</p>
+
+	<!-- Nav trigger for navigation-H-->
+	<a class="nav-trigger"><span></span></a>
+</div>
+
+<!-- Navigation in div(id="navigation-H") -->
 <nav class="nav-container" id="cd-nav">
 	<div class="nav-header">
 		<h3>Navigation</h3>
 		<a href="javascript:;" class="nav-close"></a>
 	</div>
 	<div class="nav-body">
-		<ul>
-			<% for(var i in theme.menu) { %>
-				<li class="menu-<%= i %>">
-					<a href="<%- url_for(theme.menu[i]) %>" class="menu-item-<%= i %>"><%- __(i) %></a>
-				</li>
-			<% } %>
-
-			<% if (theme.local_search.enable) { %>
-				<li class="menu-search">
-					<a href="javascript:;" class="popup-trigger" title="Search"><%= __('search') %></a>
-				</li>
-			<% } %>
-		</ul>
+		<%- partial('nav') %>
 	</div>
-
 	<div class="nav-footer">
-		<%- partial('social') %>
+		<%- partial('footer-social') %>
 	</div>
 </nav>

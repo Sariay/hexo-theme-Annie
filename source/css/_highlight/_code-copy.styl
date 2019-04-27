@@ -1,0 +1,39 @@
+.copy-nav {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    margin-bottom: 0px;
+    color: $highlight-gutter.color;
+    background: $highlight-gutter.bg-color;
+    // z-index: 5;
+
+    &:before {
+        content: " ";
+        background: #fc625d;
+        width: 12px;
+        height: 12px;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+        box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+        position: absolute;
+        left: 10px;
+        // z-index: 5;
+    }
+    .code-language {
+        font-style: italic;
+        margin-left: 82px;
+        text-transform: uppercase;
+    }
+    .copy-btn {
+        position: absolute;
+        right: 5px;
+        opacity: 1;
+        transition: opacity .3s ease-in-out;
+        cursor: pointer;
+    }
+    .copy-status {
+        color: orange;
+    }
+}

@@ -1,0 +1,29 @@
+<div class="layout-comment">
+
+	<% if(theme.comment.enable) { %>
+
+		<% if(theme.gitalk.enable) { %>
+
+			<!-- gitalk comment -->
+			<%- partial('comment/gitalk') %>
+
+		<% } else if(theme.valine.enable && !theme.leancloud_count.enable) { %>
+
+			<!-- valine comment -->
+			<%- partial('comment/valine') %>
+
+		<% } else if(theme.livere.enable) { %>
+			
+			<!-- livere comment -->
+			<%- partial('comment/livere') %>
+			
+		<% } else { %>
+
+			<!-- I don't know !!!-->
+			<div>Please check the comment setting in config.yml of hexo-theme-Annie!</div>
+			
+		<% } %>
+		
+	<% } %>
+
+</div>

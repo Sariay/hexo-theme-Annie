@@ -1,4 +1,4 @@
-<% if(number == 0) { %>
+<% if(type == 'narrow-navigation') { %>
 	<span>
 		<a href="javascript: window.scrollTo(0, 0);"><%= __('to_top') %></a>
 		<% if (page.prev) { %>
@@ -12,7 +12,9 @@
 			</a>
 		<% } %>	
 	</span>
-<%} else { %>
+<% } %>
+
+<% if(type == 'wide-navigation') { %>
 	<ul class="pagination-2">
 		<% if (page.prev) { %>
 			<li class="pagination-2-prev">

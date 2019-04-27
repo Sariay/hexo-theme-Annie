@@ -5,13 +5,7 @@
 <div class="layout-archive">
     <div class="i-container">
         <i class="fa fa-book">
-			<% if(is_category()) { %>
-				<%= page.category %> <%= page.posts.length %> <%= __('pian') %>
-			<% } else if(is_tag()) { %>
-				<%= page.tag %> <%= page.posts.length %> <%= __('pian') %>
-			<% } else {%>
-				<%= __('total') %> <%= site.posts.length %> <%= __('pian') %> <%= __('post') %>
-			<% } %>
+			<%- partial('post-number') %>
 		</i>
     </div>
 
@@ -94,6 +88,6 @@
     </div>
 
     <% if(is_tag() || is_category()){ %>
-        <%- partial('paginator', {number: 2}) %>
+        <%- partial('paginator', {type: "pageLoading"}) %>
     <% } %>
 </div>

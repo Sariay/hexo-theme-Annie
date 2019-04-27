@@ -1,0 +1,34 @@
+<div class="layout-share">
+	
+	<% if(theme.share.enable) { %>
+
+		<% if(theme.addThis.enable) { %>
+
+			<!-- addThis share -->
+			<%- partial('share/addThis') %>
+
+		<% } else if(theme.baiduShare.enable) { %>
+
+			<!-- baiduShare share -->
+			<%- partial('share/baidu-share') %>
+
+		<% } else if(theme.shareThis.enable) { %>
+			
+			<!-- shareThis share -->
+			<%- partial('share/shareThis') %>
+			
+		<%} else if(theme.socialShare.enable){%>
+			
+			<!-- socialShare share -->
+			<%- partial('share/social-share') %>
+			
+		<% } else { %>
+
+			<!-- I don't know !!!-->
+			<div>Please check the share setting in config.yml of hexo-theme-Annie!</div>
+			
+		<% } %>
+		
+	<% } %>
+</div>
+

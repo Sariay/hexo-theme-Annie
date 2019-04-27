@@ -1,4 +1,4 @@
-# 01-header
+# 01-HEADER
 # menu
 menu:
     home: /
@@ -6,41 +6,49 @@ menu:
     categories: /categories
     tags: /tags
     about: /about
+    #gallery: http://gallery.sariay.me/
     gallery: /gallery
 
 # favicon & avtor
 # if the value of avtor is false, the 'say' is optional.
 favicon: /img/favicon.ico
-avtor: /img/logo.png
-say: Welcome 
+logo: /img/logo5.png
+title: Welcome 
 
 # background_image
-# /img/1.jpg
+# /img/01.jpg
 # https://source.unsplash.com/collection/954550/1920x1080
 # https://sariay.github.io/Random-img/
+# https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/
 # May be cause CROS bug!
 background_image:
-    mode: normal #normal or random
+    mode: random #normal or random
     normal_url: /img/1.jpg
     random_max: 110 
-    random_url: https://sariay.github.io/Random-img/
+    random_url: https://annie-header-bg-1253939655.cos.ap-beijing.myqcloud.com/
     
 # show motto
 motto:
+    enable: true
+    
+# show current time
+# This is only a demo, please go to "https://time.is" to set your city time!
+timejs:
     enable: true
 
 # 02-PROLOADER
 # animation: spinner, transition or cyclic
 preloader:
     enable: true
-    animation: transition
+    animation: spinner
 
 # 03-INDEX
-# index-style: pure, cart
+# index-style: pure, cart or poem
 index_style: cart
 
 # index_cart_cover
 cover: /img/cart_cover.jpg
+lazy_image: /img/placeholder.jpg
 
 # 04-POST
 # post_relate
@@ -54,9 +62,9 @@ comment:
     enable: true
 
 gitalk:
-    enable: false
-    clientID: '333--' 
-    clientSecret: '333--' 
+    enable: true
+    clientID: 'bf19f33d43d567dce87e' 
+    clientSecret: '32f473f6f860a8f82ae10fcfd978c83c0954b93f' 
     repo: annie-gitalk 
     owner: Sariay 
     admin: Sariay 
@@ -66,8 +74,8 @@ gitalk:
     
 valine: 
     enable: false
-    appid: 'DU--'
-    appkey: 'DU--'
+    appid: 'DU84u3YWC8In5QjcOvBiDFlo-gzGzoHsz'
+    appkey: 'Ae6l2pVhIBRlKbN115rMdn8K'
     placeholder: no any!
     
 livere: 
@@ -77,8 +85,8 @@ livere:
 # post_count
 leancloud_count:
     enable: true
-    appid: 'dX--'
-    appkey: 'dx--'
+    appid: 'dX2cfN1apuSDGy1JIUwKBIA2-gzGzoHsz'
+    appkey: 'wzGaywJpxGEhEclcl87rdtHG'
     like_post:
         enable: true
     visit_post:
@@ -88,6 +96,18 @@ leancloud_count:
         limit: 10 #param2 for topN_post
 busuanzi_count:
     enable: true
+baidu_analytics:
+    enable: false
+    id: 
+cnzz_analytics:
+    enable: false
+    id:
+google_analytics:
+    enable: false
+    id:
+tencent_analytics:
+    enable: false
+    id:
 
 # post_toc
 post_toc:
@@ -96,47 +116,80 @@ post_toc:
     
 # post_mathJax
 mathjax:
-  enable: false
+  enable: true
   
 # post_code
+# normal | night | night blue | night bright | night eighties
+highlight_theme: night bright
 code_copy:
-    enable: false
+    enable: true
 
 # post_excerpt for index page
 excerpt_cart: 80
 excerpt_pure: 300   
 excerpt_link: true
 
+# post_share
+share:
+    enable: true
+# 注意浏览器的内容拦截插件
+#https://www.addthis.com/
+addThis:
+    enable: false
+    id: ra-5c7a56e7cb0ee41e
+#http://share.baidu.com/code
+baiduShare: 
+    enable: false
+    style: button # you can add slide style!
+#https://www.sharethis.com/onboarding-cms/    
+shareThis:
+    enable: false
+    id: 5c862b0996ec580017cff2d3
+    
+#https://github.com/overtrue/share.js
+socialShare:
+    enable: true
+
 # 05-FOOTER
 # social
 social:
-    enable: true
-    github: http://github.com/
-    weibo: http://github.com/
-    email: mailto:http://github.com/
-    qq: http://github.com/
-    twitter: http://github.com/
+    github:
+        url: http://github.com/
+        icon: fa fa-github
+    weibo:
+        url: http://github.com/
+        icon: fa fa-weibo    
+    pinterest: 
+        url: http://github.com/
+        icon: fa fa-pinterest
+    instagram:
+        url: http://github.com/
+        icon: fa fa-instagram
+    twitter:
+        url: http://github.com/
+        icon: fa fa-twitter
+    rss: 
+        url: /atom.xml
+        icon: fa fa-rss
 
 # copyright  
 since: 2017
-cotent_author: 
+cotent_author: Sariay
 
 # 06-OTHERS
-# rss
-rss: /atom.xml
 
-# gallery 
+# gallery page
 # format: natural or square
 gallery_format: natural
 # one time to load 4 rows or other count, 0 to load img automatically when scrolling.(0,1,2,3,4,5,6......)
 gallery_limit: 0
 # data url
-gallery_data: gallery/data.json
+gallery_data: plugin/gallerypage/data.json
 
 # Local search
 # Dependencies: https://github.com/flashlab/hexo-generator-search
 local_search:
-    enable: false
+    enable: true
     # if auto, trigger search by changing input
     # if manual, trigger search by pressing enter key or search button
     trigger: auto

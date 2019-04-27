@@ -36,10 +36,12 @@ category_categories: 分類
 current_post: 當前文章
 recent_posts: 最新文章
 related_posts: 相關文章
+popular_post: 熱門文章
 publish_date: 發佈於
 update_date: 更新於
 split_line: /
 toc: 文章目錄
+toc_switch: 目錄
 tweets: 推文
 comment: 留言
 hits: 熱度

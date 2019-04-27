@@ -38,10 +38,12 @@ category_categories: categorie
 current_post: Current post
 recent_posts: Recent post
 related_posts: Related post
+popular_post: Popular post
 publish_date: Posted on
 update_date: Updated on
 split_line: /
 toc: Catalog
+toc_switch: Catalog
 tweets: Tweets
 comment: Comment
 hits: Hits

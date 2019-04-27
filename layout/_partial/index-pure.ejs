@@ -21,12 +21,12 @@
 					<span>
 						<%= __('publish_date') %>
 						<i>
-							<%- partial('post/date', {post: post, date_format: null}) %>
+							<%- partial('post/date', {post: post, date_format: null, type: 'common'}) %>
 						</i>
 					</span>
-					<%= __('split_line')%>
+					
 					<%- partial('post-like',{post: post}) %>
-					<%- partial('third/statistics', {module: 'leancloud'}) %>
+					<%- partial('plugin/statistics', {type: 'leancloud-count'}) %>
 					<% if (theme.excerpt_link){ %>
 						<span class="right">      	
 							<%- link_to(post.path, __('view_all'), {external: false}) %>	
@@ -38,5 +38,5 @@
 	<% }); %>
 	</div>
 
-	<%- partial('paginator', {number: 0}) %>
+	<%- partial('paginator', {type: "infiniteLoading"}) %>
 </div>

@@ -2,12 +2,12 @@
 	const indexStyle = theme.index_style;
 %>
 
-<% if(indexStyle === 'pure'){ %>
+<% if(indexStyle == 'pure'){ %>
 
 	<!--pure style-->
 	<%- partial('_partial/index-pure') %>
 
-<% } else if(indexStyle === 'cart'){ %>
+<% } else if(indexStyle == 'cart'){ %>
 
 	<!--cart style-->
 	<%- partial('_partial/index-cart') %>

@@ -213,13 +213,22 @@ function topNPost(Counter, limitCount) {
     query.limit(limitCount); 		//限制n篇
     query.find().then(
         function(results) {
-            for (var i = 0; i < limitCount; i++) {
-                var temporaryV = results[i],
-                    url = temporaryV.get('url'),
-                    title = temporaryV.get('title'),
-                    visitors = temporaryV.get('visitors');
-                var content = "<ul class='topN-post-list'>" + "<li class='topN-post-item'>"  + "<a class='item-title' href='" + url + "'>" + title + "</a>"+ "<i class='item-visitors'>" + "【文章热度:" + visitors + "℃】" + "</i>" + "</li>" + "</ul>";
-                document.getElementById("topN").innerHTML += content;
+            var smallerValue = (limitCount > results.length) ? results.length : limitCount;
+
+            if (smallerValue > 0) {
+                for (var i = 0; i < smallerValue; i++) {
+                    var temporaryV = results[i],
+                        url = temporaryV.get('url'),
+                        title = temporaryV.get('title'),
+                        visitors = temporaryV.get('visitors');
+                    var topNumber = i + 1,     
+                        topContent = "<ul class='topN-post-list'>" + "<li class='topN-post-item'>"  +"<span class='item-topNumber'>" + "TOP" + topNumber + "</span>" + "<a class='item-title' href='" + url + "'>" + title + "</a>"+ "<i class='item-visitors'>" + "【文章热度:" + visitors + "℃】" + "</i>" + "</li>" + "</ul>";     
+                    $("#topN").append(topContent);
+                }
+                        
+                var	topTitleId = '.topN-title',
+                	topTitle = $(topTitleId).attr('data-title').trim();           
+                $(topTitleId).text(topTitle + "(" + smallerValue + " posts)" );              
             }
             console.log('Succed to find topNPost.');
         },

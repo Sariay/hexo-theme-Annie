@@ -1,0 +1,9 @@
+<ul>
+	<% for(var i in theme.social) { %>
+		<li>
+			<a href="<%- url_for( theme.social[i].url ) %>" target="_blank">
+				<i class="<%- theme.social[i].icon %>"></i>
+			</a>
+		</li>
+	<% } %>		
+</ul>
