@@ -15,7 +15,7 @@ Annie是一个简单的Hexo博客主题，如果你喜欢散文、诗歌、小�
 10. 文章点赞模块：leancloud
 11. 文章阅读模块：toc目录、进度条、进度百分比
 12. 文章代码模块：代码复制、代码语言提示、5种高亮主题（[Refer & use Next' theme](https://github.com/iissnan/hexo-theme-next/)）
-13. 文章Markdown：支持数学公式(MathJax），color quote（[Refer & use Minos' theme](https://github.com/ppoffice/hexo-theme-minos/blob/master/scripts/99_tags.js) ）
+13. 文章Markdown：支持数学公式(MathJax)，color quote([Refer & use Minos' theme](https://github.com/ppoffice/hexo-theme-minos/blob/master/scripts/99_tags.js))
 14. 站点分析模块：baidu_analytics 、cnzz_analytics 、google_analytics 、tencent_analytics:
 15. 站点文章搜索：local search
 16. 多语言支持：中文简体、中文繁体、英文
