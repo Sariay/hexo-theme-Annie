@@ -3,7 +3,7 @@ function init(Counter) {
     var post_url = $(".leancloud_visitors").attr('data-url').trim() || $(".leancloud_likes").attr('data-url').trim(),
         post_title = $(".leancloud_visitors").attr('data-title').trim() || $(".leancloud_likes").attr('data-title').trim(),
         post_likes = 0,
-        post_visitors = 0;
+        post_visitors = 1;
 
     //新建对象之前判断对象是否存在，不存在则创建
     var query = new AV.Query(Counter);
@@ -19,7 +19,7 @@ function init(Counter) {
                 newcounter.set("url", post_url);
                 newcounter.set("title", post_title);
                 newcounter.set("visitors", post_visitors);
-                newcounter.set("likes", post_visitors);
+                newcounter.set("likes", post_likes);
                 newcounter.save().then(
                     function(newcounter) {
                         // 成功保存之后，执行其他逻辑.
