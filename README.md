@@ -166,6 +166,8 @@ git pull
 
 ![主题交流群](source/img/Annie_qq_qrcode.jpg)
 
+![主题交流群](https://github.com/Sariay/hexo-theme-Annie/blob/master/source/img/Annie_qq_qrcode.jpg)
+
 ### Contributor
 
 欢迎各种形式的贡献。
