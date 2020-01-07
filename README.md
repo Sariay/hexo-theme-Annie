@@ -1,4 +1,6 @@
 # Annie theme
+[![GitHub issues](https://img.shields.io/github/issues/Sariay/hexo-theme-Annie?style=for-the-badge)](https://github.com/Sariay/hexo-theme-Annie/issues)  ![GitHub top language](https://img.shields.io/github/languages/top/Sariay/hexo-theme-Annie?style=for-the-badge)  [![GitHub license](https://img.shields.io/github/license/Sariay/hexo-theme-Annie?style=for-the-badge)](https://github.com/Sariay/hexo-theme-Annie/blob/master/LICENSE)
+
 Annie是一个简单的Hexo博客主题，如果你喜欢散文、诗歌、小说......那么它可能合你心意!  [☞预览 | PREVIEW](https://sariay.github.io/2019/03/12/相册主题Dream介绍/)
 
 ### Features
@@ -131,19 +133,21 @@ code_copy:
 
 文章的模板样例如下，cover即为文章封面图的路径，你可以使用相对路径或绝对路径。
 
-```
+```markdown
+---
 title: {{ title }}
 date: {{ date }}
 cover: https://.../
 categories: categories
 tags: tags
+---
 ```
 
 ### Theme update
 
 如果你使用主题后，几乎未改动代码，那么可以使用下面的`命令行`更新主题。
 
-```
+```bash
 cd themes/Annie
 git pull
 ```
@@ -152,21 +156,19 @@ git pull
 
 ### Other questions
 
-如果你有问题反馈:  [issues](https://github.com/Sariay/hexo-theme-Annie/issues) | 1261347403@qq.com（请务必先于**issues**中寻找答案）
+如果你有问题反馈:  [issues](https://github.com/Sariay/hexo-theme-Annie/issues) 						（请务必先于**issues**中寻找答案）
 
 如果你喜欢该主题:  [star](https://github.com/Sariay/hexo-theme-Annie)						（**star**越多，更新的动力越大😂）
 
 如果你想定制主题:  [fork](https://github.com/Sariay/hexo-theme-Annie/fork)						（当然，**Annie**亦期待你的贡献）
 
+主题交流群如下，招募群主！（1023390049，口令ANNIE）
+
+![主题交流群](source/img/Annie_qq_qrcode.jpg)
+
 ### Contributor
 
-一些pull request的代码由于项目重构而未能进行merge（或者issues），重构过程中参考了这些issues。
-
-zxdawn [#6](https://github.com/Sariay/hexo-theme-Annie/issues/6)
-
-Dinghow [#10](https://github.com/Sariay/hexo-theme-Annie/pull/10)
-
-miracleqi [#16](https://github.com/Sariay/hexo-theme-Annie/issues/16)
+欢迎各种形式的贡献。
 
 ### Todo
 
@@ -183,6 +185,16 @@ miracleqi [#16](https://github.com/Sariay/hexo-theme-Annie/issues/16)
 - [ ] 语言支持优化 [4](https://github.com/Sariay/hexo-theme-Annie/issues/6#issue-369754545)
 - [ ] 相册图片利用 [5](https://github.com/Sariay/hexo-theme-Annie/issues/6#issue-369754545)
 - [ ] valine与<u>文章阅读计数</u>的冲突问题，参考[valine官网](https://valine.js.org/visitor.html)、[next主题案例](https://valine.js.org/visitor.html)（注：当前使用DesertsP版的[valine](https://github.com/DesertsP/Valine)）
+- [ ] ...
+
+2020.1.7 日新增，<u>欢迎填坑！</u>
+
+- [ ] 评论插件：[hypercomments](https://www.hypercomments.com/en/demo?type=blogs#) 、[utterances](https://utteranc.es/)、[畅言云评](http://changyan.kuaizhan.com/packages-intro)
+- [ ] 相册页：寻找替代品
+- [ ] 多语言站点：接入翻译接口
+- [ ] 优化布局：index-pure
+- [ ] 在线聊天：daovoice 
+- [ ] 增加二维码：便于文章分享和阅读
 - [ ] ...
 
 ### Thanks
