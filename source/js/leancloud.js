@@ -298,7 +298,11 @@ function addCookieById(cname, id, exdays) {
 
 //调用函数add或者show数据
 function AnnieLeancloud(appid, appkey){
-    AV.initialize(appid, appkey);
+    if (!AV.applicationId)
+    {
+        AV.initialize(appid, appkey);
+    }
+    
     
     var Counter = AV.Object.extend("Counter");
      
