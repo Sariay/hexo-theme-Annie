@@ -56,7 +56,13 @@
 	<%- js(['js/jquery.min.js'])%>
 
   <!-- leancloud -->
+  <!--
+    去掉了av-core-min.js.它与av-min.js是一个作用,与leancloud建立初始化连接的,提供API接口,
+    如果出现 AV.initialize未定义,将leancloud.js中的 AV.initialize改为AV.init()
+    Valine.js其实有引用av.js的链接,此处引用,只是为了让leancloud.js使用,还未想好如何只引用一个
+  -->
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+
   <%- js([
   				'js/leancloud.js'
   			])

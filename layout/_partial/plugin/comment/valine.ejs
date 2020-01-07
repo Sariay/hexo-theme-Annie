@@ -2,10 +2,15 @@
 <div id="valineComment" class="comment"></div>
 
 <!-- valine`s js & css -->
-
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<!--
+	Valine.js其实有引用av.js的链接,所以不用再引入av.js,或者声明AV了,
+-->
 <link rel="stylesheet" href="/css/comment.css">
 <script>
+	/*
+	使用valine请不要将valine的评论功能打开
+	*/
 	if( $('#valineComment').length ) {
 		new Valine({
 			//使用id寻找div元素（使用class可能找不到?）

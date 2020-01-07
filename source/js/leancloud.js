@@ -298,12 +298,21 @@ function addCookieById(cname, id, exdays) {
 
 //调用函数add或者show数据
 function AnnieLeancloud(appid, appkey){
+    /*
+    valine.js会有AV.init(),所以会与该处的初始化重复,
+    如果该处没有初始化,首页将提示未初始化AV;没有统计,点赞效果,以及文章排名,但是不影响文章页;
+    如果该处初始化了,首页有效果,但是文章页的统计以及点赞效果会被覆盖,我猜想与valine.js有关,
+    
+        Valine会自动查找页面中class值为leancloud_visitors的元素，获取其id为查询条件。
+        并将得到的值填充到其class的值为leancloud-visitors-count的子元素里,
+        leancloud_visitors刚好是由本js文件生成的,所以对统计插入的时候会冲突(同时影响到点赞效果)
+        所以舍弃了valine.js的统计效果(键为'time',该字段依旧保存在leancloud存储上,但是不会使用到),
+        使用本js的统计效果(键为'visitors')
+    */
     if (!AV.applicationId)
     {
         AV.initialize(appid, appkey);
     }
-    
-    
     var Counter = AV.Object.extend("Counter");
      
     function AnnieAddData(){
