@@ -90,7 +90,7 @@ livere:
     
 # post_count
 leancloud_count:
-    enable: falsed
+    enable: false
     appid: 'dX--'
     appkey: 'dX--'
     like_post:
