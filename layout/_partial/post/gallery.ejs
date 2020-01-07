@@ -13,14 +13,14 @@
 			imgTitle = $(this).attr('alt') ? $(this).attr('alt') : "No image description!";
 
 		//给每个匹配的<img>元素打包, 即添加父元素<a>
-		$(this).wrap('<a data-fancybox="gallery" data-caption=" 《 ' + postTitle + ' 》 ' + imgTitle + ' "  href=" ' + imgPath + ' "> </a>');
+		$(this).wrap('<a data-fancybox="gallery" data-caption="《' + postTitle + '》' + imgTitle + '"  href="' + imgPath + '"> </a>');
 	});
 
 	videoID.each(function() {
 		var videoPath = $(this).attr('src');
 
 		//给每个匹配的<img>元素打包, 即添加父元素<a>
-		$(this).wrap('<a data-fancybox href=" ' + videoPath + ' "> </a>');
+		$(this).wrap('<a data-fancybox href="' + videoPath + '"> </a>');
 	});
 	//TODO：支持html5 video
 
