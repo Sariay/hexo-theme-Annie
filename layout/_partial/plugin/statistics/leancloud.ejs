@@ -15,15 +15,14 @@
 			04-likes相关的函数，
 				参考了01 & 02进行简单的设计与实现
 -->
-<% 
+<%
 	var lean = theme.leancloud_count; 
 %>
-<% if( lean.enable && ( lean.like_post.enable || lean.visit_post.enable)){ %>
-
-	<script>
-		var appid = '<%= lean.appid %>',
-            appkey = '<%= lean.appkey %>';	  
-        AnnieLeancloud(appid, appkey);         
-	</script>
-    
+<% if( lean.enable && ( lean.like_post.enable || lean.visit_post.enable ||lean.topN_post.enable)){ %>
+  <%- js([
+			//'<script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.1.0/dist/av-min.js"></script>', 
+			'plugin/leancloud/av-min.js',
+			'js/leancloud-count.js'
+  		])
+  %>
 <% } %>

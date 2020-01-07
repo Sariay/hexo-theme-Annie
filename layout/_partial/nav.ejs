@@ -1,8 +1,9 @@
-<ul>
+<ul id="global-nav">
 	<% for(var i in theme.menu) { %>
 		<li class="menu-<%= i %>">
-			<a href="<%- url_for(theme.menu[i]) %>" class="menu-item-<%= i %>"><%- __(i) %></a>
+			<a href="<%- url_for(theme.menu[i]) %>" class="menu-item-<%= i %>" target="_blank"><%- __(i) %></a>
 		</li>
+		
 	<% } %>
 
 	<% if (theme.local_search.enable) { %>

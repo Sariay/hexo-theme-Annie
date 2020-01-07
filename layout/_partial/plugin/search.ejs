@@ -5,7 +5,7 @@
 		插件来源: https://github.com/SuperKieran/hexo-generator-search-zip
 		代码参考：https://github.com/SuperKieran/TKL/blob/master/layout/_partial/search.ejs(Include: js & css)	
 -->
-<div class="popup search-popup local-search-popup" >
+<div class="popup search-popup local-search-popup scrollbar" >
 	<div class="local-search-container">
 		<span class="popup-btn-close">
       		ESC
@@ -26,7 +26,7 @@
 	</div>
 </div>
 
-<%- js(['plugin/search/ziploader.js','plugin/search/search.js']) %>
+<%- js(['plugin/search/ziploader.js','js/search.js']) %>
 
 <script type="text/javascript">
 	var search_path = '<%= config.search.path %>',

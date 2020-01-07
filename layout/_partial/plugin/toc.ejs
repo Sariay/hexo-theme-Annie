@@ -12,11 +12,10 @@
 	<% if(theme.post_toc.katelog) { %>
 		<div class="layout-toc">
 			<div id="layout-toc">
-				<div class="k-catelog-list" id="catelog-list" data-title="文章目录"></div>
+				<div class="k-catelog-list" id="catelog-list" data-title="<%= __('toc') %>"></div>
 			</div>
 		</div>
 
-		
 		<%- js('plugin/toc/katelog.min.js') %>
 
 	<% } else {%>

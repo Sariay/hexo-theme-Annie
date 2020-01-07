@@ -31,40 +31,24 @@
 %>
 
 <!-- header -->
-<header class="fixbackground" data-img-mode="<%= theme.background_image.mode %>" data-normal-src="<%- url_for(theme.background_image.normal_url) %>" data-random-max="<%= theme.background_image.random_max %>" data-random-src="<%- url_for(theme.background_image.random_url) %>">
+<header class="fixbackground bg-pan-br">
 	<div class="mask">
-		<!-- Logo and navigation -->
-		<div class="h-header">
-			<div id="logo">
-				<a href="/">
-					<% if(theme.logo) { %>	
-						<%- image_tag(theme.logo, {alt: 'Logo'}) %>
-					<% } else { %>
-						<%= theme.title || config.title %>
-					<% } %>
-				</a>
-			</div>
-			
-			<div id="navigation-show">
-				<%- partial('nav') %>
-			</div>				
-		</div>
-
 		<!-- motto -->
 		<div class="h-body">	
 			<% if(theme.motto.enable) { %>
-				<p class="motto"></p>
+				<div class="motto text-shadow-pop-left">
+					<p class="content" id="motto-content"><%= __('wait_cn') %></p>
+					<p>-<p>
+					<p class="author" id="motto-author"><%= __('wait_en') %></p>
+				</div>
 			<% } %>
 		</div>
 		
 		<!-- others: such as time... -->			
 		<div class="h-footer">
-			<a href="javascript:;" id="read-more"><i class="fa fa-angle-double-down" aria-hidden="true"></i>
+			<a href="javascript:;" id="read-more" class="scroll-down">
+				<span class="icon-anchor1 animation-scroll-down"></span>
 			</a>
-
-			<% if(theme.timejs.enable) { %>
-				<%- partial('widget/time-js') %>
-			<% } %>
 		</div>
 	</div>
 </header>
@@ -74,7 +58,7 @@
 	<div id="progress-bar"></div>
 
 	<!-- Progress percent -->
-	<div id="progress-percentage"><h1>0.0%</h1></div>
+	<div id="progress-percentage"><span>0.0%</span></div>
 
 	<div class="toc-switch"><span class="switch-button"><%= __('toc_switch') %></span></div>
 
@@ -89,11 +73,20 @@
 		<% } else if( is_current('tags/index.html') ) { %>
 			<%= __('tags') %>
 		<% } else if( is_post() ) { %>
-			<%= __('current_post') %>&nbsp;:&nbsp;《<%= page.title %>》
+			「<%= page.title %>」
 		<% } else { %>
 			<%= page.title %>
 		<% } %>
 	</p>
+
+	<% 
+		const leanC = theme.leancloud_count; 
+	%>
+	<% if( is_post() && leanC.enable && leanC.like_post.enable ){ %>
+		<span id="star-button" rel="unlike">
+			<i class="icon-heart"></i>
+		</span>
+	<% } %>
 
 	<!-- Nav trigger for navigation-H-->
 	<a class="nav-trigger"><span></span></a>
@@ -102,12 +95,16 @@
 <!-- Navigation in div(id="navigation-H") -->
 <nav class="nav-container" id="cd-nav">
 	<div class="nav-header">
-		<h3>Navigation</h3>
+		<span class="logo"> 
+			<%- image_tag( theme.logo) %>
+		</span>
 		<a href="javascript:;" class="nav-close"></a>
 	</div>
+	
 	<div class="nav-body">
 		<%- partial('nav') %>
 	</div>
+	
 	<div class="nav-footer">
 		<%- partial('footer-social') %>
 	</div>

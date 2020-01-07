@@ -1,20 +1,21 @@
 <footer>
-	<div class="social">
-		<%- partial('footer-social') %>
+	<div id="navigation-show">
+		<%- partial('nav') %>
 	</div>
-		
+
 	<div class="copyright">
 		<p>
 			<% if( theme.since && theme.since < date(new Date(), 'YYYY') ) { %> 
-				&copy;<%= theme.since %> - <%= date(new Date(), 'YYYY') %>, content by <%= theme.content_author || config.author || config.title %>. All Rights Reserved.
+				&copy;<%= theme.since %> - <%= date(new Date(), 'YYYY') %>, content by <%= theme.author || config.author || config.title %>. All Rights Reserved.
 			<% } else { %> 
-				&copy;<%= date(new Date(), 'YYYY') %>, content by <%= theme.author || config.content_author || config.title %>. All Rights Reserved.
+				&copy;<%= date(new Date(), 'YYYY') %>, content by <%= theme.author || config.author || config.title %>. All Rights Reserved.
 			<% } %>
 			
-			<%- partial('plugin/statistics', {type: 'busuanzi-count'}) %>
+				<%- link_to("http://hexo.io/", "Hexo", {external: true})%> Theme <%- link_to("https://github.com/Sariay/hexo-theme-Annie", "Annie", {external: true})%> by Sariay.
+			
 		</p>
 		<p>
-			<%- link_to("http://hexo.io/", "Hexo", {external: true})%> Theme <%- link_to("https://github.com/Sariay/hexo-theme-Annie", "Annie", {external: true})%> by Sariay.
+			<%- partial('plugin/statistics', {type: 'busuanzi-count'}) %>
 			<a href="javascript:zh_tran('s');" class="zh_click" id="zh_click_s">简体</a> 
 			<a href="javascript:zh_tran('t');" class="zh_click" id="zh_click_t">繁體</a>				
 		</p>

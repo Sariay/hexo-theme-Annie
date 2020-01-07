@@ -46,19 +46,29 @@
 
   <!-- css -->
   <%- 
-  	css([
-        'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css',			 			
+  	css([		
         'css/Annie.css'
   		])
   %>
   
   <!-- jquery -->
-	<%- js(['js/jquery.min.js'])%>
+	<%- js(['plugin/jquery/jquery.min.js'])%>
 
-  <!-- leancloud -->
-  <%- js([
-  				'https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js', 
-  				'js/leancloud.js'
-  			])
-  %>
+<script>
+    const CONFIG_BGIMAGE = {
+      mode: '<%= theme.background_image.mode %>',
+      normalSrc: '<%- url_for(theme.background_image.normal_url) %>',
+      randomYouMax: <%= theme.background_image.random_you_max %>,
+      randomYouSrc: '<%- url_for(theme.background_image.random_you_url) %>',
+	  randomOtherSrc: '<%- url_for(theme.background_image.random_other_url) %>',
+	  preloaderEnable: <%= theme.preloader.enable %>
+    }
+	
+    const CONFIG_LEACLOUD_COUNT = {
+      enable: <%= theme.leancloud_count.enable %>,
+	  appId: '<%= theme.leancloud_count.appid %>',
+	  appKey: '<%= theme.leancloud_count.appkey %>',
+	  serverURLs: '<%= theme.leancloud_count.serverURLs %>' || ' '
+    }
+  </script>
 </head>

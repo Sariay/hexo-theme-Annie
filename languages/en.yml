@@ -2,13 +2,17 @@
 home: Home
 archive: Archive
 archive_a: Archive
-archive_b: Archive：%s
+archive_b: Archive %s
 categories: Category
 tags: Tag
 about: About
 gallery: Gallery
 search: Search
 friend: Friend
+
+#header motto
+wait_cn: Fetching...
+wait_en: Just a minute...
 
 #navgation
 prev: Pre page
@@ -23,14 +27,10 @@ to_top: To Top
 page: Page:%d
 
 #archive page
-#pian post?
 total: Total
-pian:  pian
 post: post
 
 #tag & category page
-#ge?
-ge:  ge
 tag_tags: tag
 category_categories: categorie
 

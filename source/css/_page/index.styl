@@ -1,0 +1,169 @@
+/*--------------------------------------------------*/
+// Index - 主页
+/*--------------------------------------------------*/ 
+
+main {
+	width: 100%;
+	min-height: calc(100vh + 100px);
+	line-height: 2;
+}
+
+.layout-cart {
+	position: relative;
+	margin: 0em auto;
+	padding: 5em 0;
+}
+
+.layout-cart .post {
+	position: relative;
+	margin: 50px auto;
+	width: 1200px;
+}
+
+.layout-cart .post a {
+	border-bottom: none;
+}
+
+.layout-cart .post>a {
+	position: relative;
+	width: 680px;
+	height: 440px;
+	display: inline-block;
+	overflow: hidden;
+	background: #fff;
+	z-index: 2;
+}
+
+.layout-cart .post>a img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.layout-cart .post-cover {
+	overflow: hidden;
+}
+
+.layout-cart .post-text {
+	position: absolute;
+	top: 20px;
+	height: 398px;
+	width: 498px;
+	border: 1px solid #e0e0e0;
+	background: #fff;
+	text-align: left;
+}
+
+.layout-cart .post:nth-child(odd) {
+	text-align: left;
+}
+
+.layout-cart .post:nth-child(even) {
+	text-align: right;
+}
+
+.layout-cart .post:nth-child(odd) .post-text {
+	left: 660px;
+}
+
+.layout-cart .post:nth-child(even) .post-text {
+	right: 660px;
+}
+
+.layout-cart .post-text .post-time {
+	color: #999;
+	font-size: 12px;
+	margin: 80px 0 0 80px;
+}
+
+.layout-cart .post-text .post-title {
+	/*font-family: Georgia, Times New Roman, Times, serif;*/
+	font-size: 1.2rem;
+	font-weight: normal;
+	line-height: 1.5;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin: 10px 100px 0 80px;
+}
+
+.layout-cart .post-text .post-title a {
+	color: #222;
+}
+
+.layout-cart .post-text .post-content {
+	text-align: justify;
+	line-height: 2;
+	color: #555;
+	word-spacing: 2px;
+	letter-spacing: 0px;
+	word-break: break-word;
+	margin: 10px 100px 0 80px;
+}
+
+.layout-cart .post-text .post-meta {
+	position: absolute;
+	left: 80px;
+	bottom: 60px;
+	font-size: 12px;
+	color: #999;
+}
+
+.layout-cart .post-text .post-meta span {
+	margin-right: 16px;
+}
+
+.layout-pure {
+	/*For people who likes pure style*/
+	width: 60%;
+	height: auto;
+	margin: 0em auto;
+	padding: 5em 0;
+	.post {
+		width: 100%;
+		margin-bottom: 3.5em;
+		display: flex;
+		justify-content: center;
+		.post-text {
+			width: 100%;
+			opacity: 1;
+			padding: 0;
+			margin: 0;
+			display: block;
+			border-bottom: 1px solid #e0e0e0;
+			.post-title {
+				/*font-family: Georgia, Times New Roman, Times, serif;*/
+				font-size: 1.5rem;
+				line-height: 1.5;
+				text-align: left;
+				min-height: 20px;
+				margin: 0 0 0.1em 0;
+				padding: 0 0 0.1em 0;
+			}
+			.post-content {
+				text-align: justify;
+				line-height: 2;
+				word-spacing: 2px;
+				word-break: break-word;
+			}
+			.post-meta {
+				min-height: 20px;
+				padding: 0;
+				margin: 10px 0;
+				color: #999;
+				span {
+					margin-right: 16px;
+				}
+				span.right {
+					float: right;
+				}
+				a {
+					color: inherit;
+					&:hover{
+						color: #4183c4;
+					}
+				}
+			}
+		}
+	}
+}

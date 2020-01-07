@@ -2,43 +2,36 @@
 	<%- js('plugin/clipboard/clipboard.js') %>
 	<script>
 		// Copy code !
-	    function codePreprocessing() {
+	    function preprocessing() {
 	        $("#article-content .highlight").each(function() {
-
 	            $(this).wrap('<div id="post-code"></div>');
-
 	        })
 
 	        $("#article-content #post-code").each(function() {
-
 	            $(this).prepend('<nav class="copy-nav"><span><i class="code-language"></i></span></nav>');
-
 	        })
 
 	        $("#article-content .copy-nav").each(function() {
-	            var temp = $(this).next().attr('class'),
-	                language = ((temp.length > 9) && (temp != null)) ? temp.substr(10) : "none"; //why 9? Need to check language?
+	            let languageClass = $(this).next().attr('class'),
+	                language = ((languageClass.length > 9) && (languageClass != null)) ? languageClass.substr(10) : "none"; //why 9? Need to check language?
 
 	            $(this).find('.code-language').text(language);
-
-	            $(this).append('<span class="copy-btn"><i class="fa fa-copy" aria-hidden="true"></i></span>');
-
+	            $(this).append('<span class="copy-btn icon-paste"></span>');
 	        });
 	    }
 
-		function codeCopy() {
+		function copy() {
 		    $('#article-content #post-code').each(function(i) {
-		        var codeCopyId = 'codeCopy-' + i;
+		        let codeCopyId = 'codeCopy-' + i;
 
-		        var codeNode = $(this).find('.code'),
+		        let codeNode = $(this).find('.code'),
 		            copyButton = $(this).find('.copy-btn');
 
 		        codeNode.attr('id', codeCopyId);
 		        copyButton.attr('data-clipboard-target-id', codeCopyId);
 		    })
-
-		    
-			var clipboard = new ClipboardJS('.copy-btn', {
+   
+			let clipboard = new ClipboardJS('.copy-btn', {
 					target: function(trigger) {
 						return document.getElementById(trigger.getAttribute('data-clipboard-target-id'));
 					}
@@ -47,9 +40,9 @@
 			//pure js
 			function showTooltip(elem, msg) {		   
 				elem.setAttribute('aria-label', msg);
-				elem.setAttribute('class', 'copy-btn copy-status');
+				elem.setAttribute('class', 'copy-btn icon-clipboard1');
 				setTimeout(function() {
-					elem.setAttribute('class', 'copy-btn');
+					elem.setAttribute('class', 'copy-btn icon-paste');
 				}, 2000);
 			}
 
@@ -57,20 +50,20 @@
 			    e.clearSelection();
 			    console.info('Action:', e.action);		   
 			    console.info('Trigger:', e.trigger);
-			    showTooltip(e.trigger, 'Copied!');
-			    
+			    showTooltip(e.trigger, 'Copied!');   
 			});
+			
 			clipboard.on('error', function(e) {
 			    console.error('Action:', e.action);
 			    console.error('Trigger:', e.trigger);
 			});
-		
-
 		}
-
-		if ($('.layout-post').length) {
-		    codePreprocessing();
-		    codeCopy();
-		} 
+		
+		(function copyCode(){
+			if ($('.layout-post').length) {
+			    preprocessing();
+			    copy();
+			} 
+		})();
 	</script>
 <% } %>

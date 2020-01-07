@@ -11,31 +11,29 @@ menu:
     gallery: /gallery
 
 # favicon & logo
-# if the value of logo is false, the 'title' is optional.
 favicon: /img/favicon.ico
-logo: /img/logo.png
-title: Welcome 
+logo: /img/logo.png 
 
 # background_image
-# /img/1.jpg
-# https://source.unsplash.com/collection/954550/1920x1080
-# https://sariay.github.io/Random-img/
-# May be cause CROS bug!
+# mask_alpha: 0 ~ 1
+# mode: normal | random_you | random_other
+# normal_url: /img/header-bg.jpg
+# random_you_url: https://sariay.github.io/Random-img/
+# random_other_url: https://source.unsplash.com/collection/954550/1920x1080 | https://api.berryapi.net/?service=App.Bing.Images&day=-0
+mask_alpha: 0.4
 background_image:
-    mode: normal #normal or random
-    normal_url: /img/1.jpg
-    random_max: 110 
-    random_url: https://sariay.github.io/Random-img/
-    
-# show motto
-motto:
-    enable: true
-    
-# show current time
-# This is only a demo, please go to "https://time.is" to set your city time!
-timejs:
-    enable: true
+    mode: normal
+    normal_url: /img/header-bg.jpg 
+    random_you_max: 110 
+    random_you_url: https://sariay.github.io/Random-img/
+    random_other_url: https://api.berryapi.net/?service=App.Bing.Images&day=-0
 
+# motto 
+# source: local | hitokoto
+motto:
+	enable: true
+	source: local
+    
 #########################################################################################################
 # 002-PROLOADER
 #########################################################################################################
@@ -52,7 +50,7 @@ index_style: cart
 
 # index_cart_cover
 cover: /img/cart_cover.jpg
-lazy_image: /img/placeholder.jpg
+lazy_image: /img/lazy.gif
 
 #########################################################################################################
 # 004-POST
@@ -65,7 +63,7 @@ relate:
 
 # post_comment
 comment:
-    enable: true
+    enable: false
 
 gitalk:
     enable: false
@@ -91,18 +89,19 @@ livere:
 # post_count
 leancloud_count:
     enable: false
-    appid: 'dX--'
-    appkey: 'dX--'
+    appid: 'AU8...'
+    appkey: '4cU...'
+    serverURLs: 'http'
     like_post:
         enable: true
     visit_post:
         enable: true
     topN_post: 
-        enable: true #param1 for topN_post
-        limit: 10 #param2 for topN_post
+        enable: true 
+        limit: 10
 
 busuanzi_count:
-    enable: true
+    enable: false
 
 baidu_analytics:
     enable: false
@@ -127,7 +126,7 @@ post_toc:
     
 # post_mathJax
 mathjax:
-  enable: false
+  enable: true
   
 # post_code
 # highlight_theme: normal | night | night blue | night bright | night eighties
@@ -163,30 +162,37 @@ socialShare:
 #########################################################################################################
 # 005-FOOTER
 #########################################################################################################
-# social
+# social links
+# Check the icon in the page of Icomoon
 social:
-    github:
+	one: 
         url: http://github.com/
-        icon: fa fa-github
-    weibo:
+        icon: <span class="icon-one"><span class="path1"></span><span class="path2"></span></span>
+	zhihu: 
         url: http://github.com/
-        icon: fa fa-weibo    
-    pinterest: 
+        icon: <span class="icon-zhihu"></span>
+	github:
         url: http://github.com/
-        icon: fa fa-pinterest
-    instagram:
+        icon: <span class="icon-github"></span>
+	weibo: 
         url: http://github.com/
-        icon: fa fa-instagram
-    twitter:
+        icon: <span class="icon-sina-weibo "></span>   
+	pinterest: 
         url: http://github.com/
-        icon: fa fa-twitter
-    rss: 
+        icon: <span class="icon-pinterest2"></span>   
+	instagram:
+        url: http://github.com/
+        icon: <span class="icon-instagram"></span>   
+	twitter:
+        url: http://github.com/
+        icon: <span class="icon-twitter"></span>   
+	rss: 
         url: /atom.xml
-        icon: fa fa-rss
+        icon: <span class="icon-rss"></span>   
 
 # copyright  
 since: 2017
-cotent_author: Sariay
+author: Sariay
 
 #########################################################################################################
 # 006-GALLERY PAGE
@@ -217,7 +223,7 @@ local_search:
 #########################################################################################################
 # when click, emerge heart
 love:
-    enable: true
+    enable: false
 
 # back to top
 totop:

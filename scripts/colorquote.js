@@ -1,6 +1,5 @@
 /**
- * The code snippet refer to 'https://github.com/ppoffice/hexo-theme-minos/blob/master/scripts/99_tags.js'!
- * Colorquote tag
+ * The tag of colorquote. 
  *
  * Tag syntax: {% colorquote [type] %} content {% endcolorquote %}
  */

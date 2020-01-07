@@ -10,6 +10,10 @@ gallery: 相册
 search: 搜索
 friend: 友链
 
+#header motto
+wait_cn: 获取中...
+wait_en: Just a minute...
+
 #navgation
 prev: 上一页
 next: 下一页
@@ -24,11 +28,9 @@ page: 第 %d 页
 
 #archive page
 total: 总计
-pian: 篇
 post: 文章
 
 #tag & category page
-ge: 个
 tag_tags: 标签
 category_categories: 分类
 

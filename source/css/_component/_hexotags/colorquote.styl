@@ -1,0 +1,117 @@
+/*--------------------------------------------------*/
+// Colorquote
+/*--------------------------------------------------*/ 
+
+// The source of code snippet is 'https://github.com/ppoffice/hexo-theme-minos/'
+
+blockquote.colorquote {
+	position: relative;
+	&:before {
+		content: " ";
+		position: absolute;
+		top: 50%;
+		left: -14.5px;
+		margin-top: -12px;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		text-align: center;
+		color: #fff;
+		background-size: 16px 16px;
+		background-position: 4px 4px;
+		background-repeat: no-repeat
+	}
+	&.info {
+		border-color: #209cee;
+		background-color: #def0fd;
+		&:before {
+			background-color: #209cee;
+			background-image: url(/img/quote/info.svg)
+		}
+	}
+	&.success {
+		border-color: #23d160;
+		background-color: #cbf6da;
+		&:before {
+			background-color: #23d160;
+			background-image: url(/img/quote/success.svg)
+		}
+	}
+	&.warning {
+		border-color: #ffdd57;
+		background-color: #fff6d1;
+		&:before {
+			background-color: #ffdd57;
+			background-image: url(/img/quote/warning.svg)
+		}
+		
+	}
+	&.danger {
+		border-color: #ff3860;
+		background-color: #ffb3c2;
+		&:before {
+			background-color: #ff3860;
+			background-image: url(/img/quote/danger.svg)
+		}
+	}
+}
+
+blockquote.pullquote {
+	float: right;
+	max-width: 50%;
+	font-size: 1.15rem;
+	position: relative;
+	&:before {
+		content: " ";
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		width: 3rem;
+		height: 3rem;
+		opacity: .1;
+		background: url(/img/quote/quote-left.svg) 0 0/3rem 3rem no-repeat
+	}
+}
+
+@media screen and (max-width: 768px) {
+	blockquote.pullquote {
+		float: none;
+		max-width: 100%
+	}
+}
+
+blockquote {
+	footer {
+		cite {
+			font-style: normal;
+			&:before {
+				content: "—";
+				padding: 0 .3em
+			}
+		}
+	}
+}
+
+.caption {
+	display: block;
+	position: relative;
+	font-size: 0.9rem;
+	text-align: center;
+}
+
+.text-highlight {
+    display: inline;
+     padding: 2px 4px;
+    &.info {
+        background-color: #def0fd;
+    }
+    &.success {
+        background-color: #cbf6da;
+    }
+    &.warning {
+        background-color: #fff6d1;
+    }
+    &.danger {
+        background-color: #ffb3c2;
+    }
+}

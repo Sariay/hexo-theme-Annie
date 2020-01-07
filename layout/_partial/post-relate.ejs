@@ -1,5 +1,5 @@
 <% 
-	var currentPostTitle = post.title, 
+	let currentPostTitle = post.title, 
 		relatePostsArry = [],
 		result =[],
 		postsEnable = theme.relate.enable,
@@ -7,23 +7,23 @@
 		postsExcerpt = theme.relate.posts_excerpt,
 		sitePostsLen = site.posts.length;
 
-    //Check post exists in postArray?
+    //To check that post exists in postArray?
     function checkDup(post, postArray){
-        var title = post.title, 
-            id = post.id;
-        for (var i = 0; i < postArray.length; i++){
-            if(post){
-                if(postArray[i]){
-                    if(title === postArray[i].title && id === postArray[i].id){
-                        return true;
-                    }
-                }
-            }
+     	if(post){
+	        let title = post.title, 
+	            id = post.id;
+	        for (let i = 0; i < postArray.length; i++){        
+	                if(postArray[i]){
+	                    if(title === postArray[i].title && id === postArray[i].id){
+	                        return true;
+	                    }
+	                }
+	        }
         }
         return false;
     }
 
-	//Get all relate posts by tag.name or category.name & Remove duplicate posts.
+	//Get all related posts by tag.name or category.name & Remove duplicate posts.
 	function getPosts(){		
 		post.categories.forEach(function(category, i){
 			site.categories.findOne({'name': category.name}).posts.sort('date', 'desc').each(function(post) {
@@ -41,7 +41,7 @@
 		});
 		
 		if(relatePostsArry.length < postsLimt){
-			var distance = postsLimt - relatePostsArry.length, ij = 0;
+			let distance = postsLimt - relatePostsArry.length, ij = 0;
 			site.posts.sort('date', 'desc').each(function(post) { 
 				if((post.title !== currentPostTitle) && !checkDup(post, relatePostsArry) && (ij < distance)){
 					relatePostsArry.push(post);
@@ -61,11 +61,13 @@
 
 <div class="relate-post">
 	<% if(result.length<=0) { %>
-		<div>Please check the post_relate setting in config.yml of hexo-theme-Annie! You should make sure 'postsEnable == true' and the number of site posts greater than 1.</div>	
+		<div class="config-info">
+			Please check the parameter of <b>post_relate</b> in config.yml of hexo-theme-Annie! You should make sure that <b>postsEnable is true</b> and the number of site posts greater than 1.
+		</div>	
 	<% } else { %>
 		<ul>
 			<% 
-		 		for(var j = 0; j < ( result.length <= postsLimt ? result.length : postsLimt ); j ++ ) { 	 			
+		 		for(let j = 0; j < ( result.length <= postsLimt ? result.length : postsLimt ); j ++ ) { 	 			
 		 	%>
 					<li>
 						<div class="relate-post-text">
@@ -87,8 +89,7 @@
 								<img class="lazy" src="<%= theme.lazy_image %>" data-src="<%= result[j].cover || theme.cover %>" alt="<%= result[j].title %>"/>
 							</a>
 						</div>
-					</li>											
-			
+					</li>												
 			<% 				
 				}
 			%>

@@ -8,13 +8,11 @@
 	</div>
 	
     <script>
-        var appid = '<%= lean.appid %>',
-            appkey = '<%= lean.appkey %>',
-            limitCount = <%= lean.topN_post.limit %>;
+        var limitCount = <%= lean.topN_post.limit %>;
         if( $('#topN').length ){
-            AV.initialize(appid, appkey);
-            var Counter = AV.Object.extend("Counter");  
-            topNPost(Counter, limitCount);
+            setTimeout(function() {
+                topNPost(limitCount);
+			}, 3000);
         }
     </script>
    

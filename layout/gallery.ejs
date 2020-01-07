@@ -1,9 +1,13 @@
 <!--
 	时间：2018-09-25
-	描述：The gallery module refers to 'http://www.htmleaf.com/jQuery/Image-Effects/201807065212.html' and 'https://github.com/Ecodev/natural-gallery-js'. Relevant rights reserved by them! 
+	描述：The module of gallery refers to 'http://www.htmleaf.com/jQuery/Image-Effects/201807065212.html' and 'https://github.com/Ecodev/natural-gallery-js'. Relevant rights reserved by them! 
 -->
 
-<%- css(['plugin/gallerypage/natural.css', 'plugin/gallerypage/natural-gallery.full.css']) %>
+<%- css([
+	'plugin/gallerypage/natural.css', 
+	'plugin/gallerypage/natural-gallery.full.css',
+	]) 
+%>
 <%- js('plugin/gallerypage/natural-gallery.full.js') %>
 
 <div class="layout-gallery">
@@ -101,39 +105,41 @@
 
 <!--To get gallery data-->
 <script type="text/javascript">
-    var galleryData = {
-        options: {
-            format: '<%= theme.gallery_format %>',
-            limit: <%= theme.gallery_limit %>,
-            showCount: true,
-            searchFilter: true,
-            categoriesFilter: true,
-            showNone: true,
-            showOthers: true,
-            // labelCategories: 'Categories',
-            labelCategories: '',
-            // labelNone: 'None',
-            // labelOthers: 'Others',
-            // labelSearch: 'Search',
-            // labelImages: 'Images',
-            labelImages: '',
-        },
-    };
-
-    var galleryEl = document.getElementById('gallery');
-    var photoswipeEl = document.getElementsByClassName('pswp')[0];
-    var gallery = new NaturalGallery.Gallery(galleryEl, photoswipeEl, galleryData);
-    var images = null;
-
-    var xhr = new XMLHttpRequest();
-    //Get images' information for gallery page!
-    xhr.open('GET', '<%- url_for( theme.gallery_data ) %>')
-    xhr.send(null);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            images = JSON.parse(xhr.responseText);
-            gallery.collection = JSON.parse(xhr.responseText);
-        }
-    };
-
+	(function gallery(){
+		let galleryData = {
+		    options: {
+		        format: '<%= theme.gallery_format %>',
+		        limit: <%= theme.gallery_limit %>,
+		        showCount: true,
+		        searchFilter: true,
+		        categoriesFilter: true,
+		        showNone: true,
+		        showOthers: true,
+		        // labelCategories: 'Categories',
+		        labelCategories: '',
+		        // labelNone: 'None',
+		        // labelOthers: 'Others',
+		        // labelSearch: 'Search',
+		        // labelImages: 'Images',
+		        labelImages: '',
+		    },
+		};
+		
+		let galleryEl = document.getElementById('gallery'),
+			photoswipeEl = document.getElementsByClassName('pswp')[0],
+			gallery = new NaturalGallery.Gallery(galleryEl, photoswipeEl, galleryData),
+			images = null;
+		
+		let xhr = new XMLHttpRequest();
+		
+		//Get images' information for gallery page!
+		xhr.open('GET', '<%- url_for( theme.gallery_data ) %>')
+		xhr.send(null);
+		xhr.onreadystatechange = function() {
+		    if (xhr.readyState === 4 && xhr.status === 200) {
+		        images = JSON.parse(xhr.responseText);
+		        gallery.collection = JSON.parse(xhr.responseText);
+		    }
+		};	
+	})();
 </script>

@@ -1,0 +1,76 @@
+/*--------------------------------------------------*/
+// Header - 页头 
+/*--------------------------------------------------*/ 
+
+$mask-alpha = hexo-config("mask_alpha")
+
+.fixbackground {
+	/* header Background parallax */
+	background-attachment: fixed;
+}
+
+header {
+    display: flex;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background-size: cover; 
+	// background-image: linear-gradient(to right, #F4F4F4 4%, #DFDEDC 99%);
+	.mask {
+		/*遮罩效果*/
+		width: 100%;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, $mask-alpha);
+	}
+
+	.h-body {
+		position: relative;
+		width: 100%;	
+		.motto {
+		    font-size: 2rem;
+		    line-height: 2;
+		    text-align: center;
+		    width: 60%;
+		    margin: 8rem auto; 
+		    color: #fff;
+			border-top: 1px solid #fff;
+			border-bottom: 1px solid #fff;
+			
+			p {
+			    text-align: center;
+			    margin: 0;
+			}
+			
+			p.content {			
+				font-size: inherit;
+			}
+			p.author {
+				font-size: inherit;
+				font-style italic;		
+			}
+			span.icon-quotes-left{
+				float: left;
+				left: -45px;
+				position: absolute;
+			}
+			span.icon-quotes-right{
+				float: right;
+				position: relative;
+				top: -45px;
+				right: -15px;
+			}
+		}
+	}
+	
+	.h-footer {
+		width: 100%;
+		text-align: center;
+		a {
+			font-size: 2rem;
+			color: #fff;
+			position: absolute;
+			bottom: 20px;
+		}
+	}
+	
+}

@@ -1,0 +1,64 @@
+/*--------------------------------------------------*/
+// Toc - 目录
+/*--------------------------------------------------*/ 
+
+.layout-toc {
+	position: relative;
+	width: 24%;
+}
+
+#layout-toc {
+	display: none;
+	line-height: 1;
+}
+
+.inline-flex {
+	display: flex;
+}
+
+.k-catelog-list {
+	width: 24%;
+	height: calc(100vh - 50px);
+	padding-left: 16px;
+	top: 50px;
+	overflow: hidden;
+	border-right: 1px solid #e0e0e0;
+	display: none;
+}
+
+.k-catelog-list>ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.k-catelog-list li {
+	width: 100%;
+}
+
+.k-catelog-list li ul {
+	/*Exampl: h6 对于 h5的层级边距*/
+	padding-left: 10px;
+	margin: 0;
+	list-style: none;
+}
+
+.k-catelog-link {
+	cursor: pointer;
+	display: block;
+	padding: 5px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-decoration: none;
+	// transition: background 0.5s;
+	// -moz-transition: background 0.5s;
+	// -webkit-transition: background 0.5s;
+	// -o-transition: background 0.5s;
+}
+
+.k-catelog-link-active {
+	color: red;
+	background-color: #fff6d1;
+	border-right: 1px solid red;
+}
