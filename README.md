@@ -1,7 +1,7 @@
 # Annie theme
 [![GitHub issues](https://img.shields.io/github/issues/Sariay/hexo-theme-Annie?style=for-the-badge)](https://github.com/Sariay/hexo-theme-Annie/issues)  ![GitHub top language](https://img.shields.io/github/languages/top/Sariay/hexo-theme-Annie?style=for-the-badge)  [![GitHub license](https://img.shields.io/github/license/Sariay/hexo-theme-Annie?style=for-the-badge)](https://github.com/Sariay/hexo-theme-Annie/blob/master/LICENSE)
 
-Annie是一个简单的Hexo博客主题，如果你喜欢散文、诗歌、小说......那么它可能合你心意!  [☞预览 | PREVIEW](https://sariay.github.io/2019/03/12/相册主题Dream介绍/)
+Annie是一个简单的Hexo博客主题，如果你喜欢散文、诗歌、小说......那么它可能合你心意!  [☞预览-1](https://sariay.github.io/2019/03/12/相册主题Dream介绍/)，[☞预览-2](https://sariay.github.io/hexo-theme-Annie/)
 
 ### Features
 
@@ -163,8 +163,6 @@ git pull
 如果你想定制主题:  [fork](https://github.com/Sariay/hexo-theme-Annie/fork)						（当然，**Annie**亦期待你的贡献）
 
 主题交流群如下，招募群主！（1023390049，口令ANNIE）
-
-![主题交流群](source/img/Annie_qq_qrcode.jpg)
 
 ![主题交流群](https://github.com/Sariay/hexo-theme-Annie/blob/master/source/img/Annie_qq_qrcode.jpg)
 
