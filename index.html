@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="cn">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, minimal-ui" />
+
+		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet" />
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="css/bootstrap.extension.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/swiper.css" rel="stylesheet" type="text/css" />
+		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+		<style>
+			.presentation-entry {
+				padding: 0 15px;
+				max-width: 410px;
+				margin: 0 auto;
+			}
+
+			.presentation-content {
+				padding: 15px 0 30px 0;
+			}
+
+			.features-item-wrapper {
+				padding-bottom: 50px;
+			}
+
+			.features-item-wrapper:nth-child(3n+1) {
+				clear: both;
+			}
+
+			.features-item-margin {
+				margin-top: -50px;
+			}
+
+			/* Tablets (>=768px)*/
+			@media (max-width: 991px) {
+				.features-item-wrapper:nth-child(3n+1) {
+					clear: none;
+				}
+
+				.features-item-wrapper:nth-child(2n+1) {
+					clear: both;
+				}
+			}
+
+			/*Phones (<768px)*/
+			@media (max-width: 767px) {
+				.features-item-wrapper {
+					padding-bottom: 30px;
+				}
+
+				.features-item-margin {
+					margin-top: -30px;
+				}
+			}
+
+			.mouseover-1 img:nth-child(2) {
+				transform: scale(.9);
+				-webkit-transform: scale(.9);
+			}
+
+			.mouseover-1:hover img:nth-child(2) {
+				transform: scale(1);
+				-webkit-transform: scale(1);
+			}
+		</style>
+
+		<link rel="shortcut icon" href="img/favicon.ico" />
+		<title>Annie</title>
+	</head>
+	<body>
+
+		<!-- LOADER -->
+		<div id="loader-wrapper"></div>
+
+		<!-- HEADER -->
+		<header class="type-3 transparent light">
+			<div class="header-wrapper">
+				<a id="logo" href="/"><img src="img/logo5.png" alt="" /></a>
+				<div class="hamburger-icon">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="follow style-1">
+					<a class="entry" href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+					<a class="entry" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+					<a class="entry" href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+					<a class="entry" href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a>
+				</div>
+			</div>
+			<div class="navigation-wrapper">
+				<nav>
+					<ul>
+						<li>
+							<a href="https://sariay.github.io/" target="_blank">博客</a>
+						</li>
+						<li>
+							<a href="https://sariay.github.io/2018/08/27/Annie主题使用说明/" target="_blank">使用文档</a>
+						</li>
+						<li>
+							<a href="https://github.com/Sariay/hexo-theme-Annie/releases" target="_blank">发布日志</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<div class="banner-shortcode" style="background-image: url(presentation/img/background.jpg);">
+			<div class="banner-frame border-image" style="border-image-source: url(presentation/img/background_.jpg);"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="align">
+							<h1 class="h1 light">Hexo-Theme-Annie</h1>
+							<div class="empty-space col-xs-b15"></div>
+							<div class="sa light large">文艺、优雅、简洁的博客主题</div>
+							<div class="empty-space col-xs-b30"></div>
+							<a class="button light" href="https://github.com/Sariay/hexo-theme-Annie">download this theme</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="content-block">
+
+			<div class="container">
+
+				<div class="empty-space col-xs-b40 col-sm-b80"></div>
+
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<article class="sa">
+							<h3>PREVIEW</h3>
+						</article>
+						<div class="empty-space col-xs-b25 col-sm-b50"></div>
+					</div>
+					<div class="col-md-12 text-center">
+						<div class="sorting-menu">
+							<div class="title">All</div>
+							<div class="toggle">
+								<a class="active" data-filter="*"><span class="text">All</span><span class="number">12</span></a>
+								<a data-filter=".filter-1"><span class="text">主页</span><span class="number">3</span></a>
+								<a data-filter=".filter-2"><span class="text">归档页</span><span class="number">1</span></a>
+								<a data-filter=".filter-3"><span class="text">标签页</span><span class="number">2</span></a>
+								<a data-filter=".filter-4"><span class="text">分类页</span><span class="number">1</span></a>
+								<a data-filter=".filter-5"><span class="text">文章详情页</span><span class="number">2</span></a>
+								<a data-filter=".filter-6"><span class="text">菜单页</span><span class="number">1</span></a>
+								<a data-filter=".filter-7"><span class="text">搜索页</span><span class="number">2</span></a>
+							</div>
+						</div>
+						<div class="empty-space col-xs-b25 col-sm-b50"></div>
+					</div>
+				</div>
+
+				<div class="sorting-container portfolio-1">
+					<div class="grid-sizer w33"></div>
+
+					<div class="sorting-item w33 filter-1">
+						<div class="presentation-entry">
+							<a class="mouseover-1" href="" target="_blank">
+								<img src="presentation/img/home1.jpg" alt="" />
+								<img src="presentation/img/home1.jpg" alt="" />
+							</a>
+							<div class="presentation-content">
+								<div class="h6"><span class="ht-2"><a href="" target="_blank">主页 1</a></span></div>
+							</div>
+						</div>
+					</div>
+					<div class="sorting-item w33 filter-1">
+						<div class="presentation-entry">
+							<a class="mouseover-1" href="" target="_blank">
+								<img src="presentation/img/home2.jpg" alt="" />
+								<img src="presentation/img/home2.jpg" alt="" />
+							</a>
+							<div class="presentation-content">
+								<div class="h6"><span class="ht-2"><a href="" target="_blank">主页 2</a></span></div>
+							</div>
+						</div>
+					</div>
+					<div class="sorting-item w33 filter-1">
+						<div class="presentation-entry">
+							<a class="mouseover-1" href="" target="_blank">
+								<img src="presentation/img/home3.jpg" alt="" />
+								<img src="presentation/img/home3.jpg" alt="" />
+							</a>
+							<div class="presentation-content">
+								<div class="h6"><span class="ht-2"><a href="" target="_blank">主页 3</a></span></div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="sorting-item w33 filter-2">
+						<div class="presentation-entry">
+							<a class="mouseover-1" href="" target="_blank">
+								<img src="presentation/img/archives.png" alt="" />
+								<img src="presentation/img/archives.png" alt="" />
+							</a>
+							<div class="presentation-content">
+								<div class="h6"><span class="ht-2"><a href="" target="_blank">归档页</a></span></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="sorting-item w33 filter-3">
+						<div class="presentation-entry">
+							<a class="mouseover-1" href="" target="_blank">
+								<img src="presentation/img/tags1.jpg" alt="" />
+								<img src="presentation/img/tags1.jpg" alt="" />
+							</a>
+							<div class="presentation-content">
+								<div class="h6"><span class="ht-2"><a href="" target="_blank">标签页 1</a></span></div>
+							</div>
+						</div>
+					</div>
+					<div class="sorting-item w33 filter-3">
+						<div class="presentation-entry">
+							<a class="mouseover-1" href="" target="_blank">
+								<img src="presentation/img/tags2.jpg" alt="" />
+								<img src="presentation/img/tags2.jpg" alt="" />
+							</a>
+							<div class="presentation-content">
+								<div class="h6"><span class="ht-2"><a href="" target="_blank">标签页 2</a></span></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="sorting-item w33 filter-4">
+						<div class="presentation-entry">
+							<a class="mouseover-1" href="" target="_blank">
+								<img src="presentation/img/categories.jpg" alt="" />
+								<img src="presentation/img/categories.jpg" alt="" />
+							</a>
+							<div class="presentation-content">
+								<div class="h6"><span class="ht-2"><a href="" target="_blank">分类页</a></span></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="sorting-item w33 filter-5">
+						<div class="presentation-entry">
+							<a class="mouseover-1" href="" target="_blank">
+								<img src="presentation/img/post1.jpg" alt="" />
+								<img src="presentation/img/post1.jpg" alt="" />
+							</a>
+							<div class="presentation-content">
+								<div class="h6"><span class="ht-2"><a href="" target="_blank">文章详情页 1</a></span></div>
+							</div>
+						</div>
+					</div>
+					<div class="sorting-item w33 filter-5">
+						<div class="presentation-entry">
+							<a class="mouseover-1" href="" target="_blank">
+								<img src="presentation/img/post3.png" alt="" />
+								<img src="presentation/img/post3.png" alt="" />
+							</a>
+							<div class="presentation-content">
+								<div class="h6"><span class="ht-2"><a href="" target="_blank">文章详情页 2</a></span></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="sorting-item w33 filter-6">
+						<div class="presentation-entry">
+							<a class="mouseover-1" href="" target="_blank">
+								<img src="presentation/img/post2.png" alt="" />
+								<img src="presentation/img/post2.png" alt="" />
+							</a>
+							<div class="presentation-content">
+								<div class="h6"><span class="ht-2"><a href="" target="_blank">菜单页</a></span></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="sorting-item w33 filter-7">
+						<div class="presentation-entry">
+							<a class="mouseover-1" href="" target="_blank">
+								<img src="presentation/img/search1.png" alt="" />
+								<img src="presentation/img/search1.png" alt="" />
+							</a>
+							<div class="presentation-content">
+								<div class="h6"><span class="ht-2"><a href="" target="_blank">搜索页 1</a></span></div>
+							</div>
+						</div>
+					</div>
+					<div class="sorting-item w33 filter-7">
+						<div class="presentation-entry">
+							<a class="mouseover-1" href="" target="_blank">
+								<img src="presentation/img/search2.png" alt="" />
+								<img src="presentation/img/search2.png" alt="" />
+							</a>
+							<div class="presentation-content">
+								<div class="h6"><span class="ht-2"><a href="" target="_blank">搜索页 2</a></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="empty-space col-xs-b55 col-sm-b110"></div>
+
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<article class="sa">
+						<h3>Annie IS RELATIVELY UNIQUE</h3>
+					</article>
+					<div class="empty-space col-xs-b25 col-sm-b50"></div>
+				</div>
+			</div>
+
+			<div class="row">
+
+				<div class="col-sm-6 col-md-4 features-item-wrapper">
+					<div class="features-item text-center">
+						<img src="presentation/img/icon-3.png" alt="" />
+						<div class="empty-space col-xs-b15"></div>
+						<div class="h6"><b>思源字体</b></div>
+						<div class="empty-space col-xs-b15"></div>
+						<div class="sa small">Select the font that you like the most</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4 features-item-wrapper">
+					<div class="features-item text-center">
+						<img src="presentation/img/icon-4.png" alt="" />
+						<div class="empty-space col-xs-b15"></div>
+						<div class="h6"><b>ICOMOON图标</b></div>
+						<div class="empty-space col-xs-b15"></div>
+						<div class="sa small">Font Icomoon gives you scalable vector icons that can instantly be customized</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4 features-item-wrapper">
+					<div class="features-item text-center">
+						<img src="presentation/img/icon-6.png" alt="" />
+						<div class="empty-space col-xs-b15"></div>
+						<div class="h6"><b>自定制</b></div>
+						<div class="empty-space col-xs-b15"></div>
+						<div class="sa small">We take greart care to create IT solutions with well-structured, modular and clean code</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4 features-item-wrapper">
+					<div class="features-item text-center">
+						<img src="presentation/img/icon-10.png" alt="" />
+						<div class="empty-space col-xs-b15"></div>
+						<div class="h6"><b>移动适配</b></div>
+						<div class="empty-space col-xs-b15"></div>
+						<div class="sa small">Union always make sure that our themes are easy to navigate on any devices</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4 features-item-wrapper">
+					<div class="features-item text-center">
+						<img src="presentation/img/icon-12.png" alt="" />
+						<div class="empty-space col-xs-b15"></div>
+						<div class="h6"><b>完善的使用文档</b></div>
+						<div class="empty-space col-xs-b15"></div>
+						<div class="sa small">We provide step by step user guide for more better understanding our theme</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4 features-item-wrapper">
+					<div class="features-item text-center">
+						<img src="presentation/img/icon-13.png" alt="" />
+						<div class="empty-space col-xs-b15"></div>
+						<div class="h6"><b>问答服务</b></div>
+						<div class="empty-space col-xs-b15"></div>
+						<div class="sa small">we will help you resolve any issues that have arisen on our template and give quick answer</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="features-item-margin"></div>
+
+			<div class="empty-space col-xs-b55 col-sm-b110"></div>
+
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<article class="sa">
+
+					</article>
+					<div class="empty-space col-xs-b35"></div>
+					<a class="button" href="https://github.com/Sariay/hexo-theme-Annie"><b>use it now</b></a>
+				</div>
+			</div>
+		</div>
+
+		<footer style="min-height: 100px;">
+
+		</footer>
+
+		<div class="phone-marker visible-xs"></div>
+		<div class="tablet-marker visible-sm"></div>
+
+		<script src="js/jquery-2.2.4.min.js"></script>
+		<script src="js/swiper.jquery.min.js"></script>
+		<script src="js/global.js"></script>
+
+		<script src="js/isotope.pkgd.min.js"></script>
+
+		<!-- lightbox -->
+		<link href="css/simplelightbox.css" rel="stylesheet" type="text/css" />
+		<script src="js/simple-lightbox.min.js"></script>
+
+	</body>
+</html>

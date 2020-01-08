@@ -1,7 +1,0 @@
-<% if (post.categories && post.categories.length){ %>
-	<% post.categories.forEach( function(category, i){ %>    		
-     	<a href="<%= url_for(category.path) %>" class=" ">
-     		<%= category.name %>
-     	</a>      		
-    <% }) %>
-<% } %>
